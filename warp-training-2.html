@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<title>Adaptive Financial News</title>
+<meta HTTP-EQUIV="Content-Type" content="text/html; charset=windows-1252">
+
+
+<!-- =============================================================================================================== -->
+<!-- scripts                                                                                                 scripts -->
+<!-- =============================================================================================================== -->
+
+<!-- Spatial Hypertext                                                                             Spatial Hypertext -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mash.js" >                        </script>
+
+<!-- mash server API -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashFileManager.js" >             </script>
+
+<!-- object declarations -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashObject.js">                   </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashCollection.js">               </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashFrame.js">                    </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashImage.js">                    </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashText.js">                     </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashForm.js">                     </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashInput.js">                    </script>
+
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashVideo.js">                    </script>
+
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashUserAnnotation.js"            ></script>
+
+<!-- object support -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashContextualMenu.js"            ></script>
+
+<!-- spatial parser support -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashImplicitComposite.js">        </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashControlMenu.js"      >        </script>
+
+<!-- behavior support -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashBehaviors.js">                </script>
+
+<!-- behavior declarations -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashBehavior_Presentation.js">    </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashBehavior_Wandering.js">       </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashBehavior_SlideShow.js">       </script>
+
+<!-- relationship support -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashRelationships.js">            </script>
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashRelationship_VirtualRopes.js"></script>
+
+<!-- transformations support -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/mashTransformations.js">          </script>
+
+<!-- adaptation methods -->
+<script src="http://denali.ischool.utexas.edu/~revilla/WARP/mash_javascripts/modelUtilities.js" >              </script>
+
+
+<!-- Object declaration                                                                           Object declaration -->
+<script language="javascript">
+
+var MASH_DOCUMENT_NAME  = "WARP_ADAPTATION";
+
+var VKB_Object_section_02 = new MASH_Text("section_02", 235, 80, 200, 150, 1,
+                                        "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#323434; border-style:solid; background-image:none; color:#0000bb; font-size:14pt; font-weight:bold; ",
+                                        "<span style='color:#000000; background-color:#ffffff; '>11:27 AM ET</span><br>" +
+                                        "Fed Seen Sticking to Measured Rate Raises"
+                                       );
+var VKB_Object_section_04 = new MASH_Text("section_04", 20, 240, 200, 150, 1,
+//                                        "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#323434; border-style:solid; background-image:none; color:#0000bb; font-size:14pt; font-weight:bold; ",
+                                        "align:left; vertical-align:top; background-color:#ffffff; border-width:8; border-color:#323434; border-style:solid; background-image:none; color:#0000bb; font-size:14pt; font-weight:bold; ",
+                                        "<span style='color:#000000; background-color:#00ffff; '>04:25 PM ET</span><br>" +
+                                        "Europe Could Face Flu Crisis"
+                                       );
+var VKB_Object_section_05 = new MASH_Text("section_05", 235, 240, 200, 150, 1,
+                                        "align:left; vertical-align:top; background-color:#999999; border-width:2; border-color:#666666; border-style:solid; background-image:none; color:#0000bb; font-size:14pt; font-weight:bold; ",
+//                                        "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#323434; border-style:solid; background-image:none; color:#0000bb; font-size:14pt; font-weight:bold; ",
+//                                        "<span style='color:#000000; background-color:#00ffff; '>10:30 AM ET</span><br>" +
+//                                        "Agis shares jump after FDA approves generic enema"
+//                                        "J&J shares drop slightly after recall of child Tylenol"
+                                        ""
+                                       );
+var VKB_Object_section_06 = new MASH_Text("section_06", 455, 240, 200, 150, 1,
+                                        "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#323434; border-style:solid; background-image:none; color:#0000bb; font-size:14pt; font-weight:bold; ",
+                                        "<span style='color:#000000; background-color:#00ffff; '>05:15 PM ET</span><br>" +
+                                        "Antibody Therapy Shows Promise Against Alzheimers"
+                                       );
+var VKB_Object_section_08 = new MASH_Text("section_08", 235, 400, 200, 150, 1,
+                                        "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#323434; border-style:solid; background-image:none; color:#0000bb; font-size:14pt; font-weight:bold; ",
+                                        "<span style='color:#000000; background-color:#ffffff; '>03:32 PM ET</span><br>" +
+                                        "Several U.S. stocks boosted by hurricanes "
+                                       );
+
+//var VKB_Object_section_10 = new MASH_Text("section_10", 225, 70, 220, 490, 1,
+//                                        "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#323434; border-style:solid; background-image:none; color:#0000bb; font-size:14pt; font-weight:bold; ",
+//                                        ""
+//                                       );
+
+
+//var VKB_Object_decoration_1 = new MASH_Text("decoration_1", 190, 150, 400, 400, 0,
+//                                        "align:left; vertical-align:top; background-color:#b6fef2; border-width:1; border-color:#323434; border-style:solid; background-image:none; color:#000000; font-size:7pt; ",
+//                                        ""
+//                                       );
+//
+//var VKB_Object_1        = new MASH_Collection("Collection_1", 600, 100, 500, 300, 1,
+//                                              "align:left; vertical-align:top; background-color:#96bed2; border-width:2; border-color:#46506e; border-style:solid; background-image:none; color:#000000; font-family:Arial; font-size:13pt; font-weight:bold; ",
+//                                              "Collection 1",
+//                                              new Array(
+//                                                       )
+//                                             );
+//var VKB_Object_2        = new MASH_Collection("Collection_2", 600, 450, 370, 170, 1,
+//                                              "align:left; vertical-align:top; background-color:#ccccff; border-width:2; border-color:#a6903e; border-style:solid; background-image:none; color:#000000; font-family:Arial; font-size:13pt; font-weight:bold; ",
+//                                              "Collection 2",
+//                                              new Array(
+//                                                       )
+//                                             );
+//var VKB_Object_3        = new MASH_Collection("Collection_3", 600, 700, 340, 140, 1,
+//                                              "align:left; vertical-align:top; background-color:#007700; border-width:2; border-color:#f6f9ae; border-style:solid; background-image:none; color:#000000; font-family:Arial; font-size:13pt; font-weight:bold; ",
+//                                              "Collection 3",
+//                                              new Array(
+//                                                       )
+//                                             );
+//var VKB_Object_4        = new MASH_Collection("Collection_4", 600, 860, 300, 100, 1,
+//                                              "align:left; vertical-align:top; background-color:#007777; border-width:2; border-color:#f6797e; border-style:solid; background-image:none; color:#000000; font-family:Arial; font-size:13pt; font-weight:bold; ",
+//                                              "Collection 4",
+//                                              new Array(
+//                                                       )
+//                                             );
+//
+//var VKB_Object_49       = new MASH_Frame("VKB_Object[49]", 100, 600, 360, 315, 1,
+//                                         "align:left; vertical-align:top; background-color:#006600; border-width:1; border-color:#000000; border-style:solid; background-image:none; color:#000000; font-family:Arial; font-size:9pt; font-weight:bold; ",
+//                                         "http://kilimanjaro.csdl.tamu.edu:8080/mash/servlets/mash-workshop-2003.html",
+//                                         "Workshop 2003",
+//                                         (2/5)
+//                                       );
+
+
+var allMASHObjects      = new Array(
+
+//    VKB_Object_section_10,
+    VKB_Object_section_04,
+    VKB_Object_section_08,
+    VKB_Object_section_05,
+    VKB_Object_section_02,
+    VKB_Object_section_06
+/*
+    VKB_Object_decoration_1,
+    VKB_Object_1,
+    VKB_Object_2,
+    VKB_Object_3,
+    VKB_Object_4
+*/
+); //allMASHObjects
+
+<!-- max id = 10,  #Symbols = 9 -->
+
+</script>
+
+</head>
+
+
+
+<!-- =============================================================================================================== -->
+<!-- body                                                                                                       body -->
+<!-- =============================================================================================================== -->
+<body text="#000000" link="#0000ff" vlink="#800080" bgcolor="#ffffff" scroll="auto" >
+
+<script language="javascript">
+     MASH_Object.writeObjects();
+//     writeControls();
+     writeMASHApplet(false, "recognizer-piles:(true,false,false); "          +
+                            "recognizer-lists-vertical:(true,true,true); "   +
+                            "recognizer-lists-horizontal:(true,true,true); " +
+                            "recognizer-relationships:(true,false,false); "  ,
+                            "./"                                             );
+
+</script>
+<hr>
+
+
+</body>
+</html>

@@ -1,0 +1,846 @@
+<MASH_Document>
+<MASH_Properties>
+<MASH_DocumentName>SP_DEMO_GROUPS</MASH_DocumentName>
+<MASH_TopZIndex>1023</MASH_TopZIndex>
+
+</MASH_Properties>
+<MASH_Objects>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[50]]]></id>
+    <left><![CDATA[567]]></left>
+    <top><![CDATA[259]]></top>
+    <width><![CDATA[136]]></width>
+    <height><![CDATA[39]]></height>
+    <zIndex><![CDATA[1015]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 50
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[30]]]></id>
+    <left><![CDATA[374]]></left>
+    <top><![CDATA[399]]></top>
+    <width><![CDATA[142]]></width>
+    <height><![CDATA[33]]></height>
+    <zIndex><![CDATA[1021]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#eb8282]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#821e1e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 30
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[53]]]></id>
+    <left><![CDATA[589]]></left>
+    <top><![CDATA[281]]></top>
+    <width><![CDATA[136]]></width>
+    <height><![CDATA[39]]></height>
+    <zIndex><![CDATA[1016]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 53
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[49]]]></id>
+    <left><![CDATA[277]]></left>
+    <top><![CDATA[181]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1011]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 49
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[48]]]></id>
+    <left><![CDATA[252]]></left>
+    <top><![CDATA[159]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1010]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 48
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[40]]]></id>
+    <left><![CDATA[158]]></left>
+    <top><![CDATA[199]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1005]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 40
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[47]]]></id>
+    <left><![CDATA[231]]></left>
+    <top><![CDATA[143]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1009]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 47
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[35]]]></id>
+    <left><![CDATA[304]]></left>
+    <top><![CDATA[333]]></top>
+    <width><![CDATA[142]]></width>
+    <height><![CDATA[33]]></height>
+    <zIndex><![CDATA[1017]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#eb8282]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#821e1e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 35
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[52]]]></id>
+    <left><![CDATA[538]]></left>
+    <top><![CDATA[223]]></top>
+    <width><![CDATA[136]]></width>
+    <height><![CDATA[39]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 52
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[43]]]></id>
+    <left><![CDATA[183]]></left>
+    <top><![CDATA[186]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1006]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 43
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[34]]]></id>
+    <left><![CDATA[342]]></left>
+    <top><![CDATA[366]]></top>
+    <width><![CDATA[142]]></width>
+    <height><![CDATA[33]]></height>
+    <zIndex><![CDATA[1019]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#eb8282]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#821e1e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 34
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[51]]]></id>
+    <left><![CDATA[550]]></left>
+    <top><![CDATA[243]]></top>
+    <width><![CDATA[136]]></width>
+    <height><![CDATA[39]]></height>
+    <zIndex><![CDATA[1013]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 51
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[41]]]></id>
+    <left><![CDATA[135]]></left>
+    <top><![CDATA[179]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1004]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 41
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[42]]]></id>
+    <left><![CDATA[121]]></left>
+    <top><![CDATA[163]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1003]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 42
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[46]]]></id>
+    <left><![CDATA[106]]></left>
+    <top><![CDATA[155]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1002]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 46
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[55]]]></id>
+    <left><![CDATA[620]]></left>
+    <top><![CDATA[319]]></top>
+    <width><![CDATA[136]]></width>
+    <height><![CDATA[39]]></height>
+    <zIndex><![CDATA[1023]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 55
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[32]]]></id>
+    <left><![CDATA[326]]></left>
+    <top><![CDATA[350]]></top>
+    <width><![CDATA[142]]></width>
+    <height><![CDATA[33]]></height>
+    <zIndex><![CDATA[1018]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#eb8282]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#821e1e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 32
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[39]]]></id>
+    <left><![CDATA[36]]></left>
+    <top><![CDATA[180]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 39
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[38]]]></id>
+    <left><![CDATA[43]]></left>
+    <top><![CDATA[170]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 38
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[37]]]></id>
+    <left><![CDATA[54]]></left>
+    <top><![CDATA[159]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 37
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[36]]]></id>
+    <left><![CDATA[63]]></left>
+    <top><![CDATA[147]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 36
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[31]]]></id>
+    <left><![CDATA[358]]></left>
+    <top><![CDATA[383]]></top>
+    <width><![CDATA[142]]></width>
+    <height><![CDATA[33]]></height>
+    <zIndex><![CDATA[1020]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#eb8282]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#821e1e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 31
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[54]]]></id>
+    <left><![CDATA[603]]></left>
+    <top><![CDATA[301]]></top>
+    <width><![CDATA[136]]></width>
+    <height><![CDATA[39]]></height>
+    <zIndex><![CDATA[1022]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 54
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[45]]]></id>
+    <left><![CDATA[215]]></left>
+    <top><![CDATA[156]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1008]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 45
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[44]]]></id>
+    <left><![CDATA[194]]></left>
+    <top><![CDATA[168]]></top>
+    <width><![CDATA[109]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1007]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 44
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[33]]]></id>
+    <left><![CDATA[280]]></left>
+    <top><![CDATA[320]]></top>
+    <width><![CDATA[142]]></width>
+    <height><![CDATA[33]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[7pt]]></fontSize>
+      <fontFamily><![CDATA[arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#eb8282]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#821e1e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Object 33
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+
+</MASH_Objects>
+<MASH_Relationships>
+
+</MASH_Relationships>
+
+</MASH_Document>

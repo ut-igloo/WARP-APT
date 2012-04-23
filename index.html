@@ -1,0 +1,380 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0061)http://www.csdl.tamu.edu/~l0f0954/research/WARP_research.html -->
+<HTML>
+    <HEAD>
+        <TITLE>MIS HIPO's Demo</TITLE>
+        <META http-equiv=Content-Type content="text/html; charset=windows-1252">
+
+
+<!-- =============================================================================================================== -->
+<!-- scripts                                                                                                 scripts -->
+<!-- =============================================================================================================== -->
+
+
+<!-- this script converts npTuioClient data to mouse events -->
+<script src="http://everest.ischool.utexas.edu/WARP-APT/other-javascripts/magictouch.js"></script>
+
+<!-- Spatial Hypertext                                                                             Spatial Hypertext -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mash.js"></SCRIPT>
+
+<!-- object declarations -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashObject.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashCollection.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashFrame.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashImage.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashText.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashForm.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashInput.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashVideo.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashUserAnnotation.js"></SCRIPT>
+
+<!-- object support -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashContextualMenu.js"></SCRIPT>
+
+<!-- spatial parser support -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashImplicitComposite.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashControlMenu.js"></SCRIPT>
+
+<!-- behavior support -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashBehaviors.js"></SCRIPT>
+
+<!-- behavior declarations -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashBehavior_Presentation.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashBehavior_Wandering.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashBehavior_SlideShow.js"></SCRIPT>
+
+<!-- relationship support -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashRelationships.js"></SCRIPT>
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashRelationship_VirtualRopes.js"></SCRIPT>
+
+<!-- transformations support -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/mashTransformations.js"></SCRIPT>
+
+<!-- adaptation methods -->
+<SCRIPT src="http://everest.ischool.utexas.edu/WARP-APT/mash-javascripts/modelUtilities.js"></SCRIPT>
+
+<!-- Object declaration                                                                           Object declaration -->
+<SCRIPT language=javascript>
+
+var MASH_DOCUMENT_NAME  = "APT";
+/*
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_5-4.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_5-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_5-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_5-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_4.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_33-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_33-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_33-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_17-4.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_17-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_17-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_17-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_11-4.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_11-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_11-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f1_11-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_64-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_64-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_64-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_39-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_39-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_36-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_36-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_35-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_35-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_32-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_32-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_3-5.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_3-4.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_3-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_3-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f4_3-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f3_9-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b78_f12_13.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f6_29-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f6_29-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f3_9-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f3_8-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f3_8-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f3_8-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_44-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_44-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_25-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_25-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_25-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_24-6.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_24-5.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_24-4.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_24-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f6_7-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_24-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_24-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_17-4.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_17-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f6_5-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_9-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f6_5-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f6_2-3.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f6_2-2.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f6_2-1.jpg
+http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f2_9-1.jpg
+*/
+
+var obj1     = new MASH_Image("VKB_Object[1]", 9, 5, 400, 400, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj2     = new MASH_Image("VKB_Object[2]", 9, 5, 300, 300, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-3.jpg",
+                                         "Image"
+                                        );
+var obj3     = new MASH_Image("VKB_Object[3]", 9, 5, 500, 500, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-2.jpg",
+                                         "Image"
+                                        );
+var obj4     = new MASH_Image("VKB_Object[4]", 9, 5, 600, 600, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-1.jpg",
+                                         "Image"
+                                        );
+var obj5     = new MASH_Image("VKB_Object[5]", 9, 5, 600, 600, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f3_3-4.jpg",
+                                         "Image"
+                                        );
+var obj6     = new MASH_Image("VKB_Object[6]", 9, 5, 600, 600, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f3_3-3.jpg",
+                                         "Image"
+                                        );
+var obj7     = new MASH_Image("VKB_Object[7]", 9, 5, 600, 600, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f3_3-2.jpg",
+                                         "Image"
+                                        );
+var obj8     = new MASH_Image("VKB_Object[8]", 9, 5, 600, 600, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f3_3-1.jpg",
+                                         "Image"
+                                        );
+var obj9     = new MASH_Image("VKB_Object[9]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_5-4.jpg",
+                                         "Image"
+                                        );
+var obj10     = new MASH_Image("VKB_Object[10]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_5-3.jpg",
+                                         "Image"
+                                        );
+var obj11     = new MASH_Image("VKB_Object[11]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_5-2.jpg",
+                                         "Image"
+                                        );
+var obj12     = new MASH_Image("VKB_Object[12]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b77_f1_5-1.jpg",
+                                         "Image"
+                                        );
+var obj13     = new MASH_Image("VKB_Object[13]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj14     = new MASH_Image("VKB_Object[14]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj15     = new MASH_Image("VKB_Object[15]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj16     = new MASH_Image("VKB_Object[16]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj17     = new MASH_Image("VKB_Object[17]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj18     = new MASH_Image("VKB_Object[18]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj19     = new MASH_Image("VKB_Object[19]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj20     = new MASH_Image("VKB_Object[20]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj21     = new MASH_Image("VKB_Object[21]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj22     = new MASH_Image("VKB_Object[22]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj23     = new MASH_Image("VKB_Object[23]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj24     = new MASH_Image("VKB_Object[24]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj25     = new MASH_Image("VKB_Object[25]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj26     = new MASH_Image("VKB_Object[26]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj27     = new MASH_Image("VKB_Object[27]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj28     = new MASH_Image("VKB_Object[28]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj29     = new MASH_Image("VKB_Object[29]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj30     = new MASH_Image("VKB_Object[30]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj31     = new MASH_Image("VKB_Object[31]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj32     = new MASH_Image("VKB_Object[32]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj33     = new MASH_Image("VKB_Object[33]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj34     = new MASH_Image("VKB_Object[34]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj35     = new MASH_Image("VKB_Object[35]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj36     = new MASH_Image("VKB_Object[36]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj37     = new MASH_Image("VKB_Object[37]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj38     = new MASH_Image("VKB_Object[38]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj39     = new MASH_Image("VKB_Object[39]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+var obj40     = new MASH_Image("VKB_Object[40]", 9, 5, 100, 100, 5,
+                                         "align:left; vertical-align:top; background-color:transparent; border-width:0; border-color:#FFFFFF; border-style:solid; background-image:none; color:#000000; ",
+                                         "http://everest.ischool.utexas.edu/~jeff/apt/uclamss_2010_b79_f4_1-4.jpg",
+                                         "Image"
+                                        );
+
+/*
+var MISHIPO_toolbar = new MASH_Collection("VKB_Object[121]", 5, 80, 150, 550, 10,
+                                          "align:left; vertical-align:top; background-color:#ffffff; border-width:1; border-color:#dddddd; border-style:solid; background-image:\"icon/collect_bg.png\"; color:#000000; ","",
+                                          new Array(
+
+                                             MISHIPO_tool101,
+                                             MISHIPO_tool102,
+                                             MISHIPO_tool103,
+                                             MISHIPO_tool104,
+                                             MISHIPO_tool105
+                                             )
+                                         );
+*/
+/*
+var MISHIPO_userbar = new MASH_Collection("VKB_Object[122]", 1075, 80, 150, 550, 10,
+                                          "align:left; vertical-align:top; background-color:transparent; border-width:1; border-color:#dddddd; border-style:solid; background-image:\"icon/collect_bg.png\"; color:#000000; ","",
+                                          new Array(
+
+                                             MISHIPO_user106,
+                                             MISHIPO_user107
+                                             )
+                                         );
+*/
+
+var allMASHObjects      = new Array(
+
+    obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10, obj11, obj12, obj13, obj14, obj15, obj16, obj17, obj18, obj19, obj20, obj21, obj22, obj23, obj24, obj25, obj26, obj27, obj28, obj29, obj30, obj31, obj32, obj33, obj34, obj35, obj36, obj37, obj38, obj39, obj40
+
+); //allMASHObjects
+
+
+</SCRIPT>
+
+<!-- =============================================================================================================== -->
+<!-- body                                                                                                       body -->
+<!-- =============================================================================================================== -->
+</HEAD>
+
+<BODY text=#000000 vLink=#800080 link=#0000ff bgColor=#ffffff scroll=auto>
+<SCRIPT language=javascript>
+     MASH_Object.writeObjects();
+//     writeControls();
+
+//     MASH_Behavior_Wandering.writeControls();
+//     MASH_Behavior_AutoPresentation.writeControls();
+//     declareRelationships();
+
+</SCRIPT>
+
+   <!-- TUIO object loader for npTuioClient -->
+    <object id="tuio" type="application/x-tuio">Plugin FAILED to load</object>
+    <!-- end -->
+</BODY>
+</HTML>
+

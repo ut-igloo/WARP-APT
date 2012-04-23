@@ -1,0 +1,203 @@
+body              { text-align       : left;
+                    font-family      : Arial;
+                    font-size        : 10pt;
+                    fonr-weight      : normal;
+                    background-color : #ffffff;
+                  }
+
+
+.page_title       { font-size        : 20px;
+                    color            : #FF9933;
+                    font-family      : Arial, Helvetica, sans-serif;
+                    }
+
+h1                { text-align       : left;
+                    valign           : middle;
+                    font-family      : Arial, Helvetica, sans-serif;
+                    font-weight      : normal;
+                    color            : #FF9933;
+                    font-size        : 18pt;
+                  }
+
+h2                { width            : 820px;
+                    font-family      : Arial;
+                    font-size        : 14pt;
+                    font-weight      : normal;
+                    margin-bottom    : 0pt;
+                    padding-bottom   : 0pt;
+                    background-color : #eeeeee;
+                  }
+
+strong            { font-family      : Arial;
+                    font-size        : 12pt;
+                    font-weight      : bold;
+                  }
+
+form              { text-align       : left;
+                    width            : 100%;
+                  }
+
+
+table             { text-align       : left;
+                    valign           : middle;
+                    width            : 800px;
+                    z-index          : 1;
+                    color            : #000000;
+                    background-color : #ffffff;
+                    border-style     : solid;
+                    border-width     : 0pt;
+                    border-color     : #888888;
+                    margin-left      : 20px;
+                    font-family      : monospace, san-serif;
+                    font-size        : 10pt;
+                    font-weight      : normal;
+                  }
+
+th                { background-color : #e2eef4;
+                    border-style     : solid;
+                    border-width     : 0pt;
+                    border-color     : #888888;
+                    margin-left      : 2px;
+                    font-family      : Arial;
+                    font-size        : 12pt;
+                    font-weight      : bold;
+                  }
+
+
+.messages         { background-color : #ffffff;
+                    border-style     : solid;
+                    border-width     : 1pt;
+                    border-color     : #888888;
+                  }
+.success          { text-align       : left;
+                    valign           : middle;
+                    width            : 740px;
+                    font-family      : Arial;
+                    font-size        : 10pt;
+                    font-weight      : normal;
+                    background-color : #deffef;
+                    border-style     : solid;
+                    border-width     : 1pt;
+                    border-color     : #00cc44;
+                  }
+.alert            { text-align       : left;
+                    valign           : middle;
+                    width            : 740px;
+                    font-family      : Arial;
+                    font-size        : 10pt;
+                    font-weight      : normal;
+                    background-color : #ffffde;
+                    border-style     : solid;
+                    border-width     : 1pt;
+                    border-color     : #efef44;
+                  }
+.error            { text-align       : left;
+                    valign           : middle;
+                    width            : 740px;
+                    font-family      : Arial;
+                    font-size        : 10pt;
+                    font-weight      : normal;
+                    background-color : #ffdede;
+                    border-style     : solid;
+                    border-width     : 1pt;
+                    border-color     : #cc0000;
+                  }
+
+
+.controlsTD       { text-align       : right;
+                    valign           : middle;
+                  }
+
+.control          { font-family      : Arial;
+                    font-size        : 10pt;
+                    font-weight      : bold;
+                    text-decoration  : none;
+                    color            : #0000aa;
+                    background-color : #e2eef4;
+                    border-style     : solid;
+                    border-width     : 1pt;
+                    border-color     : #888888;
+                  }
+
+
+.submitButton     { font-family      : Arial;
+                    font-size        : 11pt;
+                    font-weight      : bold;
+                  }
+
+.required         { background-color : #deeaef;
+                    border-style     : solid;
+                    border-width     : 0pt;
+                    border-color     : #888888;
+                  }
+
+.required2        { background-color : #f4fcff;
+                    border-style     : solid;
+                    border-width     : 0pt;
+                    border-color     : #888888;
+                  }
+
+
+.description      { background-color : #f6f6f6;
+                    border-style     : solid;
+                    border-width     : 0pt;
+                    border-color     : #888888;
+                  }
+
+.inputFile        { width            : 780px;
+                    font-family      : Arial;
+                    font-size        : 10pt;
+                    font-weight      : normal;
+                  }
+
+
+.tinyCell         { width            : 10px;
+                  }
+.smallCell        { width            : 50px;
+                    background-color : #ffffff;
+                  }
+.mediumCell       { width            : 100px;
+                    background-color : #ffffff;
+                  }
+.largeCell        { width            : 200px;
+                    background-color : #ffffff;
+                  }
+.largerCell       { width            : 300px;
+                    background-color : #ffffff;
+                  }
+.veryLargeCell    { width            : 550px;
+                    background-color : #ffffff;
+                  }
+.hugeCell         { width            : 600px;
+                    background-color : #ffffff;
+                  }
+
+.tinyTH           { width            : 10px;
+                  }
+.smallTH          { width            : 50px;
+                  }
+.mediumTH         { width            : 100px;
+                  }
+.largeTH          { width            : 200px;
+                  }
+.largerTH         { width            : 300px;
+                  }
+.veryLargeTH      { width            : 550px;
+                  }
+.hugeTH           { width            : 600px;
+                  }
+
+
+.centered         { text-align       : center;
+                    valign           : middle;
+                  }
+.left             { text-align       : left;
+                    valign           : middle;
+                  }
+
+
+
+
+
+
+

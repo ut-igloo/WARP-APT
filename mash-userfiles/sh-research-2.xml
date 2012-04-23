@@ -1,0 +1,974 @@
+<MASH_Document>
+<MASH_Properties>
+<MASH_DocumentName>SH_RESEARCH</MASH_DocumentName>
+<MASH_TopZIndex>1030</MASH_TopZIndex>
+
+</MASH_Properties>
+<MASH_Objects>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[24]]></id>
+    <left><![CDATA[333]]></left>
+    <top><![CDATA[784]]></top>
+    <width><![CDATA[394]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1025]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#ffffff]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#0b4064]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#8cd5f9]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+URL: http://polux.lcc.uma.es/AH2002/index.html&lt;BR&gt;AH 2002
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[25]]></id>
+    <left><![CDATA[317]]></left>
+    <top><![CDATA[769]]></top>
+    <width><![CDATA[394]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1024]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#ffffff]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#0b4064]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#8cd5f9]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+URL: http://ah2000.itc.it/&lt;BR&gt;Page-Title: AH 2000
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[23]]></id>
+    <left><![CDATA[340]]></left>
+    <top><![CDATA[745]]></top>
+    <width><![CDATA[394]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#ffffff]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#0b4064]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#8cd5f9]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+URL: http://www.ah2004.org/&lt;BR&gt;AH 2004
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[18]]></id>
+    <left><![CDATA[69]]></left>
+    <top><![CDATA[652]]></top>
+    <width><![CDATA[94]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1003]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+HT 2002
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[19]]></id>
+    <left><![CDATA[81]]></left>
+    <top><![CDATA[687]]></top>
+    <width><![CDATA[94]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1004]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+HT 2001
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[20]]></id>
+    <left><![CDATA[104]]></left>
+    <top><![CDATA[711]]></top>
+    <width><![CDATA[94]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1005]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+HT 2000
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[27]]></id>
+    <left><![CDATA[20]]></left>
+    <top><![CDATA[595]]></top>
+    <width><![CDATA[94]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+HT 1998
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[26]]></id>
+    <left><![CDATA[125]]></left>
+    <top><![CDATA[739]]></top>
+    <width><![CDATA[94]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1006]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+HT 1999
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[17]]></id>
+    <left><![CDATA[60]]></left>
+    <top><![CDATA[639]]></top>
+    <width><![CDATA[94]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1002]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+HT 2003
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[44]]></id>
+    <left><![CDATA[41]]></left>
+    <top><![CDATA[613]]></top>
+    <width><![CDATA[94]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1001]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+HT 2004
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[21]]></id>
+    <left><![CDATA[137]]></left>
+    <top><![CDATA[306]]></top>
+    <width><![CDATA[144]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1007]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Spatial HT&lt;BR&gt;Workshop 2002
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[22]]></id>
+    <left><![CDATA[155]]></left>
+    <top><![CDATA[295]]></top>
+    <width><![CDATA[144]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Spatial HT&lt;BR&gt;Workshop 2001
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[45]]></id>
+    <left><![CDATA[115]]></left>
+    <top><![CDATA[318]]></top>
+    <width><![CDATA[144]]></width>
+    <height><![CDATA[54]]></height>
+    <zIndex><![CDATA[1007]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[10pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Spatial HT Workshp 2003
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[38]]></id>
+    <left><![CDATA[411]]></left>
+    <top><![CDATA[313]]></top>
+    <width><![CDATA[224]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1022]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ba8b1d]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#ffb300]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Sycara 1989
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[39]]></id>
+    <left><![CDATA[513]]></left>
+    <top><![CDATA[308]]></top>
+    <width><![CDATA[224]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1021]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ba8b1d]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#ffb300]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Sandholm 1999
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[36]]></id>
+    <left><![CDATA[368]]></left>
+    <top><![CDATA[324]]></top>
+    <width><![CDATA[224]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1020]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ba8b1d]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#ffb300]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Ferber 1999
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[41]]></id>
+    <left><![CDATA[443]]></left>
+    <top><![CDATA[164]]></top>
+    <width><![CDATA[170]]></width>
+    <height><![CDATA[30]]></height>
+    <zIndex><![CDATA[1030]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[transparent]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#ffb300]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Conflict Resolution
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[16]]></id>
+    <left><![CDATA[425]]></left>
+    <top><![CDATA[135]]></top>
+    <width><![CDATA[95]]></width>
+    <height><![CDATA[30]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[transparent]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Systems
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[6]]></id>
+    <left><![CDATA[455]]></left>
+    <top><![CDATA[545]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1010]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Bernstein 2001
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[11]]></id>
+    <left><![CDATA[541]]></left>
+    <top><![CDATA[617]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1016]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Nakakoji and Yamamoto 2001
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[12]]></id>
+    <left><![CDATA[541]]></left>
+    <top><![CDATA[624]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1017]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Nielsen and Oerbaek
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[13]]></id>
+    <left><![CDATA[517]]></left>
+    <top><![CDATA[630]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1018]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Shipman et al. 2001
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[14]]></id>
+    <left><![CDATA[513]]></left>
+    <top><![CDATA[640]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1019]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Simpson 2001
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[15]]></id>
+    <left><![CDATA[425]]></left>
+    <top><![CDATA[520]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+TaskGallery
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[28]]></id>
+    <left><![CDATA[434]]></left>
+    <top><![CDATA[534]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1009]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+WebSquirrel
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[10]]></id>
+    <left><![CDATA[543]]></left>
+    <top><![CDATA[599]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1015]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Marshal et al. 1994
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[8]]></id>
+    <left><![CDATA[494]]></left>
+    <top><![CDATA[574]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1013]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Hsieh et al. 2000
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[9]]></id>
+    <left><![CDATA[531]]></left>
+    <top><![CDATA[586]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1014]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+HotSauce
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[7]]></id>
+    <left><![CDATA[479]]></left>
+    <top><![CDATA[562]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1012]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Groenbaek et al. 2001
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[46]]></id>
+    <left><![CDATA[446]]></left>
+    <top><![CDATA[552]]></top>
+    <width><![CDATA[244]]></width>
+    <height><![CDATA[24]]></height>
+    <zIndex><![CDATA[1011]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[8pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ebc85a]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#96821e]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[
+
+Francisco-Revilla and Shipman 2003
+    
+    ]]>
+    </text>
+
+  </MASH_Text>
+
+</MASH_Objects>
+<MASH_Relationships>
+
+</MASH_Relationships>
+
+</MASH_Document>

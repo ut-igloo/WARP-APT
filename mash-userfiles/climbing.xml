@@ -1,0 +1,785 @@
+<MASH_Document>
+<MASH_Properties>
+<MASH_DocumentName>MASH_document by VKB</MASH_DocumentName>
+<MASH_TopZIndex>1119</MASH_TopZIndex>
+
+</MASH_Properties>
+<MASH_Objects>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[108]]]></id>
+    <left><![CDATA[52]]></left>
+    <top><![CDATA[165]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-01.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[1]]]></id>
+    <left><![CDATA[175]]></left>
+    <top><![CDATA[159]]></top>
+    <width><![CDATA[130]]></width>
+    <height><![CDATA[29]]></height>
+    <zIndex><![CDATA[1074]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Arrives to top anchors]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[15]]]></id>
+    <left><![CDATA[471]]></left>
+    <top><![CDATA[158]]></top>
+    <width><![CDATA[174]]></width>
+    <height><![CDATA[29]]></height>
+    <zIndex><![CDATA[1070]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Locks in using 2 daisy chains]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[118]]]></id>
+    <left><![CDATA[335]]></left>
+    <top><![CDATA[167]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-02.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[228]]]></id>
+    <left><![CDATA[620]]></left>
+    <top><![CDATA[165]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-03.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[123]]]></id>
+    <left><![CDATA[754]]></left>
+    <top><![CDATA[157]]></top>
+    <width><![CDATA[174]]></width>
+    <height><![CDATA[29]]></height>
+    <zIndex><![CDATA[1071]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Tells the belayer to be Tells Tell the belayer to be off-belay]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[128]]]></id>
+    <left><![CDATA[169]]></left>
+    <top><![CDATA[372]]></top>
+    <width><![CDATA[158]]></width>
+    <height><![CDATA[29]]></height>
+    <zIndex><![CDATA[1073]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Locks anchor to belay loop]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[229]]]></id>
+    <left><![CDATA[60]]></left>
+    <top><![CDATA[404]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[1006]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-04.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[230]]]></id>
+    <left><![CDATA[335]]></left>
+    <top><![CDATA[404]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-05.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[132]]]></id>
+    <left><![CDATA[446]]></left>
+    <top><![CDATA[334]]></top>
+    <width><![CDATA[227]]></width>
+    <height><![CDATA[69]]></height>
+    <zIndex><![CDATA[1072]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Ties an 8 in a bight in rope (A) and clips it to the harness in order to avoid accidentally droping the rope]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[231]]]></id>
+    <left><![CDATA[620]]></left>
+    <top><![CDATA[403]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[1066]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-06.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[134]]]></id>
+    <left><![CDATA[766]]></left>
+    <top><![CDATA[378]]></top>
+    <width><![CDATA[229]]></width>
+    <height><![CDATA[48]]></height>
+    <zIndex><![CDATA[1075]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Untie the rope from the harness and thread the rope through the anchors]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[232]]]></id>
+    <left><![CDATA[49]]></left>
+    <top><![CDATA[633]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-07.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[26]]]></id>
+    <left><![CDATA[181]]></left>
+    <top><![CDATA[534]]></top>
+    <width><![CDATA[220]]></width>
+    <height><![CDATA[96]]></height>
+    <zIndex><![CDATA[1082]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[After threading the rope through the anchors, ties an 8 in a bight in rope at the end of the rope (B) and clips it to the harness]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[237]]]></id>
+    <left><![CDATA[49]]></left>
+    <top><![CDATA[865]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-10.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[59]]]></id>
+    <left><![CDATA[202]]></left>
+    <top><![CDATA[791]]></top>
+    <width><![CDATA[161]]></width>
+    <height><![CDATA[118]]></height>
+    <zIndex><![CDATA[1101]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Set up your rapel, making sure that both ropes are correctly threaded through the descender]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[233]]]></id>
+    <left><![CDATA[332]]></left>
+    <top><![CDATA[632]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-08.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[320]]]></id>
+    <left><![CDATA[479]]></left>
+    <top><![CDATA[565]]></top>
+    <width><![CDATA[155]]></width>
+    <height><![CDATA[205]]></height>
+    <zIndex><![CDATA[1085]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Uties the first 8 in a bight (A) and feeds the rope through the anchors. Often it is better to keep the rope on the top and throw it down later in order to prevent possible snags]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[234]]]></id>
+    <left><![CDATA[618]]></left>
+    <top><![CDATA[632]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-09.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[52]]]></id>
+    <left><![CDATA[790]]></left>
+    <top><![CDATA[579]]></top>
+    <width><![CDATA[227]]></width>
+    <height><![CDATA[161]]></height>
+    <zIndex><![CDATA[1093]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Unclip the rope from the harness and throw it down. Remember to schout \"ROPE!\" in order to prevent the belayer or other people from getting hit on the head with the rope and DON\'T drop the carabinner!]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[236]]]></id>
+    <left><![CDATA[332]]></left>
+    <top><![CDATA[865]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-11.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[60]]]></id>
+    <left><![CDATA[474]]></left>
+    <top><![CDATA[918]]></top>
+    <width><![CDATA[173]]></width>
+    <height><![CDATA[122]]></height>
+    <zIndex><![CDATA[1099]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Take the slack of the rope so your weight is transferred to the ropes (as opposed to resting on the daisy chains)]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[75]]]></id>
+    <left><![CDATA[755]]></left>
+    <top><![CDATA[1032]]></top>
+    <width><![CDATA[255]]></width>
+    <height><![CDATA[52]]></height>
+    <zIndex><![CDATA[1112]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Remove the wraps around your leg and proceed to rapel down]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[61]]]></id>
+    <left><![CDATA[754]]></left>
+    <top><![CDATA[956]]></top>
+    <width><![CDATA[255]]></width>
+    <height><![CDATA[71]]></height>
+    <zIndex><![CDATA[1119]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Wrapp the ropes 3 or 4 times around your leg as a back up for your breaking hand]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[74]]]></id>
+    <left><![CDATA[754]]></left>
+    <top><![CDATA[863]]></top>
+    <width><![CDATA[253]]></width>
+    <height><![CDATA[88]]></height>
+    <zIndex><![CDATA[1114]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Without releasing your breaking hand, un clip the daisy chains from the anchors and clip them to your harness]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[240]]]></id>
+    <left><![CDATA[611]]></left>
+    <top><![CDATA[860]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[1025]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-12.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Image>
+    <id><![CDATA[VKB_Object[238]]]></id>
+    <left><![CDATA[50]]></left>
+    <top><![CDATA[1091]]></top>
+    <width><![CDATA[200]]></width>
+    <height><![CDATA[200]]></height>
+    <zIndex><![CDATA[2]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[0]]></borderWidth>
+
+    </style>
+    <src><![CDATA[rockclimbing/anchors-13.jpg]]></src>
+    <text><![CDATA[MASH Image Object]]></text>
+
+  </MASH_Image>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[226]]]></id>
+    <left><![CDATA[210]]></left>
+    <top><![CDATA[1090]]></top>
+    <width><![CDATA[170]]></width>
+    <height><![CDATA[100]]></height>
+    <zIndex><![CDATA[1116]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[12pt]]></fontSize>
+      <fontFamily><![CDATA[dialog]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#ffffff]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Remember to untie the knot at the end of the rope before pulling the rope down]]>
+    </text>
+
+  </MASH_Text>
+
+</MASH_Objects>
+<MASH_Relationships>
+
+</MASH_Relationships>
+
+</MASH_Document>

@@ -1,0 +1,350 @@
+<MASH_Document>
+<MASH_Properties>
+<MASH_DocumentName>SH_RESEARCH</MASH_DocumentName>
+<MASH_TopZIndex>1001</MASH_TopZIndex>
+
+</MASH_Properties>
+<MASH_Objects>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[1]]]></id>
+    <left><![CDATA[20]]></left>
+    <top><![CDATA[85]]></top>
+    <width><![CDATA[555]]></width>
+    <height><![CDATA[45]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[16pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[transparent]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Implicit and Explicit Relationships]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Frame>
+    <id><![CDATA[VKB_Object[18]]]></id>
+    <left><![CDATA[620]]></left>
+    <top><![CDATA[370]]></top>
+    <width><![CDATA[190]]></width>
+    <height><![CDATA[100]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <src><![CDATA[http://kilimanjaro.csdl.tamu.edu:8080/mash/domainwrapper?pageAddress=http://www.ht02.org]]></src>
+    <text><![CDATA[HT 2002]]></text>
+    <scale><![CDATA[0.25]]></scale>
+
+  </MASH_Frame>
+  <MASH_Frame>
+    <id><![CDATA[VKB_Object[19]]]></id>
+    <left><![CDATA[620]]></left>
+    <top><![CDATA[480]]></top>
+    <width><![CDATA[190]]></width>
+    <height><![CDATA[100]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <src><![CDATA[http://kilimanjaro.csdl.tamu.edu:8080/mash/domainwrapper?pageAddress=http://www.markbernstein.org/notes/Hypertext01.html]]></src>
+    <text><![CDATA[Mark\'s HT\'01]]></text>
+    <scale><![CDATA[0.25]]></scale>
+
+  </MASH_Frame>
+  <MASH_Frame>
+    <id><![CDATA[VKB_Object[17]]]></id>
+    <left><![CDATA[620]]></left>
+    <top><![CDATA[260]]></top>
+    <width><![CDATA[190]]></width>
+    <height><![CDATA[100]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <src><![CDATA[http://kilimanjaro.csdl.tamu.edu:8080/mash/domainwrapper?pageAddress=http://www.ht03.org]]></src>
+    <text><![CDATA[HT 2003]]></text>
+    <scale><![CDATA[0.25]]></scale>
+
+  </MASH_Frame>
+  <MASH_Frame>
+    <id><![CDATA[VKB_Object[44]]]></id>
+    <left><![CDATA[620]]></left>
+    <top><![CDATA[150]]></top>
+    <width><![CDATA[190]]></width>
+    <height><![CDATA[100]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#0c9b64]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#00584b]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <src><![CDATA[http://kilimanjaro.csdl.tamu.edu:8080/mash/domainwrapper?pageAddress=http://www.ht04.org]]></src>
+    <text><![CDATA[HT 2004]]></text>
+    <scale><![CDATA[0.25]]></scale>
+
+  </MASH_Frame>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[1]]]></id>
+    <left><![CDATA[620]]></left>
+    <top><![CDATA[85]]></top>
+    <width><![CDATA[190]]></width>
+    <height><![CDATA[45]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[16pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[transparent]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Transclusion]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[24]]]></id>
+    <left><![CDATA[180]]></left>
+    <top><![CDATA[220]]></top>
+    <width><![CDATA[400]]></width>
+    <height><![CDATA[60]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#ffffff]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#0b4064]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#8cd5f9]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[URL: &lt;a href=\'http://polux.lcc.uma.es/AH2002/index.html\' style=\'color:#ffffff; font-family:Arial; font-size:10pt;\'&gt;http://polux.lcc.uma.es/AH2002/index.html&lt;/a&gt;&lt;BR&gt;AH 2002]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[25]]]></id>
+    <left><![CDATA[126]]></left>
+    <top><![CDATA[418]]></top>
+    <width><![CDATA[400]]></width>
+    <height><![CDATA[60]]></height>
+    <zIndex><![CDATA[1001]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#ffffff]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#0b4064]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#8cd5f9]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[URL: &lt;a href=\'http://ah2000.itc.it/\' style=\'color:#ffffff; font-family:Arial; font-size:10pt;\'&gt;http://ah2000.itc.it/&lt;/a&gt;&lt;BR&gt;Page-Title: AH 2000]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[23]]]></id>
+    <left><![CDATA[180]]></left>
+    <top><![CDATA[150]]></top>
+    <width><![CDATA[400]]></width>
+    <height><![CDATA[60]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#ffffff]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[normal]]></fontWeight>
+      <backgroundColor><![CDATA[#0b4064]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#8cd5f9]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[URL: &lt;a href=\'http://www.ah2004.org/\' style=\'color:#ffffff; font-family:Arial; font-size:10pt;\'&gt;http://www.ah2004.org/&lt;/a&gt;&lt;BR&gt;AH 2004]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[21]]]></id>
+    <left><![CDATA[20]]></left>
+    <top><![CDATA[220]]></top>
+    <width><![CDATA[150]]></width>
+    <height><![CDATA[60]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Spatial HT&lt;BR&gt;Workshop 2002]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[45]]]></id>
+    <left><![CDATA[20]]></left>
+    <top><![CDATA[150]]></top>
+    <width><![CDATA[150]]></width>
+    <height><![CDATA[60]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Spatial HT Workshp 2003]]>
+    </text>
+
+  </MASH_Text>
+  <MASH_Text>
+    <id><![CDATA[VKB_Object[22]]]></id>
+    <left><![CDATA[20]]></left>
+    <top><![CDATA[290]]></top>
+    <width><![CDATA[150]]></width>
+    <height><![CDATA[60]]></height>
+    <zIndex><![CDATA[1]]></zIndex>
+    <style>
+      <horizontalAlign><![CDATA[left]]></horizontalAlign>
+      <verticalAlign><![CDATA[top]]></verticalAlign>
+      <fontColor><![CDATA[#000000]]></fontColor>
+      <fontSize><![CDATA[9pt]]></fontSize>
+      <fontFamily><![CDATA[Arial]]></fontFamily>
+      <fontWeight><![CDATA[bold]]></fontWeight>
+      <backgroundColor><![CDATA[#6edc78]]></backgroundColor>
+      <backgroundImage><![CDATA[none]]></backgroundImage>
+      <backgroundRepeat><![CDATA[no-repeat]]></backgroundRepeat>
+      <backgroundPosition><![CDATA[center center]]></backgroundPosition>
+      <borderColor><![CDATA[#1e7828]]></borderColor>
+      <borderStyle><![CDATA[solid]]></borderStyle>
+      <borderWidth><![CDATA[1]]></borderWidth>
+
+    </style>
+    <text>
+<![CDATA[Spatial HT&lt;BR&gt;Workshop 2001]]>
+    </text>
+
+  </MASH_Text>
+
+</MASH_Objects>
+<MASH_Relationships>
+
+</MASH_Relationships>
+
+</MASH_Document>
