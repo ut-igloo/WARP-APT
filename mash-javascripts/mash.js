@@ -18,51 +18,54 @@
 // GLOBAL CONSTANTS                                                                                     GLOBAL CONSTANTS
 // =====================================================================================================================
 
-var MASH_DOCUMENT_NAME   = "MASH_CENTRE_";
-var NON_MASH_DOCUMENT    = "NON_MASH_DOC";
+var MASH_DOCUMENT_NAME     = "MASH_CENTRE_";
+var NON_MASH_DOCUMENT      = "NON_MASH_DOC";
 
-var MASH_APPLET_NAME     = "mashApplet";
-var MASH_APPLET_CODEBASE = "http://denali.ischool.utexas.edu/~revilla/WARP-MT/";
-var MASH_APPLET_CODE     = "MASH/MASHApplet.class";
+var MASH_APPLET_NAME       = "mashApplet";
+var MASH_APPLET_CODEBASE   = "http://everest.ischool.utexas.edu/WARP-APT/";
+var MASH_APPLET_CODE       = "MASH/MASHApplet.class";
 
 
 // resize controls
-var RESIZE_TOP_LEFT      = "topLeft";
-var RESIZE_TOP_CENTER    = "topCenter";
-var RESIZE_TOP_RIGHT     = "topRight";
+var RESIZE_TOP_LEFT        = "topLeft";
+var RESIZE_TOP_CENTER      = "topCenter";
+var RESIZE_TOP_RIGHT       = "topRight";
 
-var RESIZE_MIDDLE_LEFT   = "middleLeft";
-var RESIZE_MIDDLE_RIGHT  = "middleRight";
+var RESIZE_MIDDLE_LEFT     = "middleLeft";
+var RESIZE_MIDDLE_RIGHT    = "middleRight";
 
-var RESIZE_BOTTOM_LEFT   = "bottomLeft";
-var RESIZE_BOTTOM_CENTER = "bottomCenter";
-var RESIZE_BOTTOM_RIGHT  = "bottomRight";
+var RESIZE_BOTTOM_LEFT     = "bottomLeft";
+var RESIZE_BOTTOM_CENTER   = "bottomCenter";
+var RESIZE_BOTTOM_RIGHT    = "bottomRight";
 
 
 // Global Arrays of MASH objects
-var collectionObjects   = new Array();
-var formObjects         = new Array();
-var inputObjects        = new Array();
-var frameObjects        = new Array();
-var textObjects         = new Array();
-var imageObjects        = new Array();
-var importedObjects     = new Array();
-var exportedObjects     = new Array();
+var collectionObjects      = new Array();
+var formObjects            = new Array();
+var inputObjects           = new Array();
+var frameObjects           = new Array();
+var textObjects            = new Array();
+var imageObjects           = new Array();
+var importedObjects        = new Array();
+var exportedObjects        = new Array();
 
-var videoObjects        = new Array();
-var videoIndiexObjects  = new Array();
+var videoObjects           = new Array();
+var videoIndiexObjects     = new Array();
 
 // Spatial Parser
-var implicitComposites  = new Array();
+var implicitComposites     = new Array();
 
 //other objects
-var otherObjects        = new Array();
+var otherObjects           = new Array();
 
 //user's annotation objects
-var annotationObjects   = new Array();
+var annotationObjects      = new Array();
 
 //video index objects
-var videoIndexObjects   = new Array();
+var videoIndexObjects      = new Array();
+
+//APT objects
+var digitizedRecordObjects = new Array();
 
 
 //Copyright
@@ -110,8 +113,8 @@ function writeControls(){
 
     document.writeln("<a href=\"javascript:arrangeObjects(allMASHObjects);\"><img id=\"" + CTRL_REARRANGE_IMG_ID              + "\" src=\"" + CTRL_REARRANGE_IMG_FILE               + "\" title=\"Re-arrange\"                     alt=\"re-arrange objects to their original state\"        border=\"0\"></a>&nbsp;");
     document.writeln("<a href=\"javascript:freezeAllObjects();\"            ><img id=\"" + CTRL_FREEZE_IMG_ID                 + "\" src=\"" + CTRL_UNFREEZE_IMG_FILE                + "\" title=\"Freeze Space\"                   alt=\"freezes the space. Objects cannot be moved\"        border=\"0\"></a>&nbsp;||&nbsp;");
-    document.writeln("<a href=\"javascript:saveAllObjects();\"              ><img id=\"" + CTRL_SAVE_IMG_ID                   + "\" src=\"" + CTRL_SAVE_IMG_FILE                    + "\" title=\"Save Space\"                     alt=\"save the objects' current state\"                   border=\"0\"></a>&nbsp;");
-    document.writeln("<a href=\"javascript:restoreAllObjects();\"           ><img id=\"" + CTRL_RESTORE_IMG_ID                + "\" src=\"" + CTRL_RESTORE_IMG_FILE                 + "\" title=\"Restore Space\"                  alt=\"restore the objects to the previously saved state\" border=\"0\"></a>&nbsp;||&nbsp;");
+//    document.writeln("<a href=\"javascript:saveAllObjects();\"              ><img id=\"" + CTRL_SAVE_IMG_ID                   + "\" src=\"" + CTRL_SAVE_IMG_FILE                    + "\" title=\"Save Space\"                     alt=\"save the objects' current state\"                   border=\"0\"></a>&nbsp;");
+//    document.writeln("<a href=\"javascript:restoreAllObjects();\"           ><img id=\"" + CTRL_RESTORE_IMG_ID                + "\" src=\"" + CTRL_RESTORE_IMG_FILE                 + "\" title=\"Restore Space\"                  alt=\"restore the objects to the previously saved state\" border=\"0\"></a>&nbsp;||&nbsp;");
 
 //    if(MASH_FileManagerDefined) {
 //        MASH_FileManager.writeControls();
@@ -126,15 +129,16 @@ function writeControls(){
     document.writeln("<a href=\"javascript:toggleAnnotations(MASH_UserAnnotation.ALL_ANNOTATIONS);\"><img id=\"" + CTRL_ANNOTATE_SHOW_IMG_ID              + "\" src=\"" + CTRL_ANNOTATE_SHOW_IMG_FILE              + "\" title=\"Show/Hide Annotations\"         alt=\"Show/Hide Annotations\"          border=\"0\"></a>&nbsp;||&nbsp;");
 
 
-    document.writeln("<a href=\"javascript:annotateCollection('#eef8ff', '#000088');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_ID   + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_FILE   + "\" title=\"Blue Collection: To insert/remove object, click and drag it simultaneously pressing/releasing the Ctrl key\"   alt=\"Blue Collection: To insert/remove object, click and drag it simultaneously pressing/releasing the Ctrl key\"   border=\"0\"></a>");
-    document.writeln("<a href=\"javascript:annotateCollection('#eefff8', '#008800');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_ID  + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_FILE  + "\" title=\"Green Collection: To insert/remove object, click and drag it simultaneously pressing/releasing the Ctrl key\"  alt=\"Green Collection: To insert/remove object, click and drag it simultaneously pressing/releasing the Ctrl key\"  border=\"0\"></a>");
-    document.writeln("<a href=\"javascript:annotateCollection('#fff8ee', '#880000');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_ID    + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_FILE    + "\" title=\"Red Collection: To insert/remove object, click and drag it simultaneously pressing/releasing the Ctrl key\"    alt=\"Red Collection: To insert/remove object, click and drag it simultaneously pressing/releasing the Ctrl key\"    border=\"0\"></a>");
-    document.writeln("<a href=\"javascript:annotateCollection('#ffffee', '#aaaa00');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_ID + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_FILE + "\" title=\"Yellow Collection: To insert/remove object, click and drag it simultaneously pressing/releasing the Ctrl key\" alt=\"Yellow Collection: To insert/remove object, click and drag it simultaneously pressing/releasing the Ctrl key\" border=\"0\"></a>&nbsp;||&nbsp;");
+    document.writeln("<a href=\"javascript:createArchivalSubGroup();\"                              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_ID   + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_FILE   + "\" title=\"Create Sub-Group\"  alt=\"Sub-Group\"  border=\"0\"></a>");
+//    document.writeln("<a href=\"javascript:annotateCollection('#eef8ff', '#000088');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_ID   + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_FILE   + "\" title=\"Create Sub-Group\"  alt=\"Sub-Group\"  border=\"0\"></a>");
+    document.writeln("<a href=\"javascript:annotateCollection('#eefff8', '#008800');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_ID  + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_FILE  + "\" title=\"Create Series\"     alt=\"Series\"     border=\"0\"></a>");
+    document.writeln("<a href=\"javascript:annotateCollection('#fff8ee', '#880000');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_ID    + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_FILE    + "\" title=\"Create Sub-Series\" alt=\"Sub-Series\" border=\"0\"></a>");
+    document.writeln("<a href=\"javascript:annotateCollection('#ffffee', '#aaaa00');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_ID + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_FILE + "\" title=\"Create File\"       alt=\"File\"       border=\"0\"></a>&nbsp;||&nbsp;");
 
 //    document.writeln("<a href=\"javascript:annotateBlueCircle();\"                                  ><img id=\"" + CTRL_ANNOTATE_CIRCLE_BLUE_IMG_ID       + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_BLUE_IMG_FILE       + "\" title=\"Make Blue Circle Annotation\"       alt=\"Make Blue Circle Annotation\"    border=\"0\"></a>");
 //    document.writeln("<a href=\"javascript:annotateGreenCircle();\"                                 ><img id=\"" + CTRL_ANNOTATE_CIRCLE_GREEN_IMG_ID      + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_GREEN_IMG_FILE      + "\" title=\"Make Green Circle Annotation\"      alt=\"Make Green Circle Annotation\"   border=\"0\"></a>");
 //    document.writeln("<a href=\"javascript:annotateRedCircle();\"                                   ><img id=\"" + CTRL_ANNOTATE_CIRCLE_RED_IMG_ID        + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_RED_IMG_FILE        + "\" title=\"Make Red Circle Annotation\"        alt=\"Make Red Circle Annotation\"     border=\"0\"></a>");
-//    document.writeln("<a href=\"javascript:annotateYellowCircle();\"                                ><img id=\"" + CTRL_ANNOTATE_CIRCLE_YELLOW_IMG_ID     + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_YELLOW_IMG_FILE     + "\" title=\"Make Yellow Circle Annotation\"     alt=\"Make Yellow Circle Annotation\"  border=\"0\"></a>&nbsp;||&nbsp;");
+    document.writeln("<a href=\"javascript:annotateYellowCircle();\"                                ><img id=\"" + CTRL_ANNOTATE_CIRCLE_YELLOW_IMG_ID     + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_YELLOW_IMG_FILE     + "\" title=\"Make Yellow Circle Annotation\"     alt=\"Make Yellow Circle Annotation\"  border=\"0\"></a>&nbsp;||&nbsp;");
 
     document.writeln("<a href=\"javascript:annotateBlueText();\"                                    ><img id=\"" + CTRL_ANNOTATE_TEXT_BLUE_IMG_ID         + "\" src=\"" + CTRL_ANNOTATE_TEXT_BLUE_IMG_FILE         + "\" title=\"Make Blue Text Annotation\"         alt=\"Make Blue Text Annotation\"      border=\"0\"></a>");
     document.writeln("<a href=\"javascript:annotateGreenText();\"                                   ><img id=\"" + CTRL_ANNOTATE_TEXT_GREEN_IMG_ID        + "\" src=\"" + CTRL_ANNOTATE_TEXT_GREEN_IMG_FILE        + "\" title=\"Make Green Text Annotation\"        alt=\"Make Green Text Annotation\"     border=\"0\"></a>");
@@ -1521,7 +1525,8 @@ function resizeMouseDown(e){
     wasDragged  = false;
 
     //Inform the user which object is being resized
-    window.status = "object = " + objDrag.MASHparameters.id + "  z = " + objDrag.style.zIndex;
+//    window.status = "RESIZING object = " + objDrag.MASHparameters.id;
+    objDrag.MASHparameters.emphasizeResizeButton();
 
     //This disables the default action for this event
     //  In particular it overrides the browser's default drag-and-drop behavior on images
@@ -1556,6 +1561,8 @@ function resizeMouseMove(e){
         var tmpZoom = getDocumentZoomFactor();
 
         //compute new width and height
+//        var tmpObjOffsetX = parseInt(objDrag.style.width)  - ( 2*parseInt(objDrag.style.borderWidth) );
+//        var tmpObjOffsetY = parseInt(objDrag.style.height) - ( 2*parseInt(objDrag.style.borderWidth) );
         var tmpObjOffsetX = parseInt(objDrag.style.width);
         var tmpObjOffsetY = parseInt(objDrag.style.height);
 
@@ -1603,8 +1610,20 @@ function resizeMouseMove(e){
         }
         // bottom right
         if(objDrag.resizeControlClicked == RESIZE_BOTTOM_RIGHT) {
-            tmpObjOffsetX      = parseInt(objDrag.style.width)  + parseInt( (dragX - objX) / tmpZoom );
-            tmpObjOffsetY      = parseInt(objDrag.style.height) + parseInt( (dragY - objY) / tmpZoom );
+            if(objDrag.MASHparameters.FIXED_DIMENSIONAL_RATIO == 0) {
+                tmpObjOffsetX      = parseInt(objDrag.style.width)  + parseInt( (dragX - objX) / tmpZoom );
+                tmpObjOffsetY      = parseInt(objDrag.style.height) + parseInt( (dragY - objY) / tmpZoom );
+            }
+            else {
+                if( (dragX - objX) > (dragY - objY) ) {
+                    tmpObjOffsetX  = parseInt(objDrag.style.width)  + parseInt( (dragX - objX) / tmpZoom );
+                    tmpObjOffsetY  = parseInt(tmpObjOffsetX / objDrag.MASHparameters.FIXED_DIMENSIONAL_RATIO);
+                }
+                else {
+                    tmpObjOffsetY  = parseInt(objDrag.style.height) + parseInt( (dragY - objY) / tmpZoom );
+                    tmpObjOffsetX  = tmpObjOffsetY * objDrag.MASHparameters.FIXED_DIMENSIONAL_RATIO;
+                }
+            }
         }
 
         //resize object
@@ -1637,6 +1656,10 @@ function resizeMouseUp(e){
     //This disables the default action for this event
     preventDefault(e);
     stopPropagation(e);
+
+    //Inform the user which object is being resized
+//    window.status = "RESIZING object = " + objDrag.MASHparameters.id;
+    objDrag.MASHparameters.demphasizeResizeButton();
 
     //remove the events for mousemouve and mouseup
     removeEventListener(document, "mousemove", resizeMouseMove, true);
@@ -1711,8 +1734,9 @@ function divMouseDown(e){
         }
 
         //open contextual menu for this object
-        objDrag.MASHparameters.contextMenu = new MASH_ContextualMenu(objX-10, objY-10,  objDrag.MASHparameters);
-        var tmpObj      = MASH_Object.createObject(objDrag.MASHparameters.contextMenu, null);
+//        objDrag.MASHparameters.contextMenu = new MASH_ContextualMenu(objX-10, objY-10,  objDrag.MASHparameters);
+        objDrag.MASHparameters.contextMenu = new MASH_MetadataMenu(objX-10, objY-10,  objDrag.MASHparameters);
+        var tmpObj                         = MASH_Object.createObject(objDrag.MASHparameters.contextMenu, null);
 
         objDrag.MASHparameters.select(true);
 
@@ -1837,10 +1861,10 @@ function divMouseDown(e){
     var fingerY      = parseInt( objY + getWindowScrollY() );
 
 //    MT_fingerMarker = createUserAnnotation("", objX-20, objY-20, 40, 40, (topZ+2), "+", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerTop    = createUserAnnotation("", fingerX-8,  fingerY-30, 4, 20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerLeft   = createUserAnnotation("", fingerX-30, fingerY-8, 20,  4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerBottom = createUserAnnotation("", fingerX-8,  fingerY+10, 4, 20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerRight  = createUserAnnotation("", fingerX+10, fingerY-8, 20,  4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    MT_fingerMarkerTop    = createUserAnnotation(""+fingerX, fingerX-8,  fingerY-30, 4, 20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    MT_fingerMarkerLeft   = createUserAnnotation(""+fingerX, fingerX-30, fingerY-8, 20,  4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    MT_fingerMarkerBottom = createUserAnnotation(""+fingerX, fingerX-8,  fingerY+10, 4, 20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    MT_fingerMarkerRight  = createUserAnnotation(""+fingerX, fingerX+10, fingerY-8, 20,  4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
 
 
     //update the status bar
@@ -2255,7 +2279,8 @@ var globalSpaceOffsetY      = 200;
 
 // controls' image files
 //var CONTROLS_IMG_DIR                         = "mash_images/";
-var CONTROLS_IMG_DIR                         = "http://denali.ischool.utexas.edu/~revilla/WARP-MT/mash_images/";
+//var CONTROLS_IMG_DIR                         = "http://denali.ischool.utexas.edu/~revilla/Breadcrumbs/mash-images/";
+var CONTROLS_IMG_DIR                         = MASH_APPLET_CODEBASE + "mash_images/";
 
 var CTRL_REARRANGE_IMG_FILE                  = CONTROLS_IMG_DIR + "reArrange.png";
 var CTRL_FREEZE_IMG_FILE                     = CONTROLS_IMG_DIR + "freeze.png";
@@ -2709,15 +2734,15 @@ function zoom(factor){
 }//zoom
 
 
-
-// annotateCollection                                                                                 annotateCollection
+// createArchivalSubGroup                                                                         createArchivalSubGroup
 // ---------------------------------------------------------------------------------------------------------------------
-// * Creates a blue annotation object
-function annotateCollection(backgroundColor, borderColor){
+// * Creates an archival group type "sub-group" (APT)
+function createArchivalSubGroup(){
+
 
     //validate paramenters
-    if(!backgroundColor) { backgroundColor = "#ffffff"; }
-    if(!borderColor)      { borderColor     = "#000000"; }
+    var backgroundColor = "#eef8ff";
+    var borderColor     = "#000088";
 
     var style = "align:left; "                                +
                 "vertical-align:top; "                        +
@@ -2730,11 +2755,72 @@ function annotateCollection(backgroundColor, borderColor){
                 "font-size:9pt; "                             ;
 
     //get title of acollection
-    var annotationText = prompt("Please enter the title of the annotation collection", "");
+    var annotationText = prompt("Please enter the title of the Sub-Group", "");
+    if(!annotationText) { return; }
+
+    var newID           = "ArchivalGroup" + MASH_Object.getUniqueID();
+    var title           = MASH_ArchivalGroup.TYPE_SUBGROUP + ": " + annotationText;
+    var groupType       = MASH_ArchivalGroup.TYPE_SUBGROUP;
+    var description     = "";
+
+    //create collection
+    createArchivalGroup(newID, 190, 40, 200, 100, ++topZ, style, title, groupType, description);
+
+}//createArchivalSubGroup
+
+
+
+// createArchivalGroup                                                                               createArchivalGroup
+// ---------------------------------------------------------------------------------------------------------------------
+// * Creates an annotation collection object
+// * annotation collections MUST be added to the allMASHObjects array in order to be able to push objects in/out of them
+function createArchivalGroup(id, left, top, width, height, zIndex, style, text, groupType, description){
+
+    //create annotation object
+    var annotationObj                   = new MASH_ArchivalGroup(id, left, top, width, height, zIndex, style, text, new Array(), groupType, description);
+
+    //append object to document
+    var annotationObjWrapper            = annotationObj.createScreenObject(collectionObjects.length);
+    annotationObjWrapper                = document.body.appendChild(annotationObjWrapper);
+    annotationObjWrapper.MASHparameters = annotationObj;
+    annotationObj.reference             = annotationObjWrapper;
+
+    collectionObjects.push(annotationObj);
+
+    //add object to allMASHObjects
+    addObject(annotationObj);
+
+    return annotationObj;
+
+}//createArchivalGroup
+
+
+
+// annotateCollection                                                                                 annotateCollection
+// ---------------------------------------------------------------------------------------------------------------------
+// * Creates a blue annotation object
+function annotateCollection(backgroundColor, borderColor){
+
+    //validate paramenters
+    if(!backgroundColor) { backgroundColor = "#ffffff"; }
+    if(!borderColor)     { borderColor     = "#000000"; }
+
+    var style = "align:left; "                                +
+                "vertical-align:top; "                        +
+                "background-color:"  + backgroundColor + "; " +
+                "border-color:"      + borderColor     + "; " +
+                "border-width:2; "                            +
+                "border-style:dashed; "                       +
+                "background-image:none; "                     +
+                "color:#ffffff; "                             +
+                "font-size:9pt; "                             ;
+
+    //get title of acollection
+    var annotationText = prompt("Please enter the title of the group", "");
     if(!annotationText) { return; }
 
     //create collection
-    createAnnotationCollection("CollectionAnnotation", 190, 40, 200, 100, 1, style, annotationText);
+    createAnnotationCollection("CollectionAnnotation", 190, 40, 200, 100, ++topZ, style, annotationText);
 
 }//annotateCollection
 
@@ -2761,10 +2847,6 @@ function createAnnotationCollection(id, left, top, width, height, zIndex, style,
     //add object to allMASHObjects
     addObject(annotationObj);
 
-
-    //alpha
-//    annotationObj.alpha(0);
-
     return annotationObj;
 
 }//createAnnotationCollection
@@ -2777,7 +2859,7 @@ function createAnnotationCollection(id, left, top, width, height, zIndex, style,
 function annotateBlueCircle(){
     var annotationText = prompt("Please enter the annotation text", "");
     if(!annotationText) { return; }
-    createUserAnnotation("", 190, 40, 200, 100, 1, annotationText, MASH_UserAnnotation.BLUE_CIRCLE);
+    createUserAnnotation("", 190, 40, 200, 100, (topZ+2), annotationText, MASH_UserAnnotation.BLUE_CIRCLE);
 }//annotateBlueCircle
 
 
@@ -2788,7 +2870,7 @@ function annotateBlueCircle(){
 function annotateGreenCircle(){
     var annotationText = prompt("Please enter the annotation text", "");
     if(!annotationText) { return; }
-    createUserAnnotation("", 222, 40, 200, 100, 1, annotationText, MASH_UserAnnotation.GREEN_CIRCLE);
+    createUserAnnotation("", 222, 40, 200, 100, (topZ+2), annotationText, MASH_UserAnnotation.GREEN_CIRCLE);
 }//annotateGreenCircle
 
 
@@ -2799,7 +2881,7 @@ function annotateGreenCircle(){
 function annotateRedCircle(){
     var annotationText = prompt("Please enter the annotation text", "");
     if(!annotationText) { return; }
-    createUserAnnotation("", 222, 40, 200, 100, 1, annotationText, MASH_UserAnnotation.RED_CIRCLE);
+    createUserAnnotation("", 222, 40, 200, 100, (topZ+2), annotationText, MASH_UserAnnotation.RED_CIRCLE);
 }//annotateRedCircle
 
 
@@ -2810,7 +2892,7 @@ function annotateRedCircle(){
 function annotateYellowCircle(){
     var annotationText = prompt("Please enter the annotation text", "");
     if(!annotationText) { return; }
-    createUserAnnotation("", 286, 40, 200, 100, 1, annotationText, MASH_UserAnnotation.YELLOW_CIRCLE);
+    createUserAnnotation("", 286, 40, 200, 100, (topZ+2), annotationText, MASH_UserAnnotation.YELLOW_CIRCLE);
 }//annotateYellowCircle
 
 
@@ -2820,7 +2902,7 @@ function annotateYellowCircle(){
 function annotateBlueText(){
     var annotationText = prompt("Please enter the annotation text", "");
     if(!annotationText) { return; }
-    createUserAnnotation("", 350, 40, 200, 40, 1, annotationText, MASH_UserAnnotation.BLUE_RECTANGLE);
+    createUserAnnotation("", 350, 40, 200, 40, (topZ+2), annotationText, MASH_UserAnnotation.BLUE_RECTANGLE);
 }//annotateBlueText
 
 
@@ -2831,7 +2913,7 @@ function annotateBlueText(){
 function annotateGreenText(){
     var annotationText = prompt("Please enter the annotation text", "");
     if(!annotationText) { return; }
-    createUserAnnotation("", 382, 40, 200, 40, 1, annotationText, MASH_UserAnnotation.GREEN_RECTANGLE);
+    createUserAnnotation("", 382, 40, 200, 40, (topZ+2), annotationText, MASH_UserAnnotation.GREEN_RECTANGLE);
 }//annotateGreenText
 
 
@@ -2842,7 +2924,7 @@ function annotateGreenText(){
 function annotateRedText(){
     var annotationText = prompt("Please enter the annotation text", "");
     if(!annotationText) { return; }
-    createUserAnnotation("", 414, 40, 200, 40, 1, annotationText, MASH_UserAnnotation.RED_RECTANGLE);
+    createUserAnnotation("", 414, 40, 200, 40, (topZ+2), annotationText, MASH_UserAnnotation.RED_RECTANGLE);
 }//annotateRedText
 
 
@@ -2853,7 +2935,7 @@ function annotateRedText(){
 function annotateYellowText(){
     var annotationText = prompt("Please enter the annotation text", "");
     if(!annotationText) { return; }
-    createUserAnnotation("", 446, 40, 200, 40, 1, annotationText, MASH_UserAnnotation.YELLOW_RECTANGLE);
+    createUserAnnotation("", 446, 40, 200, 40, (topZ+2), annotationText, MASH_UserAnnotation.YELLOW_RECTANGLE);
 }//annotateYellowText
 
 
@@ -2863,12 +2945,11 @@ function annotateYellowText(){
 function createUserAnnotation(id, left, top, width, height, zIndex, text, type){
 
     //create annotation object
-    var annotationObj = new MASH_UserAnnotation(id, left, top, width, height, zIndex, text, type);
+    var annotationObj                   = new MASH_UserAnnotation(id, left, top, width, height, zIndex, text, type);
 
     //append object to document
-    var annotationObjWrapper  = annotationObj.createScreenObject(0);
-    annotationObjWrapper      = document.body.appendChild(annotationObjWrapper);
-
+    var annotationObjWrapper            = annotationObj.createScreenObject(0);
+    annotationObjWrapper                = document.body.appendChild(annotationObjWrapper);
     annotationObjWrapper.MASHparameters = annotationObj;
     annotationObj.reference             = annotationObjWrapper;
 

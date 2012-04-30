@@ -13,33 +13,22 @@
 
 
 // =====================================================================================================================
-// MASH_Collection                                                                                       MASH_Collection
+// MASH_ArchivalGroup                                                                                 MASH_ArchivalGroup
 // =====================================================================================================================
-function MASH_Collection(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle,
-                         tmpText, tmpComponents) {
+function MASH_ArchivalGroup(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle,
+                         tmpText, tmpComponents,
+                         tmpGroupType, tmpDescription) {
 
-    this.base = MASH_Object;
-    this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle);
+    this.base = MASH_Collection;
+    this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, tmpText, tmpComponents);
 
     //validate components
-    if(typeof(tmpComponents)=="undefined") { tmpComponents = new Array(); }
-
-    this.text                      = tmpText;
-    this.components                = tmpComponents;
-    this.maximized                 = false;
-    this.minimized                 = false;
-    this.scale                     = 1.0;
-
-    this.MASHobjectType            = MASH_Object.COLLECTION;
-
-    this.collectionCounter         = -1;
-
-    this.controlObj                = null;
-    this.spanObj                   = null;
-    this.innerObj                  = null;
+    if(typeof(tmpGroupType)   == "undefined") { tmpGroupType   = MASH_ArchivalGroup.TYPE_UNDETERMITED; }
+    if(typeof(tmpDescription) == "undefined") { tmpDescription = ""                                    }
 
     //Metadata variables (APT)
-    this.metadataTitle             = "";
+    this.metadataGroupType         = tmpGroupType;
+    this.metadataTitle             = tmpText;
     this.metadataDescription       = "";
 
 
@@ -50,85 +39,83 @@ function MASH_Collection(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex,
     this.defaultContextMenuString += "</div><br/>\n";
 
     this.defaultContextMenuString += "<div style='font-size:12pt; font-weight:bold;' >\n";
-    this.defaultContextMenuString += "    Title       <br/>    <textarea name='metadataTitle'           id='" + MASH_DigitizedRecord.ID_TEXTAREA_TITLE       + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:25px;  background-color:#ffffff; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' >" + this.title               + "</textarea> <br/>\n";
+    this.defaultContextMenuString += "    Title       <br/>    <textarea name='metadataTitle'           id='" + MASH_DigitizedRecord.ID_TEXTAREA_TITLE       + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:25px;  background-color:#ffffff; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' >" + this.metadataTitle       + "</textarea> <br/>\n";
     this.defaultContextMenuString += "    Description <br/>    <textarea name='metadataDescription'     id='" + MASH_DigitizedRecord.ID_TEXTAREA_DESCRIPTION + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:100px; background-color:#ffffff; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' >" + this.metadataDescription + "</textarea> <br/>\n";
     this.defaultContextMenuString += "    <br/><br/>Group Type <select   name='metadataGroupType'       id='" + MASH_DigitizedRecord.ID_SELECT_GROUP_TYPE    + "' style='position:relative;                                             height:25px;  background-color:#ffffff; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' >";
-    this.defaultContextMenuString += "    <option value=\"sub-group\" >Sub-Group</option>\n";
-    this.defaultContextMenuString += "    <option value=\"series\"    >Series</option>\n";
-    this.defaultContextMenuString += "    <option value=\"sub-series\">Sub-Series</option>\n";
-    this.defaultContextMenuString += "    <option value=\"file\"      >File</option>\n";
+    this.defaultContextMenuString += "    <option value=\"MASH_ArchivalGroup.TYPE_SUBGROUP\" >Sub-Group </option>\n";
+    this.defaultContextMenuString += "    <option value=\"MASH_ArchivalGroup.TYPE_SERIES\"   >Series    </option>\n";
+    this.defaultContextMenuString += "    <option value=\"MASH_ArchivalGroup.TYPE_SUBSERIES\">Sub-Series</option>\n";
+    this.defaultContextMenuString += "    <option value=\"MASH_ArchivalGroup.TYPE_FILE\"     >File      </option>\n";
     this.defaultContextMenuString += "    </select> <br/>\n";
     this.defaultContextMenuString += "</div>\n";
 
     this.contextMenuString         = this.defaultContextMenuString;
 
-    //This is used in order to iherit the controls for MASH_Video objects when inserted in the collection
-    this.componentsContainVideos   = false;
-    this.componentsVideoControls   = "<span onclick=\"findObjectByID('"+this.id+"').playAllVideos();\"  style=\"color:550000; text-decoration:none;\"><img src=\""+CONTROLS_IMG_DIR+"/"+MASH_Video.CONTROL_PLAY_IMG_FILENAME           +"\" width=\"20px\" height=\"20px\" algin=\"absmiddle\">&nbsp;Play All Videos</span><br>\n" +
-                                     "<span onclick=\"findObjectByID('"+this.id+"').pauseAllVideos();\" style=\"color:550000; text-decoration:none;\"><img src=\""+CONTROLS_IMG_DIR+"/"+MASH_Video.CONTROL_PAUSE_IMG_FILENAME          +"\" width=\"20px\" height=\"20px\" algin=\"absmiddle\">&nbsp;Pause All Videos</span><br>\n"+
-                                     "<span onclick=\"findObjectByID('"+this.id+"').indexAllVideos();\" style=\"color:550000; text-decoration:none;\"><img src=\""+CONTROLS_IMG_DIR+"/"+MASH_Video.CONTROL_INDEX_POSITION_IMG_FILENAME +"\" width=\"20px\" height=\"20px\" algin=\"absmiddle\">&nbsp;Index All Videos</span><br>\n"+
-                                     "<span onclick=\"findObjectByID('"+this.id+"').indexAllVideos();\" style=\"color:550000; text-decoration:none;\"><img src=\""+CONTROLS_IMG_DIR+"/"+MASH_Video.CONTROL_INDEX_TIME_IMG_FILENAME     + "\" width=\"20px\" height=\"20px\" algin=\"absmiddle\">&nbsp;Index Time</span><br>\n"  ;
-
-    //XML
-    this.xmlObjectTag              = MASH_Collection.XML_TAG_OBJECT;
-
 }
 //set inheritance
-MASH_Collection.prototype                     = new MASH_Object("MASH_Collection",0,0,1,1,0,"");
-MASH_Collection.prototype.constructor         = MASH_Collection;
-//MASH_Collection
+MASH_ArchivalGroup.prototype                     = new MASH_Object("MASH_ArchivalGroup",0,0,1,1,0,"");
+MASH_ArchivalGroup.prototype.constructor         = MASH_ArchivalGroup;
+//MASH_ArchivalGroup
 
 
 //Constants
-MASH_Collection.COOKIE_NAME                   = "mash_collections";
-MASH_Collection.INNER_ID_PREFIX               = "collectionObj";
-MASH_Collection.ID_PREFIX                     = MASH_Object.ID_PREFIX + MASH_Collection.INNER_ID_PREFIX;
-MASH_Collection.CONTROLS_ID_PREFIX            = MASH_Collection.INNER_ID_PREFIX + "Controls";
+MASH_ArchivalGroup.COOKIE_NAME                   = "mash_collections";
+MASH_ArchivalGroup.INNER_ID_PREFIX               = "collectionObj";
+MASH_ArchivalGroup.ID_PREFIX                     = MASH_Object.ID_PREFIX + MASH_ArchivalGroup.INNER_ID_PREFIX;
+MASH_ArchivalGroup.CONTROLS_ID_PREFIX            = MASH_ArchivalGroup.INNER_ID_PREFIX + "Controls";
 
-MASH_Collection.TITLE_HEIGHT                  = 20; //pixel height of the title bar of a frame object
-MASH_Collection.CONTROLS_MAXIMIZE_IMG_ID      = "imgMaximizeCollection"
-MASH_Collection.CONTROLS_MINIMIZE_IMG_ID      = "imgMinimizeCollection"
-MASH_Collection.CONTROLS_ZOOM_IN_IMG_ID       = "imgZoomInCollection";
-MASH_Collection.CONTROLS_ZOOM_OUT_IMG_ID      = "imgZoomOutCollection";
+MASH_ArchivalGroup.TITLE_HEIGHT                  = 20; //pixel height of the title bar of a frame object
+MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_ID      = "imgMaximizeCollection"
+MASH_ArchivalGroup.CONTROLS_MINIMIZE_IMG_ID      = "imgMinimizeCollection"
+MASH_ArchivalGroup.CONTROLS_ZOOM_IN_IMG_ID       = "imgZoomInCollection";
+MASH_ArchivalGroup.CONTROLS_ZOOM_OUT_IMG_ID      = "imgZoomOutCollection";
 
-MASH_Collection.CONTROLS_MAXIMIZE_IMG_TITLE   = "Maximize"
-MASH_Collection.CONTROLS_MINIMIZE_IMG_TITLE   = "Minimize"
-MASH_Collection.CONTROLS_ZOOM_IN_IMG_TITLE    = "Zoom In";
-MASH_Collection.CONTROLS_ZOOM_OUT_IMG_TITLE   = "Zoom Out";
+MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_TITLE   = "Maximize"
+MASH_ArchivalGroup.CONTROLS_MINIMIZE_IMG_TITLE   = "Minimize"
+MASH_ArchivalGroup.CONTROLS_ZOOM_IN_IMG_TITLE    = "Zoom In";
+MASH_ArchivalGroup.CONTROLS_ZOOM_OUT_IMG_TITLE   = "Zoom Out";
 
-MASH_Collection.CONTROLS_IMG_DIR              = MASH_APPLET_CODEBASE             + "mash_images/";
+MASH_ArchivalGroup.CONTROLS_IMG_DIR              = MASH_APPLET_CODEBASE             + "mash_images/";
 
-MASH_Collection.CONTROLS_MAXIMIZE_IMG_FILE    = MASH_Collection.CONTROLS_IMG_DIR + "maximize.png";
-MASH_Collection.CONTROLS_MAXIMIZE_IMG_WIDTH   = 16;
-MASH_Collection.CONTROLS_MAXIMIZE_IMG_HEIGHT  = 16;
-MASH_Collection.CONTROLS_NORMALIZE_IMG_FILE   = MASH_Collection.CONTROLS_IMG_DIR + "normalize.png";
-MASH_Collection.CONTROLS_MINIMIZE_IMG_FILE    = MASH_Collection.CONTROLS_IMG_DIR + "minimize.png";
-MASH_Collection.CONTROLS_ZOOM_OUT_IMG_FILE    = MASH_Collection.CONTROLS_IMG_DIR + "zoomOutPage.png";
-MASH_Collection.CONTROLS_ZOOM_IN_IMG_FILE     = MASH_Collection.CONTROLS_IMG_DIR + "zoomInPage.png";
+MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_FILE    = MASH_ArchivalGroup.CONTROLS_IMG_DIR + "maximize.png";
+MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_WIDTH   = 16;
+MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_HEIGHT  = 16;
+MASH_ArchivalGroup.CONTROLS_NORMALIZE_IMG_FILE   = MASH_ArchivalGroup.CONTROLS_IMG_DIR + "normalize.png";
+MASH_ArchivalGroup.CONTROLS_MINIMIZE_IMG_FILE    = MASH_ArchivalGroup.CONTROLS_IMG_DIR + "minimize.png";
+MASH_ArchivalGroup.CONTROLS_ZOOM_OUT_IMG_FILE    = MASH_ArchivalGroup.CONTROLS_IMG_DIR + "zoomOutPage.png";
+MASH_ArchivalGroup.CONTROLS_ZOOM_IN_IMG_FILE     = MASH_ArchivalGroup.CONTROLS_IMG_DIR + "zoomInPage.png";
 
 
 //XML tags
-MASH_Collection.XML_TAG_OBJECT                = MASH_Object.COLLECTION;
-MASH_Collection.XML_TAG_TEXT                  = "text";
-MASH_Collection.XML_TAG_COMPONENTS            = "components";
+MASH_ArchivalGroup.XML_TAG_OBJECT                = MASH_Object.COLLECTION;
+MASH_ArchivalGroup.XML_TAG_TEXT                  = "text";
+MASH_ArchivalGroup.XML_TAG_COMPONENTS            = "components";
 
 
 //Default values for User Readings open in collections
-MASH_Collection.USER_READING_LEFT             = 10;
-MASH_Collection.USER_READING_TOP              = 100;
-MASH_Collection.USER_READING_WIDTH            = 600;
-MASH_Collection.USER_READING_HEIGHT           = 400;
-MASH_Collection.USER_READING_STYLE            = "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#222222; border-style:solid; background-image:none; color:#ffffff; font-family:Arial; font-size:13pt; font-weight:bold; ";
+MASH_ArchivalGroup.USER_READING_LEFT             = 10;
+MASH_ArchivalGroup.USER_READING_TOP              = 100;
+MASH_ArchivalGroup.USER_READING_WIDTH            = 600;
+MASH_ArchivalGroup.USER_READING_HEIGHT           = 400;
+MASH_ArchivalGroup.USER_READING_STYLE            = "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#222222; border-style:solid; background-image:none; color:#ffffff; font-family:Arial; font-size:13pt; font-weight:bold; ";
+
+
+//APT
+MASH_ArchivalGroup.TYPE_UNDETERMITED             = "UNDETERMINDED";
+MASH_ArchivalGroup.TYPE_SUBGROUP                 = "SUB-GROUP";
+MASH_ArchivalGroup.TYPE_SERIES                   = "SERIES";
+MASH_ArchivalGroup.TYPE_SUBSERIES                = "SUB-SERIES";
+MASH_ArchivalGroup.TYPE_FILE                     = "FILE";
 
 
 
 
-// MASH_Collection.clone                                                                           MASH_Collection.clone
+// MASH_ArchivalGroup.clone                                                                           MASH_ArchivalGroup.clone
 // ---------------------------------------------------------------------------------------------------------------------
 // * This needs to clone the compnents as well
 //   - by calling it as a Class Method (as opposed to an instance method) the objects are created in the context of the callee
 //   - this allows for a document to clone MASH_Objects from another clone. This is basicfor the import/export functions
-MASH_Collection.clone = function(originalObj) {
+MASH_ArchivalGroup.clone = function(originalObj) {
 
     //clone all components
     var clonedComponents = new Array();
@@ -137,199 +124,25 @@ MASH_Collection.clone = function(originalObj) {
     }
 
     //clone container
-    var cloneObj = new MASH_Collection(originalObj.id, originalObj.left, originalObj.top, originalObj.width, originalObj.height, originalObj.zIndex,
+    var cloneObj = new MASH_ArchivalGroup(originalObj.id, originalObj.left, originalObj.top, originalObj.width, originalObj.height, originalObj.zIndex,
                                        originalObj.style,
-                                       originalObj.text, clonedComponents);
+                                       originalObj.text, clonedComponents,
+                                       originalObj.metadataGroupType, originalObj.metadataDescription);
     return cloneObj;
-}//MASH_Collection.clone
+}//MASH_ArchivalGroup.clone
 
 
 
-// MASH_Collection.prototype.clone                                                       MASH_Collection.prototype.clone
+
+
+// MASH_ArchivalGroup.prototype.createScreenObject                             MASH_ArchivalGroup.prototype.createScreenObject
 // ---------------------------------------------------------------------------------------------------------------------
-// this needs to clone the compnents as well
-MASH_Collection.prototype.clone = function() {
-    return MASH_Collection.clone(this);
-}//MASH_Collection.prototype.clone
-
-
-
-// MASH_Collection.prototype.findObjectByID                                     MASH_Collection.prototype.findObjectByID
-// ---------------------------------------------------------------------------------------------------------------------
-// * searchs for a MASH object with the specified ID
-// * return the MASH objecti if it's found
-// * return null if it's nmot found
-//   (this is a depth-first search)
-MASH_Collection.prototype.findObjectByID = function(tmpID) {
-
-    for(var i=0; i<this.components.length; i++){
-
-        //search in components
-        if(this.components[i].id == tmpID) { return this.components[i]; }
-
-        //search inside components
-        if(this.components[i].components) {
-            var objFound = this.components[i].findObjectByID(tmpID);
-            if(objFound != null) {
-                return objFound;
-            }
-        }
-    }//for i
-
-    //if it didn't find it, return null
-    return null;
-
-}//MASH_Collection.prototype.findObjectByID
-
-
-
-// MASH_Collection.prototype.removeComponent                                   MASH_Collection.prototype.removeComponent
-// ---------------------------------------------------------------------------------------------------------------------
-// * searchs and removes a tmpObj from the components array of this Collection
-MASH_Collection.prototype.removeComponent = function(tmpObj) {
-
-    for(var i=0; i<this.components.length; i++) {
-        if(this.components[i] == tmpObj) {
-            this.components.splice(i,1);
-            return true;
-        }
-    }
-
-    //update the context menu if need be
-    this.updateControlInheritance();
-
-    return false;
-
-}//MASH_Collection.prototype.removeComponent
-
-
-
-// MASH_Collection.prototype.addComponent                                         MASH_Collection.prototype.addComponent
-// ---------------------------------------------------------------------------------------------------------------------
-// * adds tmpObj to the components array of this Collection
-MASH_Collection.prototype.addComponent = function(tmpObj) {
-
-    this.components.push(tmpObj);
-
-    //inherit the components controls if need be
-    this.inheritControls(tmpObj);
-
-}//MASH_Collection.prototype.addComponent
-
-
-
-// MASH_Collection.prototype.inheritControls                                   MASH_Collection.prototype.inheritControls
-// ---------------------------------------------------------------------------------------------------------------------
-// * adds tmpObj to the components array of this Collection
-MASH_Collection.prototype.inheritControls = function(tmpObj) {
-
-    //check for videos in order to inherit their controls
-    if(tmpObj.MASHobjectType == MASH_Object.VIDEO) {
-
-        //update context menu
-        if(this.componentsContainVideos == false) { this.contextMenuString += this.componentsVideoControls; }
-        this.componentsContainVideos = true;
-    }
-
-}//MASH_Collection.prototype.inheritControls
-
-
-
-// MASH_Collection.prototype.updateControlInheritance                 MASH_Collection.prototype.updateControlInheritance
-// ---------------------------------------------------------------------------------------------------------------------
-// * adds tmpObj to the components array of this Collection
-MASH_Collection.prototype.updateControlInheritance = function() {
-
-    //reset contextMenu to the default
-    this.contextMenuString = this.defaultContextMenuString;
-
-    //check if this collection still needs to have global controls for its components
-    var needsVideoControls = false;
-    for(var i=0; i < this.components.length; i++) {
-        var tmpObj = this.components[i];
-        if(tmpObj.MASHobjectType == MASH_Object.VIDEO) {
-            needsVideoControls = true;
-        }
-    }
-
-    //update contextMenu with appropriate global controls
-    if(needsVideoControls == true) {
-        this.contextMenuString += this.componentsVideoControls;
-    }
-
-}//MASH_Collection.prototype.updateControlInheritance
-
-
-
-// MASH_Collection.prototype.playAllVideos                                       MASH_Collection.prototype.playAllVideos
-// ---------------------------------------------------------------------------------------------------------------------
-// * this function is added to the collection's context menu when a MASH_Video object is included inside the collection
-// * sends a play message to all the MASH_Video objects inside this Collection
-MASH_Collection.prototype.playAllVideos = function(tmpObj) {
-
-    for(var i=0; i<this.components.length; i++) {
-        var tmpObj = this.components[i];
-        if(tmpObj.MASHobjectType == MASH_Object.VIDEO) {
-            tmpObj.play();
-        }
-    }
-
-}//MASH_Collection.prototype.playAllVideos
-
-
-
-// MASH_Collection.prototype.pauseAllVideos                                     MASH_Collection.prototype.pauseAllVideos
-// ---------------------------------------------------------------------------------------------------------------------
-// * this function is added to the collection's context menu when a MASH_Video object is included inside the collection
-// * sends a pause message to all the MASH_Video objects inside this Collection
-MASH_Collection.prototype.pauseAllVideos = function(tmpObj) {
-
-    for(var i=0; i<this.components.length; i++) {
-        var tmpObj = this.components[i];
-        if(tmpObj.MASHobjectType == MASH_Object.VIDEO) {
-            tmpObj.pause();
-        }
-    }
-
-}//MASH_Collection.prototype.pauseAllVideos
-
-
-
-// MASH_Collection.prototype.indexAllVideos                                     MASH_Collection.prototype.indexAllVideos
-// ---------------------------------------------------------------------------------------------------------------------
-// * this function is added to the collection's context menu when a MASH_Video object is included inside the collection
-// * it creates a MASH_VideoIndex to all the MASH_Video objects inside this collection
-MASH_Collection.prototype.indexAllVideos = function(tmpObj) {
-
-    if(this.componentsContainVideos == false)  {
-        alert("no video components");
-        return;
-    }
-
-    //find all video components
-    var videoComponents = new Array();
-    for(var i=0; i<this.components.length; i++) {
-        var tmpObj = this.components[i];
-        if(tmpObj.MASHobjectType == MASH_Object.VIDEO) {
-            videoComponents.push(tmpObj);
-        }
-    }
-
-    //create a videoIndex to all the MASH)Video objects in this collection
-    if(videoComponents.length>0) { MASH_Video.multipleIndexVideoPosition(videoComponents); }
-
-}//MASH_Collection.prototype.indexAllVideos
-
-
-
-// MASH_Collection.prototype.createScreenObject                             MASH_Collection.prototype.createScreenObject
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.createScreenObject  = function(i){
+MASH_ArchivalGroup.prototype.createScreenObject  = function(i){
 
     //make object and sub object's id
-    var tmpObjID                = MASH_Collection.ID_PREFIX          + i;
-    var tmpObjInnerID           = MASH_Collection.INNER_ID_PREFIX    + i;
-    var controlsObjID           = MASH_Collection.CONTROLS_ID_PREFIX + i;
+    var tmpObjID                = MASH_ArchivalGroup.ID_PREFIX          + i;
+    var tmpObjInnerID           = MASH_ArchivalGroup.INNER_ID_PREFIX    + i;
+    var controlsObjID           = MASH_ArchivalGroup.CONTROLS_ID_PREFIX + i;
 
 
     //wrapper object
@@ -349,7 +162,7 @@ MASH_Collection.prototype.createScreenObject  = function(i){
     var adjustedHeight           = adjustSize(this.height, this.borderWidth);
 
     var adjustedInnerWidth       = this.width  - (this.borderWidth*2) - 0;
-    var adjustedInnerHeight      = this.height - (this.borderWidth*2) - MASH_Collection.TITLE_HEIGHT;
+    var adjustedInnerHeight      = this.height - (this.borderWidth*2) - MASH_ArchivalGroup.TITLE_HEIGHT;
 
     //validate adjusted dimensions
     // - if dimensions are 0 or negative, IE stops the scripts, and Netscape ignores the assignments
@@ -363,10 +176,10 @@ MASH_Collection.prototype.createScreenObject  = function(i){
     this.controlObj.id                   = controlsObjID;
 
     this.controlObj.style.position       = "absolute";
-    this.controlObj.style.left           = adjustedInnerWidth - MASH_Collection.getControlsWidth();
+    this.controlObj.style.left           = adjustedInnerWidth - MASH_ArchivalGroup.getControlsWidth();
     this.controlObj.style.top            = 0;
-    this.controlObj.style.width          = 0 + MASH_Collection.getControlsWidth();
-    this.controlObj.style.height         = MASH_Collection.TITLE_HEIGHT;
+    this.controlObj.style.width          = 0 + MASH_ArchivalGroup.getControlsWidth();
+    this.controlObj.style.height         = MASH_ArchivalGroup.TITLE_HEIGHT;
     this.controlObj.style.zIndex         = 1;
 
     this.controlObj.style.backgroundColor= this.borderColor;
@@ -375,58 +188,58 @@ MASH_Collection.prototype.createScreenObject  = function(i){
 
     //zoom out control
     this.zoomOutObj                     = document.createElement("img");
-    this.zoomOutObj.id                  = MASH_Collection.CONTROLS_ZOOM_OUT_IMG_ID + i;
-    this.zoomOutObj.src                 = MASH_Collection.CONTROLS_ZOOM_OUT_IMG_FILE;
-    this.zoomOutObj.title               = MASH_Collection.CONTROLS_ZOOM_OUT_IMG_TITLE;
+    this.zoomOutObj.id                  = MASH_ArchivalGroup.CONTROLS_ZOOM_OUT_IMG_ID + i;
+    this.zoomOutObj.src                 = MASH_ArchivalGroup.CONTROLS_ZOOM_OUT_IMG_FILE;
+    this.zoomOutObj.title               = MASH_ArchivalGroup.CONTROLS_ZOOM_OUT_IMG_TITLE;
     this.zoomOutObj.align               = "top";
-    this.zoomOutObj.width               = MASH_Collection.CONTROLS_MAXIMIZE_IMG_WIDTH;;
-    this.zoomOutObj.height              = MASH_Collection.CONTROLS_MAXIMIZE_IMG_HEIGHT;
+    this.zoomOutObj.width               = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_WIDTH;;
+    this.zoomOutObj.height              = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_HEIGHT;
 
     this.zoomOutObj.style.borderWidth    = 0;
 
-    addEventListener(this.zoomOutObj, "click",  MASH_Collection.zoomOutCollectionEvent, false);
+    addEventListener(this.zoomOutObj, "click",  MASH_ArchivalGroup.zoomOutCollectionEvent, false);
 
 
     //zoom in control
     this.zoomInObj                      = document.createElement("img");
-    this.zoomInObj.id                   = MASH_Collection.CONTROLS_ZOOM_IN_IMG_ID + i;
-    this.zoomInObj.src                  = MASH_Collection.CONTROLS_ZOOM_IN_IMG_FILE;
-    this.zoomInObj.title                = MASH_Collection.CONTROLS_ZOOM_IN_IMG_TITLE;
+    this.zoomInObj.id                   = MASH_ArchivalGroup.CONTROLS_ZOOM_IN_IMG_ID + i;
+    this.zoomInObj.src                  = MASH_ArchivalGroup.CONTROLS_ZOOM_IN_IMG_FILE;
+    this.zoomInObj.title                = MASH_ArchivalGroup.CONTROLS_ZOOM_IN_IMG_TITLE;
     this.zoomInObj.align                = "top";
-    this.zoomInObj.width                = MASH_Collection.CONTROLS_MAXIMIZE_IMG_WIDTH;
-    this.zoomInObj.height               = MASH_Collection.CONTROLS_MAXIMIZE_IMG_HEIGHT;
+    this.zoomInObj.width                = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_WIDTH;
+    this.zoomInObj.height               = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_HEIGHT;
 
     this.zoomInObj.style.borderWidth    = 0;
 
-    addEventListener(this.zoomInObj, "click",  MASH_Collection.zoomInCollectionEvent, false);
+    addEventListener(this.zoomInObj, "click",  MASH_ArchivalGroup.zoomInCollectionEvent, false);
 
 
     //maximize control
     this.maximizeObj                     = document.createElement("img");
-    this.maximizeObj.id                  = MASH_Collection.CONTROLS_MAXIMIZE_IMG_ID + i;
-    this.maximizeObj.src                 = MASH_Collection.CONTROLS_MAXIMIZE_IMG_FILE;
-    this.maximizeObj.title               = MASH_Collection.CONTROLS_MAXIMIZE_IMG_TITLE;
+    this.maximizeObj.id                  = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_ID + i;
+    this.maximizeObj.src                 = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_FILE;
+    this.maximizeObj.title               = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_TITLE;
     this.maximizeObj.align               = "top";
-    this.maximizeObj.width               = MASH_Collection.CONTROLS_MAXIMIZE_IMG_WIDTH;;
-    this.maximizeObj.height              = MASH_Collection.CONTROLS_MAXIMIZE_IMG_HEIGHT;
+    this.maximizeObj.width               = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_WIDTH;;
+    this.maximizeObj.height              = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_HEIGHT;
 
     this.maximizeObj.style.borderWidth   = 0;
 
-    addEventListener(this.maximizeObj, "click",  MASH_Collection.maximizeCollectionEvent, false);
+    addEventListener(this.maximizeObj, "click",  MASH_ArchivalGroup.maximizeCollectionEvent, false);
 
 
     //minimize control
     this.minimizeObj                     = document.createElement("img");
-    this.minimizeObj.id                  = MASH_Collection.CONTROLS_MINIMIZE_IMG_ID + i;
-    this.minimizeObj.src                 = MASH_Collection.CONTROLS_MINIMIZE_IMG_FILE;
-    this.minimizeObj.title               = MASH_Collection.CONTROLS_MINIMIZE_IMG_TITLE;
+    this.minimizeObj.id                  = MASH_ArchivalGroup.CONTROLS_MINIMIZE_IMG_ID + i;
+    this.minimizeObj.src                 = MASH_ArchivalGroup.CONTROLS_MINIMIZE_IMG_FILE;
+    this.minimizeObj.title               = MASH_ArchivalGroup.CONTROLS_MINIMIZE_IMG_TITLE;
     this.minimizeObj.align               = "top";
-    this.minimizeObj.width               = MASH_Collection.CONTROLS_MAXIMIZE_IMG_WIDTH;;
-    this.minimizeObj.height              = MASH_Collection.CONTROLS_MAXIMIZE_IMG_HEIGHT;
+    this.minimizeObj.width               = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_WIDTH;;
+    this.minimizeObj.height              = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_HEIGHT;
 
     this.minimizeObj.style.borderWidth   = 0;
 
-    addEventListener(this.minimizeObj, "click",  MASH_Collection.minimizeCollectionEvent, false);
+    addEventListener(this.minimizeObj, "click",  MASH_ArchivalGroup.minimizeCollectionEvent, false);
 
 
     //append controls to control div
@@ -448,8 +261,8 @@ MASH_Collection.prototype.createScreenObject  = function(i){
     this.spanObj.style.left              = 0;
     this.spanObj.style.top               = 0;
     this.spanObj.style.width             = "100%";
-//    this.spanObj.style.width             = adjustedInnerWidth - MASH_Collection.getControlsWidth();
-    this.spanObj.style.height            = MASH_Collection.TITLE_HEIGHT;
+//    this.spanObj.style.width             = adjustedInnerWidth - MASH_ArchivalGroup.getControlsWidth();
+    this.spanObj.style.height            = MASH_ArchivalGroup.TITLE_HEIGHT;
     this.spanObj.style.zIndex            = 1;
 
     this.spanObj.style.color             = this.color;
@@ -476,7 +289,7 @@ MASH_Collection.prototype.createScreenObject  = function(i){
 
     this.innerObj.style.position         = "absolute";
     this.innerObj.style.left             = "0px";
-    this.innerObj.style.top              = MASH_Collection.TITLE_HEIGHT;
+    this.innerObj.style.top              = MASH_ArchivalGroup.TITLE_HEIGHT;
     this.innerObj.style.width            = adjustedInnerWidth;
     this.innerObj.style.height           = adjustedInnerHeight;
     this.innerObj.style.zIndex           = 0;
@@ -519,20 +332,20 @@ MASH_Collection.prototype.createScreenObject  = function(i){
     this.reference                 = this.wrapperObj;
 
     //add event listeners
-//    addEventListener(this.wrapperObj, "dblclick",  MASH_Collection.maximizeCollectionEvent, false);
-    addEventListener(this.spanObj,  "dblclick",  MASH_Collection.maximizeCollectionEvent, false);
+//    addEventListener(this.wrapperObj, "dblclick",  MASH_ArchivalGroup.maximizeCollectionEvent, false);
+    addEventListener(this.spanObj,  "dblclick",  MASH_ArchivalGroup.maximizeCollectionEvent, false);
     addEventListener(this.innerObj, "scroll",    divScroll, false);//this event listener is needed in order to avoid "sticky" scrollbars
 
     return this.wrapperObj;
 
-}//MASH_Collection.prototype.createScreenObject
+}//MASH_ArchivalGroup.prototype.createScreenObject
 
 
 
-// MASH_Collection.zoomInCollectionEvent                                           MASH_Collection.zoomInCollectionEvent
+// MASH_ArchivalGroup.zoomInCollectionEvent                                           MASH_ArchivalGroup.zoomInCollectionEvent
 // ---------------------------------------------------------------------------------------------------------------------
 // * it is a wrapper over the function zoomObj in order to be able to call it as an event handler
-MASH_Collection.zoomInCollectionEvent = function(tmpEvent){
+MASH_ArchivalGroup.zoomInCollectionEvent = function(tmpEvent){
 
     //validate that we have the event object
     //  (this compensates for using DOM 2 and IE event models
@@ -543,22 +356,22 @@ MASH_Collection.zoomInCollectionEvent = function(tmpEvent){
     var objIndex    = wrapperObj.objectIndex;
 
     //zoom in
-    MASH_Collection.zoomObject(objIndex, (4/3));
+    MASH_ArchivalGroup.zoomObject(objIndex, (4/3));
     stopPropagation(tmpEvent);
     preventDefault(tmpEvent);
 
     //zoom contents
     obj.zoomContents();
 
-}//MASH_Collection.zoomInCollectionEvent
+}//MASH_ArchivalGroup.zoomInCollectionEvent
 
 
 
-// MASH_Collection.zoomOutCollectionEvent                                         MASH_Collection.zoomOutCollectionEvent
+// MASH_ArchivalGroup.zoomOutCollectionEvent                                         MASH_ArchivalGroup.zoomOutCollectionEvent
 // ---------------------------------------------------------------------------------------------------------------------
 // * zooms the contentest of a COLLECTION object
 // * it is a wrapper over the function zoomObj in order to be able to call it as an event handler
-MASH_Collection.zoomOutCollectionEvent = function(tmpEvent){
+MASH_ArchivalGroup.zoomOutCollectionEvent = function(tmpEvent){
 
     //validate that we have the event object
     //  (this compensates for using DOM 2 and IE event models
@@ -569,21 +382,21 @@ MASH_Collection.zoomOutCollectionEvent = function(tmpEvent){
     var objIndex    = wrapperObj.objectIndex;
 
     //zoom in
-    MASH_Collection.zoomObject(objIndex, (3/4));
+    MASH_ArchivalGroup.zoomObject(objIndex, (3/4));
     stopPropagation(tmpEvent);
     preventDefault(tmpEvent);
 
     //zoom contents
     obj.zoomContents();
 
-}//MASH_Collection.zoomOutCollectionEvent
+}//MASH_ArchivalGroup.zoomOutCollectionEvent
 
 
 
-// MASH_Collection.prototype.zoomContents                                         MASH_Collection.prototype.zoomContents
+// MASH_ArchivalGroup.prototype.zoomContents                                         MASH_ArchivalGroup.prototype.zoomContents
 // ---------------------------------------------------------------------------------------------------------------------
 // * zooms the contents of a COLLECTION object
-MASH_Collection.prototype.zoomContents = function(){
+MASH_ArchivalGroup.prototype.zoomContents = function(){
 
     //adjuste maximized children
     var adjustedWidth       = this.getInnerObjWidth(parseInt(this.wrapperObj.style.width));
@@ -601,7 +414,7 @@ MASH_Collection.prototype.zoomContents = function(){
             var childHeight      = adjustedInnerHeight;
 
             var childInnerWidth  = (childWidth  - (2*this.components[i].borderWidth) - 1) / this.components[i].scale;
-            var childInnerHeight = (childHeight - (2*this.components[i].borderWidth) - 1 -MASH_Collection.TITLE_HEIGHT) / this.components[i].scale;
+            var childInnerHeight = (childHeight - (2*this.components[i].borderWidth) - 1 -MASH_ArchivalGroup.TITLE_HEIGHT) / this.components[i].scale;
 
             //resize child
 
@@ -612,7 +425,7 @@ MASH_Collection.prototype.zoomContents = function(){
             this.components[i].innerObj.style.height   = childInnerHeight;
 
             //relocate the controls
-            this.components[i].controlObj.style.left = childWidth - (2*this.components[i].borderWidth) - MASH_Collection.getControlsWidth();
+            this.components[i].controlObj.style.left = childWidth - (2*this.components[i].borderWidth) - MASH_ArchivalGroup.getControlsWidth();
 
             //zoom contents
             this.components[i].zoomContents();
@@ -620,15 +433,15 @@ MASH_Collection.prototype.zoomContents = function(){
 
     }//for i
 
-}//MASH_Collection.prototype.zoomContents
+}//MASH_ArchivalGroup.prototype.zoomContents
 
 
 
-// MASH_Collection.minimizeCollectionEvent                                       MASH_Collection.minimizeCollectionEvent
+// MASH_ArchivalGroup.minimizeCollectionEvent                                       MASH_ArchivalGroup.minimizeCollectionEvent
 // ---------------------------------------------------------------------------------------------------------------------
 // * this function allows to minimizea COLLECTION object
 // * it is a wrapper over the function minimizeCollection in order to be able to call it as an event handler
-MASH_Collection.minimizeCollectionEvent = function(tmpEvent){
+MASH_ArchivalGroup.minimizeCollectionEvent = function(tmpEvent){
 
     //validate that we have the event object
     //  (this compensates for using DOM 2 and IE event models
@@ -642,15 +455,15 @@ MASH_Collection.minimizeCollectionEvent = function(tmpEvent){
     stopPropagation(tmpEvent);
     preventDefault(tmpEvent);
 
-}//MASH_Collection.minimizeCollectionEvent
+}//MASH_ArchivalGroup.minimizeCollectionEvent
 
 
 
-// MASH_Collection.maximizeCollectionEvent                                       MASH_Collection.maximizeCollectionEvent
+// MASH_ArchivalGroup.maximizeCollectionEvent                                       MASH_ArchivalGroup.maximizeCollectionEvent
 // ---------------------------------------------------------------------------------------------------------------------
 // * this function allows to maximize 'into' a COLLECTION object
 // * it is a wrapper over the function maximizeCollection in order to be able to call it as an event handler
-MASH_Collection.maximizeCollectionEvent = function(tmpEvent){
+MASH_ArchivalGroup.maximizeCollectionEvent = function(tmpEvent){
 
     //validate that we have the event object
     //  (this compensates for using DOM 2 and IE event models
@@ -665,14 +478,14 @@ MASH_Collection.maximizeCollectionEvent = function(tmpEvent){
     stopPropagation(tmpEvent);
     preventDefault(tmpEvent);
 
-}//MASH_Collection.maximizeCollectionEvent
+}//MASH_ArchivalGroup.maximizeCollectionEvent
 
 
 
-// MASH_Collection.prototype.minimize                                                 MASH_Collection.prototype.minimize
+// MASH_ArchivalGroup.prototype.minimize                                                 MASH_ArchivalGroup.prototype.minimize
 // ---------------------------------------------------------------------------------------------------------------------
 // * minimizes this COLLECTION object
-MASH_Collection.prototype.minimize = function(){
+MASH_ArchivalGroup.prototype.minimize = function(){
 
     //validate conditions
     if(wasDragged) { return }
@@ -695,8 +508,8 @@ MASH_Collection.prototype.minimize = function(){
     }
 
     //set images
-    this.minimizeObj.src = MASH_Collection.CONTROLS_NORMALIZE_IMG_FILE;
-    this.maximizeObj.src = MASH_Collection.CONTROLS_MAXIMIZE_IMG_FILE;
+    this.minimizeObj.src = MASH_ArchivalGroup.CONTROLS_NORMALIZE_IMG_FILE;
+    this.maximizeObj.src = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_FILE;
 
     //set the flags
     this.minimized       = true;
@@ -704,11 +517,11 @@ MASH_Collection.prototype.minimize = function(){
 
     //relocate the collection controls
     this.wrapperObj.style.zIndex = ++topZ;
-    this.controlObj.style.left   = this.width - (2*this.borderWidth) - MASH_Collection.getControlsWidth();
+    this.controlObj.style.left   = this.width - (2*this.borderWidth) - MASH_ArchivalGroup.getControlsWidth();
 
     //compute the width and height
     var adjustedWidth    = adjustSize(this.width,  this.borderWidth);
-    var adjustedHeight   = this.getObjHeight(MASH_Collection.TITLE_HEIGHT);
+    var adjustedHeight   = this.getObjHeight(MASH_ArchivalGroup.TITLE_HEIGHT);
 
     //compute inner div dimensions
     var adjustedInnerWidth  = this.getInnerObjWidth(adjustedWidth);
@@ -749,14 +562,14 @@ MASH_Collection.prototype.minimize = function(){
                                                                                                              stepLeft            + "," +
                                                                                                              stepTop             + ")", 100);
 
-}//MASH_Collection.prototype.minimize
+}//MASH_ArchivalGroup.prototype.minimize
 
 
 
-// MASH_Collection.prototype.normalize                                               MASH_Collection.prototype.normalize
+// MASH_ArchivalGroup.prototype.normalize                                               MASH_ArchivalGroup.prototype.normalize
 // ---------------------------------------------------------------------------------------------------------------------
 // * resotores this colelction object to normal size
-MASH_Collection.prototype.normalize = function(){
+MASH_ArchivalGroup.prototype.normalize = function(){
 
     //validate conditions
     if(wasDragged) { return }
@@ -775,8 +588,8 @@ MASH_Collection.prototype.normalize = function(){
     else                        { showScrollbars(true);                    }
 
     //set images
-    this.minimizeObj.src = MASH_Collection.CONTROLS_MINIMIZE_IMG_FILE;
-    this.maximizeObj.src = MASH_Collection.CONTROLS_MAXIMIZE_IMG_FILE;
+    this.minimizeObj.src = MASH_ArchivalGroup.CONTROLS_MINIMIZE_IMG_FILE;
+    this.maximizeObj.src = MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_FILE;
 
     //compute the width and height
     var adjustedWidth    = adjustSize(this.width,  this.borderWidth);
@@ -802,7 +615,7 @@ MASH_Collection.prototype.normalize = function(){
 
     //relocate controls and adjust Zindex
     this.wrapperObj.style.zIndex = ++topZ;
-    this.controlObj.style.left   = this.width - (2*this.borderWidth) - MASH_Collection.getControlsWidth();
+    this.controlObj.style.left   = this.width - (2*this.borderWidth) - MASH_ArchivalGroup.getControlsWidth();
 
     //compute the current dimensions and the required steps
     var currWidth  = parseInt(this.wrapperObj.style.width);
@@ -836,14 +649,14 @@ MASH_Collection.prototype.normalize = function(){
                                                                                                              stepLeft            + "," +
                                                                                                              stepTop             + ")", 100);
 
-}//MASH_Collection.prototype.normalize
+}//MASH_ArchivalGroup.prototype.normalize
 
 
 
-// MASH_Collection.prototype.maximize                                                 MASH_Collection.prototype.maximize
+// MASH_ArchivalGroup.prototype.maximize                                                 MASH_ArchivalGroup.prototype.maximize
 // ---------------------------------------------------------------------------------------------------------------------
 // * maximizes 'into' this COLLECTION object
-MASH_Collection.prototype.maximize = function(){
+MASH_ArchivalGroup.prototype.maximize = function(){
 
     //validate conditions
     if(wasDragged) { return }
@@ -880,8 +693,8 @@ MASH_Collection.prototype.maximize = function(){
     }
 
     //set the button images
-    this.minimizeObj.src = MASH_Collection.CONTROLS_MINIMIZE_IMG_FILE;
-    this.maximizeObj.src = MASH_Collection.CONTROLS_NORMALIZE_IMG_FILE;
+    this.minimizeObj.src = MASH_ArchivalGroup.CONTROLS_MINIMIZE_IMG_FILE;
+    this.maximizeObj.src = MASH_ArchivalGroup.CONTROLS_NORMALIZE_IMG_FILE;
 
     //save and set the coordinates for the maximized collection
     //  all this is because Netscape deos not support the .scrollIntoView() method
@@ -897,7 +710,7 @@ MASH_Collection.prototype.maximize = function(){
 
     //reposition controls and adjust Zindex
     this.wrapperObj.style.zIndex = ++topZ;
-    this.controlObj.style.left   = totalWidth - (2*this.borderWidth) - MASH_Collection.getControlsWidth();
+    this.controlObj.style.left   = totalWidth - (2*this.borderWidth) - MASH_ArchivalGroup.getControlsWidth();
 
     //if it's maximizing, then adjust the innerObj first in order to have a better display of the information inside
     if(!this.maximized) {
@@ -957,13 +770,13 @@ MASH_Collection.prototype.maximize = function(){
                                                                                                              stepLeft            + "," +
                                                                                                              stepTop             + ")", 100);
 
-}//MASH_Collection.prototype.maximize
+}//MASH_ArchivalGroup.prototype.maximize
 
 
-// MASH_Collection.prototype.normalizeMaximizedChildren             MASH_Collection.prototype.normalizeMaximizedChildren
+// MASH_ArchivalGroup.prototype.normalizeMaximizedChildren             MASH_ArchivalGroup.prototype.normalizeMaximizedChildren
 // ---------------------------------------------------------------------------------------------------------------------
 // * newWidth and newHeight are optional parameters
-MASH_Collection.prototype.normalizeMaximizedChildren = function(newWidth, newHeight){
+MASH_ArchivalGroup.prototype.normalizeMaximizedChildren = function(newWidth, newHeight){
 
     //compute the inner div dimensions
     var adjustedInnerWidth  = newWidth  || this.width;
@@ -978,7 +791,7 @@ MASH_Collection.prototype.normalizeMaximizedChildren = function(newWidth, newHei
             var childHeight      = adjustedInnerHeight;
 
             var childInnerWidth  = (adjustedInnerWidth  - (2*this.components[i].borderWidth));
-            var childInnerHeight = (adjustedInnerHeight - (2*this.components[i].borderWidth) - MASH_Collection.TITLE_HEIGHT);
+            var childInnerHeight = (adjustedInnerHeight - (2*this.components[i].borderWidth) - MASH_ArchivalGroup.TITLE_HEIGHT);
 
             if(childInnerWidth  <= 0) { childInnerWidth  = 1; }
             if(childInnerHeight <= 0) { childInnerHeight = 1; }
@@ -991,7 +804,7 @@ MASH_Collection.prototype.normalizeMaximizedChildren = function(newWidth, newHei
             this.components[i].innerObj.style.height   = childInnerHeight;
 
             //relocate the controls
-            this.components[i].controlObj.style.left = adjustedInnerWidth - (2*this.components[i].borderWidth) - MASH_Collection.getControlsWidth();
+            this.components[i].controlObj.style.left = adjustedInnerWidth - (2*this.components[i].borderWidth) - MASH_ArchivalGroup.getControlsWidth();
 
             //recursively adjust maximized inner children
             this.components[i].normalizeMaximizedChildren(childInnerWidth, childInnerHeight);
@@ -1000,13 +813,13 @@ MASH_Collection.prototype.normalizeMaximizedChildren = function(newWidth, newHei
     }//for i
 
 
-}//MASH_Collection.prototype.normalizeMaximizedChildren
+}//MASH_ArchivalGroup.prototype.normalizeMaximizedChildren
 
 
 
-// MASH_Collection.prototype.maximizeMaximizedChildren               MASH_Collection.prototype.maximizeMaximizedChildren
+// MASH_ArchivalGroup.prototype.maximizeMaximizedChildren               MASH_ArchivalGroup.prototype.maximizeMaximizedChildren
 // ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.maximizeMaximizedChildren = function(newWidth, newHeight){
+MASH_ArchivalGroup.prototype.maximizeMaximizedChildren = function(newWidth, newHeight){
 
 /*
     //check if this collection has a parent collection
@@ -1041,7 +854,7 @@ MASH_Collection.prototype.maximizeMaximizedChildren = function(newWidth, newHeig
             var childHeight      = adjustedInnerHeight;
 
             var childInnerWidth  = (childWidth  - (2*this.components[i].borderWidth));
-            var childInnerHeight = (childHeight - (2*this.components[i].borderWidth) - MASH_Collection.TITLE_HEIGHT);
+            var childInnerHeight = (childHeight - (2*this.components[i].borderWidth) - MASH_ArchivalGroup.TITLE_HEIGHT);
 
             if(childInnerWidth  <= 0) { childInnerWidth  = 1; }
             if(childInnerHeight <= 0) { childInnerHeight = 1; }
@@ -1058,7 +871,7 @@ MASH_Collection.prototype.maximizeMaximizedChildren = function(newWidth, newHeig
             this.components[i].innerObj.style.height   = childInnerHeight;
 
             //relocate the controls
-            this.components[i].controlObj.style.left = adjustedInnerWidth - (2*this.components[i].borderWidth) - MASH_Collection.getControlsWidth();
+            this.components[i].controlObj.style.left = adjustedInnerWidth - (2*this.components[i].borderWidth) - MASH_ArchivalGroup.getControlsWidth();
 
             //recursively adjust maximized inner children
             this.components[i].maximizeMaximizedChildren(childInnerWidth, childInnerHeight);
@@ -1067,14 +880,14 @@ MASH_Collection.prototype.maximizeMaximizedChildren = function(newWidth, newHeig
     }//for i
 
 
-}//MASH_Collection.prototype.maximizeMaximizedChildren
+}//MASH_ArchivalGroup.prototype.maximizeMaximizedChildren
 
 
 
-// MASH_Collection.prototype.resizeAnimation                                   MASH_Collection.prototype.resizeAnimation
+// MASH_ArchivalGroup.prototype.resizeAnimation                                   MASH_ArchivalGroup.prototype.resizeAnimation
 // ---------------------------------------------------------------------------------------------------------------------
 // * animates the navigation 'into' or 'out of' this COLLECTION object
-MASH_Collection.prototype.resizeAnimation = function(currWidth,          currHeight,
+MASH_ArchivalGroup.prototype.resizeAnimation = function(currWidth,          currHeight,
                                                      stepWidth,          stepHeight,
                                                      adjustedWidth,      adjustedHeight,
                                                      adjustedInnerWidth, adjustedInnerHeight,
@@ -1195,16 +1008,16 @@ MASH_Collection.prototype.resizeAnimation = function(currWidth,          currHei
                                                                                                              stepLeft            + "," +
                                                                                                              stepTop             + ")", 100);
 
-}//MASH_Collection.prototype.resizeAnimation
+}//MASH_ArchivalGroup.prototype.resizeAnimation
 
 
 
-// MASH_Collection.prototype.getInternalMouseCoords                     MASH_Collection.prototype.getInternalMouseCoords
+// MASH_ArchivalGroup.prototype.getInternalMouseCoords                     MASH_ArchivalGroup.prototype.getInternalMouseCoords
 // ---------------------------------------------------------------------------------------------------------------------
 // objDrag                = object being dragged
 // tmpSourceX, tmpSourceY = position of the click
 // tmpOffX, tmpOffY       = position of this collection relative to the parent coordinate system
-MASH_Collection.prototype.getInternalMouseCoords = function(objDrag, tmpSourceX, tmpSourceY, tmpOffX, tmpOffY, tmpScale) {
+MASH_ArchivalGroup.prototype.getInternalMouseCoords = function(objDrag, tmpSourceX, tmpSourceY, tmpOffX, tmpOffY, tmpScale) {
 
     var i;
 
@@ -1272,7 +1085,7 @@ MASH_Collection.prototype.getInternalMouseCoords = function(objDrag, tmpSourceX,
     return results;
 
 
-}// MASH_Collection.prototype.getInternalMouseCoords
+}// MASH_ArchivalGroup.prototype.getInternalMouseCoords
 
 
 
@@ -1282,361 +1095,23 @@ MASH_Collection.prototype.getInternalMouseCoords = function(objDrag, tmpSourceX,
 
 
 
-// MASH_Collection.prototype.editText                                                 MASH_Collection.prototype.editText
+// MASH_ArchivalGroup.prototype.editText                                                 MASH_ArchivalGroup.prototype.editText
 // ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.editText = function() {
+MASH_ArchivalGroup.prototype.editText = function() {
 
     this.text              = prompt("Please enter the annotation text", this.text);
     this.spanObj.innerHTML = this.text;
 
-}//MASH_Collection.prototype.editText
+}//MASH_ArchivalGroup.prototype.editText
 
 
 
-// MASH_Collection.prototype.explode                                                   MASH_Collection.prototype.explode
+
+
+
+// MASH_ArchivalGroup.prototype.toString                                                 MASH_ArchivalGroup.prototype.toString
 // ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.explode  = function(){
-
-    if(this.maximized) { this.maximize(); }
-
-    //determine the parent of this collection
-    var parentCollection  = this.collection;
-    if(!parentCollection) {
-        parentCollection = null;
-        var tmpScrollLeft = getWindowScrollX();
-        var tmpScrollTop  = getWindowScrollY();
-    }
-    else {
-        tmpScrollLeft = getScrollOffsetX(parentCollection);
-        tmpScrollTop  = getScrollOffsetY(parentCollection);
-    }
-
-    //determine the offset for the position of the components
-    var tmpOffsetX = parseInt(this.reference.style.left) + parseInt(this.reference.style.borderWidth);
-    var tmpOffsetY = parseInt(this.reference.style.top)  + parseInt(this.reference.style.borderWidth) + MASH_Collection.TITLE_HEIGHT;
-
-    //move this collection's componentsobject contents
-    for(var i=0; i<this.components.length; i++) {
-
-        var componentObject = this.components[i];
-        var componentScreen = componentObject.reference;
-
-        //adjust the position of the object
-        componentScreen.style.left = parseInt(componentScreen.style.left) + tmpOffsetX;
-        componentScreen.style.top  = parseInt(componentScreen.style.top)  + tmpOffsetY;
-
-        //reset the collection container of the object
-        componentObject.collection = parentCollection;
-
-        //relocate the object in the parent of this collection (both on the screen and in the proper array -components or allMASHObjects- )
-        if(!parentCollection) {
-            document.body.appendChild(componentScreen);
-            allMASHObjects.push(componentObject);
-        }
-        else {
-            parentCollection.appendChild(componentScreen);
-            parentCollection.MASHparameters.addComponent(componentObject);
-        }
-
-    }//for i
-
-
-    //clear the components array (otherwise the components will be destroyed whith this collection)
-    this.components = new Array();
-    this.destroy();
-//    //remove the collection itself from the object array and from the screen
-//    removeObject(this);
-//    this.reference.parentNode.removeChild(this.reference);
-
-
-}//MASH_Collection.prototype.explode
-
-
-
-// MASH_Collection.prototype.emphasize                                               MASH_Collection.prototype.emphasize
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.emphasize  = function(value){
-
-    //validate emphasis value
-    // if it is not a positive number
-    // then set it to a default of 10
-    if(!value)  { value = 10; }
-    if(value<0) { value = 10; }
-
-    //validate coefficient
-    if(!this.emphasisCoefficient) { this.emphasisCoefficient = 0; }
-
-    //update coefficient
-    this.emphasisCoefficient = parseInt(this.emphasisCoefficient + value);
-    if(this.emphasisCoefficient > 100) { this.emphasisCoefficient = 100; }
-
-    this.translateEmphasisToVisualCues();
-
-}//MASH_Collection.prototype.emphasize
-
-
-
-// MASH_Collection.prototype.deemphasize                                           MASH_Collection.prototype.deemphasize
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.deemphasize  = function(value){
-
-    //validate emphasis value
-    // if it is not a positive number
-    // then set it to a default of 10
-    if(!value)  { value = 10; }
-    if(value<0) { value = 10; }
-
-    //validate coefficient
-    if(!this.emphasisCoefficient) { this.emphasisCoefficient = 0; }
-
-    //update coefficient
-    this.emphasisCoefficient = parseInt(this.emphasisCoefficient - value);
-    if(this.emphasisCoefficient < -100) { this.emphasisCoefficient = -100; }
-
-    this.translateEmphasisToVisualCues();
-
-}//MASH_Collection.prototype.deemphasize
-
-
-
-// MASH_Collection.prototype.translateEmphasisToVisualCues       MASH_Collection.prototype.translateEmphasisToVisualCues
-// ---------------------------------------------------------------------------------------------------------------------
-// * modifies the visual prominence of the object in order to reflect the degree of emphasis
-// * the specific adaptations depend on the magnitude of the emphasis coefficient
-//   from alpha-blurring and reducing the size and minimizing the collection
-//   to glowing, increasing the size, font and border
-MASH_Collection.prototype.translateEmphasisToVisualCues  = function(){
-
-    //if the emphasis coefficient is very close to zero, then just kill the filters and return
-    if((this.emphasisCoefficient > -1) && (this.emphasisCoefficient <  1) ){
-        this.resetVisualCues();
-        return;
-    }
-
-    //object is de-emphasized
-    if(this.emphasisCoefficient < 1) {
-
-        //font adaptations
-        var fontIncrease = parseInt(this.emphasisCoefficient/20);
-        var newFontSize  = parseInt(this.fontSize) + fontIncrease;
-        if(newFontSize < 4) { newFontSize  = 4; }
-        this.spanObj.style.fontSize = newFontSize + "pt";
-/*
-
-        //border adaptations
-        var borderIncrease = parseInt(this.emphasisCoefficient/20);
-        var newBorderWidth = parseInt(this.reference.style.borderWidth) + borderIncrease;
-        if(newBorderWidth < 0) { newBorderWidth = 0; }
-        this.wrapperObj.style.borderWidth = newBorderWidth;
-*/
-        //size adaptations
-        var sizeIncrease           = 1 + (this.emphasisCoefficient/100);
-        if(sizeIncrease < 0.25) { sizeIncrease = 0.25; }
-        var newWidth               = parseInt(adjustSize(this.width,  this.borderWidth) * sizeIncrease);
-        var newHeight              = parseInt(adjustSize(this.height, this.borderWidth) * sizeIncrease);
-        //move object to make it appear as it is resizing from it's center
-        this.wrapperObj.style.left = parseInt(this.wrapperObj.style.left) - parseInt((newWidth  - parseInt(this.wrapperObj.style.width))  / 2);
-        this.wrapperObj.style.top  = parseInt(this.wrapperObj.style.top)  - parseInt((newHeight - parseInt(this.wrapperObj.style.height)) / 2);
-        //resize object
-        this.resize(newWidth, newHeight);
-
-
-        //zoom adaptation
-        var zoomFactor = 1 + parseInt(2 * this.emphasisCoefficient/100);
-        var objIndex   = this.wrapperObj.objectIndex;
-        if(zoomFactor < 0.25)  { zoomFactor = 0.25;  }
-        MASH_Collection.zoomObject(objIndex, zoomFactor);
-
-        //adjust filters
-        var alphaValue     = 100 + 0.7*this.emphasisCoefficient;
-        if(alphaValue>100) { alphaValue = 100; }
-        if(alphaValue<10)  { alphaValue = 10;  }
-
-        this.normal();
-        this.alpha(alphaValue);
-
-        //minimize  irrelevanet collections
-//        if(this.emphasisCoefficient < -0.5) { this.minimize(); }
-    }
-
-    //object is emphasized
-    if(this.emphasisCoefficient >= 1) {
-
-        //font adaptation
-        var fontIncrease = parseInt(this.emphasisCoefficient/20);
-        var newFontSize  = parseInt(this.fontSize) + fontIncrease;
-        if(newFontSize > 12) { newFontSize  = 12; }
-        this.spanObj.style.fontSize = newFontSize+"pt";
-
-/*
-        //border adaptation
-        var borderIncrease                = parseInt(this.emphasisCoefficient/20);
-        this.wrapperObj.style.borderWidth = parseInt(this.borderWidth) + borderIncrease;
-*/
-/*
-        //size adaptation
-        var sizeIncrease            = 1 + (this.emphasisCoefficient/100);
-        var newWidth                = parseInt(adjustSize(this.width,  this.borderWidth) * sizeIncrease);
-        var newHeight               = parseInt(adjustSize(this.height, this.borderWidth) * sizeIncrease);
-        //move object to make it appear as it is resizing from it's center
-        this.wrapperObj.style.left  = parseInt(this.wrapperObj.style.left) - parseInt((newWidth  + 10 - parseInt(this.wrapperObj.style.width))  / 2);
-        this.wrapperObj.style.top   = parseInt(this.wrapperObj.style.top)  - parseInt((newHeight + 10 - parseInt(this.wrapperObj.style.height)) / 2);
-        //resize object
-        this.resize( (newWidth+10), (newHeight+10) );
-*/
-        //bring the objet to the front
-        this.sendToFront();
-
-        //zoom adaptation
-        var zoomFactor = 1 + parseInt(this.emphasisCoefficient/100);
-        var objIndex   = this.wrapperObj.objectIndex;
-        MASH_Collection.zoomObject(objIndex, zoomFactor);
-
-        //adjust filters
-        this.normal();
-        var glowStrength = parseInt(this.emphasisCoefficient/10);
-        this.glow(glowStrength);
-
-        //normalize relevanet collections
-//        if((this.emphasisCoefficient >= -0.5) &&(this.minimized == true)) { this.normalize(); }
-
-        //start aniimation
-//        window.setTimeout("document.getElementById('"+ this.wrapperObj.id+"').MASHparameters.emphasizeAnimation("+newWidth+", "+newHeight+", "+glowStrength+")", 300);
-
-    }//if ephasized
-
-}//MASH_Collection.prototype.translateEmphasisToVisualCues
-
-
-
-// MASH_Collection.prototype.resetVisualCues                                   MASH_Collection.prototype.resetVisualCues
-// ---------------------------------------------------------------------------------------------------------------------
-// * resets the visual cues to the authored-specified values
-MASH_Collection.prototype.resetVisualCues  = function(){
-
-    //reset the size
-    var newWidth     = adjustSize(this.width,  this.borderWidth);
-    var newHeight    = adjustSize(this.height, this.borderWidth);
-    //move object to make it appear as it is resizing from it's center
-    var leftOffset = parseInt((newWidth  - parseInt(this.wrapperObj.style.width))  / 2);
-    var topOffset  = parseInt((newHeight - parseInt(this.wrapperObj.style.height)) / 2);
-    this.wrapperObj.style.left  = parseInt(this.wrapperObj.style.left) - leftOffset;
-    this.wrapperObj.style.top   = parseInt(this.wrapperObj.style.top)  - topOffset;
-    //resize object
-    this.resize(newWidth, newHeight);
-
-    //set the style
-    this.wrapperObj.style.backgroundColor    = this.backgroundColor;
-    this.wrapperObj.style.backgroundImage    = this.backgroundImage;
-    this.wrapperObj.style.backgroundRepeat   = this.backgroundRepeat;
-    this.wrapperObj.style.backgroundPosition = this.backgroundPosition;
-
-    this.wrapperObj.style.borderStyle        = this.borderStyle;
-    this.wrapperObj.style.borderWidth        = this.borderWidth;
-    this.wrapperObj.style.borderColor        = this.borderColor;
-
-    this.wrapperObj.align                    = this.align;
-
-    this.spanObj.style.color                 = this.color;
-    this.spanObj.style.fontFamily            = this.fontFamily;
-    this.spanObj.style.fontSize              = this.fontSize;
-    this.spanObj.style.fontWeight            = this.fontWeight;
-
-    var adjustedInnerWidth                   = this.width  - (this.borderWidth*2) - 0;
-    this.controlObj.style.left               = adjustedInnerWidth - MASH_Collection.getControlsWidth();
-
-    //adjust filters
-    this.normal();
-
-}//MASH_Collection.prototype.resetVisualCues
-
-
-
-// MASH_Collection.prototype.emphasizeAnimation                             MASH_Collection.prototype.emphasizeAnimation
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.emphasizeAnimation  = function(newWidth, newHeight, glowStrength){
-
-    //move object to make it appear as it is resizing from it's center
-    var leftOffset = parseInt((newWidth  - parseInt(this.wrapperObj.style.width))  / 2);
-    var topOffset  = parseInt((newHeight - parseInt(this.wrapperObj.style.height)) / 2);
-
-    this.wrapperObj.style.left  = parseInt(this.wrapperObj.style.left) - leftOffset;
-    this.wrapperObj.style.top   = parseInt(this.wrapperObj.style.top)  - topOffset;
-
-    //adjust the size
-    this.resize(newWidth, newHeight);
-
-    //adjust filters
-    this.normal();
-    this.glow(glowStrength);
-
-    this.sendToFront();
-
-}//emphasizeAnimation
-
-
-
-// MASH_Collection.prototype.resize                                                     MASH_Collection.prototype.resize
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.resize = function(newWidth, newHeight) {
-
-    this.resizeContextLayer(newWidth, newHeight);
-
-    var adjustedInnerWidth      = this.getInnerObjWidth(newWidth);
-    var adjustedInnerHeight     = this.getInnerObjHeight(newHeight);
-
-    this.controlObj.style.left  = (adjustedInnerWidth * this.scale) - MASH_Collection.getControlsWidth();
-
-    //validate new values
-    if(adjustedInnerWidth<0)  { adjustedInnerWidth  = 0; }
-    if(adjustedInnerHeight<0) { adjustedInnerHeight = 0; }
-
-    //resize
-    this.innerObj.width         = adjustedInnerWidth;
-    this.innerObj.height        = adjustedInnerHeight;
-
-    this.innerObj.style.width   = adjustedInnerWidth;
-    this.innerObj.style.height  = adjustedInnerHeight;
-
-    //adjuste maximized children
-    for(var i=0; i<this.components.length; i++){
-
-        if(this.components[i].maximized) {
-
-            //compute new dimensions for children
-            var childWidth       = (adjustedInnerWidth  - (2*this.components[i].borderWidth)) / 1;
-            var childHeight      = (adjustedInnerHeight - (2*this.components[i].borderWidth)) / 1;
-
-            var childInnerWidth  = (adjustedInnerWidth  - (2*this.components[i].borderWidth)) / this.scale;
-            var childInnerHeight = (adjustedInnerHeight - (2*this.components[i].borderWidth) - MASH_Collection.TITLE_HEIGHT) / this.scale;
-
-            if(childInnerWidth  <= 0) { childInnerWidth  = 1; }
-            if(childInnerHeight <= 0) { childInnerHeight = 1; }
-
-            //resize child
-            this.components[i].wrapperObj.style.width  = adjustedInnerWidth;
-            this.components[i].wrapperObj.style.height = adjustedInnerHeight;
-
-            this.components[i].innerObj.style.width    = childInnerWidth;
-            this.components[i].innerObj.style.height   = childInnerHeight;
-
-            //relocate the controls
-            this.components[i].controlObj.style.left = adjustedInnerWidth - (2*this.components[i].borderWidth) - MASH_Collection.getControlsWidth();
-        }
-
-    }//for i
-
-
-    //fire a MASH event that is used in case of relationships
-    if(relationshipList) { relationshipList.manageEvent(this.wrapperObj, MASH_EVENT.OBJECT_RESIZE); }
-
-}//MASH_Collection.prototype.resize
-
-
-
-// MASH_Collection.prototype.toString                                                 MASH_Collection.prototype.toString
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.toString = function() {
+MASH_ArchivalGroup.prototype.toString = function() {
 
     var returnString = "\n---------------------------------------------------------------------------\n";
     returnString += "id\t\t= "                 + this.id                    + "\n";
@@ -1687,7 +1162,7 @@ MASH_Collection.prototype.toString = function() {
 
     return returnString;
 
-}//MASH_Collection.prototype.toString
+}//MASH_ArchivalGroup.prototype.toString
 
 
 // =====================================================================================================================
@@ -1696,64 +1171,12 @@ MASH_Collection.prototype.toString = function() {
 
 
 
-// MASH_Collection.prototype.getInnerObjWidth                                 MASH_Collection.prototype.getInnerObjWidth
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.getInnerObjWidth = function(newWidth) {
-
-    var adjustedInnerWidth;
-
-    if(isIE)       { adjustedInnerWidth = (newWidth  - 1 - (this.borderWidth*2)) / this.scale; }
-    if(isNetscape) { adjustedInnerWidth = (newWidth  - 1) / this.scale;                        }
-
-    //avoid negative widths
-    if(adjustedInnerWidth<0) { adjustedInnerWidth = 0; }
-
-    return adjustedInnerWidth;
-
-}//getInnerObjWidth
 
 
-
-// MASH_Collection.prototype.getInnerObjHeight                               MASH_Collection.prototype.getInnerObjHeight
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.getInnerObjHeight = function(newHeight) {
-
-    var adjustedInnerHeight;
-
-    if(isIE)       { adjustedInnerHeight = (newHeight - MASH_Collection.TITLE_HEIGHT - (this.borderWidth*2)) / this.scale; }
-    if(isNetscape) { adjustedInnerHeight = (newHeight - MASH_Collection.TITLE_HEIGHT) / this.scale;                        }
-
-    //avoid negative heights
-    if(adjustedInnerHeight<0) { adjustedInnerHeight = 0; }
-
-    return adjustedInnerHeight;
-
-}//getInnerObjHeight
-
-
-
-// MASH_Collection.prototype.getObjHeight                                         MASH_Collection.prototype.getObjHeight
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.getObjHeight = function(newHeight) {
-
-    var adjustedHeight;
-
-//    if(isIE)       { adjustedHeight = (newHeight + (this.borderWidth*2)) / this.scale;  }
-//    if(isNetscape) { adjustedHeight = (newHeight ) / this.scale;                        }
-
-    if(isIE)       { adjustedHeight = (newHeight + (this.borderWidth*2));  }
-    if(isNetscape) { adjustedHeight = (newHeight );                        }
-
-    return adjustedHeight;
-
-}//getObjHeight
-
-
-
-// MASH_Collection.zoomObject                                                                 MASH_Collection.zoomObject
+// MASH_ArchivalGroup.zoomObject                                                                 MASH_ArchivalGroup.zoomObject
 // ---------------------------------------------------------------------------------------------------------------------
 // *** THIS ONLY WORKS IN IE ***
-MASH_Collection.zoomObject = function(objID, factor){
+MASH_ArchivalGroup.zoomObject = function(objID, factor){
 
     //Netscape                                                                                              Netscape
     if(isNetscape) {
@@ -1770,7 +1193,7 @@ MASH_Collection.zoomObject = function(objID, factor){
         var wrapperObjHeight            = parseInt(collectionObjects[objID].wrapperObj.style.height);
         var wrapperObjBorder            = parseInt(collectionObjects[objID].wrapperObj.style.borderWidth);
         var adjustedInnerWidth          = (wrapperObjWidth  - (wrapperObjBorder*2)) / collectionObjects[objID].scale;
-        var adjustedInnerHeight         = (wrapperObjHeight - (wrapperObjBorder*2) - MASH_Collection.TITLE_HEIGHT) / collectionObjects[objID].scale;
+        var adjustedInnerHeight         = (wrapperObjHeight - (wrapperObjBorder*2) - MASH_ArchivalGroup.TITLE_HEIGHT) / collectionObjects[objID].scale;
 
         //validate values
         if(adjustedInnerWidth  < 1) { adjustedInnerWidth  = 1; }
@@ -1783,34 +1206,18 @@ MASH_Collection.zoomObject = function(objID, factor){
         collectionObjects[objID].innerObj.style.zoom   = collectionObjects[objID].scale;
     }
 
-}//MASH_Collection.zoomObject
+}//MASH_ArchivalGroup.zoomObject
 
 
 
-// MASH_Collection.getControlsWidth                                                     MASH_Collection.getControlsWidth
+// MASH_ArchivalGroup.getControlsWidth                                               MASH_ArchivalGroup.getControlsWidth
 // ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.getControlsWidth = function(){
+MASH_ArchivalGroup.getControlsWidth = function(){
 
-    if(isNetscape) { return ((MASH_Collection.CONTROLS_MAXIMIZE_IMG_WIDTH)*2); }
-    else if(isIE)  { return ((MASH_Collection.CONTROLS_MAXIMIZE_IMG_WIDTH)*4); }
+    if(isNetscape) { return ((MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_WIDTH)*2); }
+    else if(isIE)  { return ((MASH_ArchivalGroup.CONTROLS_MAXIMIZE_IMG_WIDTH)*4); }
 
 }//MASH_Frame.getControlsWidth
-
-
-// MASH_Collection.prototype.getAccumulatedScale                           MASH_Collection.prototype.getAccumulatedScale
-// ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.getAccumulatedScale = function(){
-
-    var parentCollectionScreenObj = this.collection;                                        //this an HTML div object (the inner object of the parent collection)
-    if(!parentCollectionScreenObj) {
-       if(!this.scale) { return 1.0; }
-       return this.scale;
-    }
-    var parentCollectionMASHObj   = parentCollectionScreenObj.wrapperObject.MASHparameters; //this an MASH_Collection object (the parent MASH_Collection)
-
-    return parentCollectionMASHObj.getAccumulatedScale() * this.scale;
-
-}//MASH_Collection.prototype.getAccumulatedScale
 
 
 
@@ -1823,23 +1230,23 @@ MASH_Collection.prototype.getAccumulatedScale = function(){
 
 
 //XML tags
-MASH_Collection.XML_TAG_OBJECT      = MASH_Object.COLLECTION;
-MASH_Collection.XML_TAG_TEXT        = "text";
-MASH_Collection.XML_TAG_COMPONENTS  = "components";
+MASH_ArchivalGroup.XML_TAG_OBJECT      = MASH_Object.COLLECTION;
+MASH_ArchivalGroup.XML_TAG_TEXT        = "text";
+MASH_ArchivalGroup.XML_TAG_COMPONENTS  = "components";
 
 
 //Default values for User Readings open in collections
-MASH_Collection.USER_READING_LEFT   = 10;
-MASH_Collection.USER_READING_TOP    = 100;
-MASH_Collection.USER_READING_WIDTH  = 600;
-MASH_Collection.USER_READING_HEIGHT = 400;
-MASH_Collection.USER_READING_STYLE = "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#222222; border-style:solid; background-image:none; color:#ffffff; font-family:Arial; font-size:13pt; font-weight:bold; ";
+MASH_ArchivalGroup.USER_READING_LEFT   = 10;
+MASH_ArchivalGroup.USER_READING_TOP    = 100;
+MASH_ArchivalGroup.USER_READING_WIDTH  = 600;
+MASH_ArchivalGroup.USER_READING_HEIGHT = 400;
+MASH_ArchivalGroup.USER_READING_STYLE = "align:left; vertical-align:top; background-color:#ffffff; border-width:2; border-color:#222222; border-style:solid; background-image:none; color:#ffffff; font-family:Arial; font-size:13pt; font-weight:bold; ";
 
 
 
-// MASH_Collection.xmlCreateCollectionWithMASHDocument               MASH_Collection.xmlCreateCollectionWithMASHDocument
+// MASH_ArchivalGroup.xmlCreateCollectionWithMASHDocument         MASH_ArchivalGroup.xmlCreateCollectionWithMASHDocument
 // ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.xmlCreateCollectionWithMASHDocument = function(xmlString){
+MASH_ArchivalGroup.xmlCreateCollectionWithMASHDocument = function(xmlString){
 
 //    alert("MASH_FileManager.xmlCreateMASHDocumentInCollection()");
 
@@ -1863,12 +1270,12 @@ MASH_Collection.xmlCreateCollectionWithMASHDocument = function(xmlString){
     //create a new collection that includes the objects in the parsed document
     var collectionTitle  = parsedDocument.properties.documentName;
     var collectionName   = MASH_Object.COLLECTION + "[" + collectionObjects.length + "]" + MASH_Object.USER_READING;
-    var collectionLeft   = MASH_Collection.USER_READING_LEFT;
-    var collectionTop    = MASH_Collection.USER_READING_TOP;
-    var collectionWidth  = MASH_Collection.USER_READING_WIDTH;
-    var collectionHeight = MASH_Collection.USER_READING_HEIGHT;
-    var collectionStyle  = MASH_Collection.USER_READING_STYLE;
-    var newCollection    = new MASH_Collection(collectionName, collectionLeft, collectionTop, collectionWidth, collectionHeight, topZ,
+    var collectionLeft   = MASH_ArchivalGroup.USER_READING_LEFT;
+    var collectionTop    = MASH_ArchivalGroup.USER_READING_TOP;
+    var collectionWidth  = MASH_ArchivalGroup.USER_READING_WIDTH;
+    var collectionHeight = MASH_ArchivalGroup.USER_READING_HEIGHT;
+    var collectionStyle  = MASH_ArchivalGroup.USER_READING_STYLE;
+    var newCollection    = new MASH_ArchivalGroup(collectionName, collectionLeft, collectionTop, collectionWidth, collectionHeight, topZ,
                                                collectionStyle,
                                                collectionTitle,
                                                parsedDocument.objects
@@ -1884,13 +1291,13 @@ MASH_Collection.xmlCreateCollectionWithMASHDocument = function(xmlString){
 
 
 
-}//MASH_Collection.xmlCreateCollectionWithMASHDocument
+}//MASH_ArchivalGroup.xmlCreateCollectionWithMASHDocument
 
 
 
-// MASH_Collection.prototype.getTypeSpecificXML                             MASH_Collection.prototype.getTypeSpecificXML
+// MASH_ArchivalGroup.prototype.getTypeSpecificXML                       MASH_ArchivalGroup.prototype.getTypeSpecificXML
 // ---------------------------------------------------------------------------------------------------------------------
-MASH_Collection.prototype.getTypeSpecificXML = function(indent) {
+MASH_ArchivalGroup.prototype.getTypeSpecificXML = function(indent) {
 
     //validate parameters
     if(!indent) { indent = MASH_Object.XML_TAG_INDENT;         }
@@ -1904,22 +1311,22 @@ MASH_Collection.prototype.getTypeSpecificXML = function(indent) {
     }
 
     //make XML tags
-    var objectXML = MASH_Object.xmlMakeTagSingleLine(MASH_Collection.XML_TAG_TEXT,       this.text,     false,  indent);
-    objectXML    += MASH_Object.xmlMakeTagMultiLine( MASH_Collection.XML_TAG_COMPONENTS, componentsXML, false, indent);
+    var objectXML = MASH_Object.xmlMakeTagSingleLine(MASH_ArchivalGroup.XML_TAG_TEXT,       this.text,     false,  indent);
+    objectXML    += MASH_Object.xmlMakeTagMultiLine( MASH_ArchivalGroup.XML_TAG_COMPONENTS, componentsXML, false, indent);
 
     return objectXML;
 
-}//MASH_Collection.prototype.getTypeSpecificXML
+}//MASH_ArchivalGroup.prototype.getTypeSpecificXML
 
 
 
-// MASH_Collection.xmlParseObjectNode                                                 MASH_Collection.xmlParseObjectNode
+// MASH_ArchivalGroup.xmlParseObjectNode                                           MASH_ArchivalGroup.xmlParseObjectNode
 // ---------------------------------------------------------------------------------------------------------------------
 // * this is a Netscape only function
 //   it uses the Netscape XML parser
-MASH_Collection.xmlParseObjectNode = function(node){
+MASH_ArchivalGroup.xmlParseObjectNode = function(node){
 
-//    alert("MASH_Collection.xmlParseObjectNode\n======================\n" +
+//    alert("MASH_ArchivalGroup.xmlParseObjectNode\n======================\n" +
 //          "nodeName = ["    + node.nodeName  + "]\n" );
 
     //initialize temporary variables
@@ -1965,17 +1372,17 @@ MASH_Collection.xmlParseObjectNode = function(node){
         else if(childName == MASH_Object.XML_TAG_STYLE)   { objStyle  = MASH_Object.xmlParseStyleNode(child); }
 
         //parse paremers specific to this kind of object
-        else if(childName == MASH_Collection.XML_TAG_TEXT)       { objText       = MASH_Object.xmlParseNodeText(child);     }
-        else if(childName == MASH_Collection.XML_TAG_COMPONENTS) { objComponents = MASH_Object.xmlParseMASH_Objects(child); }
+        else if(childName == MASH_ArchivalGroup.XML_TAG_TEXT)       { objText       = MASH_Object.xmlParseNodeText(child);     }
+        else if(childName == MASH_ArchivalGroup.XML_TAG_COMPONENTS) { objComponents = MASH_Object.xmlParseMASH_Objects(child); }
     }
 
     //declare object
-    var obj = new MASH_Collection(objID, objLeft, objTop, objWidth, objHeight, objZIndex, objStyle,
+    var obj = new MASH_ArchivalGroup(objID, objLeft, objTop, objWidth, objHeight, objZIndex, objStyle,
                                   objText, objComponents);
 
     return obj;
 
-}//MASH_Collection.xmlParseObjectNode
+}//MASH_ArchivalGroup.xmlParseObjectNode
 
 
 

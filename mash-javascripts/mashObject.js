@@ -17,64 +17,67 @@ function MASH_Object(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmp
     if((tmpID) && (tmpID!="")) { this.id = tmpID;                     }
     else                       { this.id = MASH_Object.getUniqueID(); }
 
+    //keep track of the highest z index
+    if(tmpZIndex > topZ) { topZ  = tmpZIndex; }
+
 
     //set the coordinates
-    this.left               = tmpLeft   || 0;
-    this.top                = tmpTop    || 0;
-    this.width              = tmpWidth  || 100;
-    this.height             = tmpHeight || 100;
-    this.zIndex             = tmpZIndex || 1;
-    this.style              = tmpStyle  || "";
+    this.left                   = tmpLeft   || 0;
+    this.top                    = tmpTop    || 0;
+    this.width                  = tmpWidth  || 100;
+    this.height                 = tmpHeight || 100;
+    this.zIndex                 = tmpZIndex || 1;
+    this.style                  = tmpStyle  || "";
 
 
     //set the default style values
-    this.align              = "center";
-    this.verticalAlign      = "middle";
+    this.align                  = "center";
+    this.verticalAlign          = "middle";
 
-    this.color              = "#000000";
-    this.fontFamily         = "arial";
-    this.fontSize           = "10pt";
-    this.fontWeight         = "normal";
+    this.color                  = "#000000";
+    this.fontFamily             = "arial";
+    this.fontSize               = "10pt";
+    this.fontWeight             = "normal";
 
-    this.backgroundColor    = "#ffffff";
-    this.backgroundImage    = "none";
-    this.backgroundRepeat   = "no-repeat";
-    this.backgroundPosition = "center center";
+    this.backgroundColor        = "#ffffff";
+    this.backgroundImage        = "none";
+    this.backgroundRepeat       = "no-repeat";
+    this.backgroundPosition     = "center center";
 
-    this.borderStyle        = "solid";
-    this.borderWidth        = 1;
-    this.borderColor        = "#000000";
+    this.borderStyle            = "solid";
+    this.borderWidth            = 1;
+    this.borderColor            = "#000000";
 
     //overide the default style values
     MASH_Object.setStyle(this, this.style);
 
 
-    this.reference          = null;
-    this.behaviors          = new Array();
-    this.collection         = null;
+    this.reference              = null;
+    this.behaviors              = new Array();
+    this.collection             = null;
 
-    this.MASHobjectType     = MASH_Object.OBJECT;
+    this.MASHobjectType         = MASH_Object.OBJECT;
 
     //import/export support
-    this.imported           = false;
-    this.originalID         = "";
-    this.originalIndex      = null;
-    this.originalDocName    = "";
+    this.imported               = false;
+    this.originalID             = "";
+    this.originalIndex          = null;
+    this.originalDocName        = "";
 
     //clickable
-    this.clickable          = true;
+    this.clickable              = true;
 
     //context menu
-    this.contextMenuString  = "";
+    this.contextMenuString      = "";
 
     //adaptations: basicImage()
-    this.basicImageString    = "";
-    this.basicImageMirror    = 0;
-    this.basicImageInvert    = 0;
-    this.basicImageRotation  = 0;
-    this.basicImageGrayScale = 0;
-    this.basicImageXRay      = 0;
-    this.basicImageOpacity   = 1.0;
+    this.basicImageString       = "";
+    this.basicImageMirror       = 0;
+    this.basicImageInvert       = 0;
+    this.basicImageRotation     = 0;
+    this.basicImageGrayScale    = 0;
+    this.basicImageXRay         = 0;
+    this.basicImageOpacity      = 1.0;
 
     //filters
     this.filterBasicImage       = false;
@@ -92,13 +95,19 @@ function MASH_Object(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmp
     this.objectConflictResolutionSetFlag = false; //when = true it means that the object setObjectConflictResoluiton() has been used
 
     //Metadata
-    this.metadataArray = new Array();
+    this.metadataArray                   = new Array();
 
     //parent composites (implicit structure)
-    this.parentComposites = new Array();
+    this.parentComposites                = new Array();
 
     //XML
-    this.xmlObjectTag = MASH_Object.XML_TAG_OBJECT;
+    this.xmlObjectTag                    = MASH_Object.XML_TAG_OBJECT;
+
+    // controls' image files
+//    this.CONTROLS_IMG_DIR                = "../mash-images/";
+    this.CTRL_CORNER_RESIZE_IMG          = CONTROLS_IMG_DIR + "mashObjectCornerResize.png";
+    this.FIXED_DIMENSIONAL_RATIO         = 0.0;
+
 
 }//MASH_Object
 
@@ -134,6 +143,9 @@ MASH_Object.VIDEO_INDEX                             = "MASH_VideoIndex";
 
 MASH_Object.USER_READING                            = "MASH_UserReading";
 
+MASH_Object.DIGITIZED_RECORD                        = "MASH_DigitizedRecord";
+
+
 //conflict resolution methods
 MASH_Object.RESOLVE_USING_AVERAGE                   = "average";
 MASH_Object.RESOLVE_USING_MAX_STRENGTH              = "maximum strength";
@@ -152,7 +164,8 @@ MASH_Object.uniqueIDCount = 0;
 // ---------------------------------------------------------------------------------------------------------------------
 MASH_Object.getUniqueID = function() {
 
-    var newID = "MASHObject[" + MASH_Object.uniqueIDCount + "]";
+//    var newID = "MASHObject[" + MASH_Object.uniqueIDCount + "]";
+    var newID = "MASHObject_" + MASH_Object.uniqueIDCount;
     MASH_Object.uniqueIDCount++;
     return newID;
 
@@ -170,11 +183,13 @@ MASH_Object.clone = function(originalObj) {
 
     var cloneObj;
 
-    if     (originalObj.MASHobjectType == MASH_Object.TEXT)       { cloneObj = MASH_Text.clone(originalObj);        }
-    else if(originalObj.MASHobjectType == MASH_Object.IMAGE)      { cloneObj = MASH_Image.clone(originalObj);       }
-    else if(originalObj.MASHobjectType == MASH_Object.FRAME)      { cloneObj = MASH_Frame.clone(originalObj);       }
-    else if(originalObj.MASHobjectType == MASH_Object.COLLECTION) { cloneObj = MASH_Collection.clone(originalObj);  }
-    else if(originalObj.MASHobjectType == MASH_Object.VIDEO)      { cloneObj = MASH_Video.clone(originalObj);       }
+    if     (originalObj.MASHobjectType == MASH_Object.TEXT)             { cloneObj = MASH_Text.clone(originalObj);            }
+    else if(originalObj.MASHobjectType == MASH_Object.IMAGE)            { cloneObj = MASH_Image.clone(originalObj);           }
+    else if(originalObj.MASHobjectType == MASH_Object.FRAME)            { cloneObj = MASH_Frame.clone(originalObj);           }
+    else if(originalObj.MASHobjectType == MASH_Object.COLLECTION)       { cloneObj = MASH_Collection.clone(originalObj);      }
+    else if(originalObj.MASHobjectType == MASH_Object.VIDEO)            { cloneObj = MASH_Video.clone(originalObj);           }
+
+    else if(originalObj.MASHobjectType == MASH_Object.DIGITIZED_RECORD) { cloneObj = MASH_DigitizedRecord.clone(originalObj); }
 
     return cloneObj;
 
@@ -188,22 +203,25 @@ MASH_Object.getArray = function(tmpObj){
 
     var tmpObjectArray  = null;
 
-    if     (tmpObj.MASHobjectType == MASH_Object.OBJECT)            { tmpObjectArray = textObjects;        }
+    if     (tmpObj.MASHobjectType == MASH_Object.OBJECT)            { tmpObjectArray = textObjects;            }
 
-    else if(tmpObj.MASHobjectType == MASH_Object.TEXT)              { tmpObjectArray = textObjects;        }
-    else if(tmpObj.MASHobjectType == MASH_Object.IMAGE)             { tmpObjectArray = imageObjects;       }
-    else if(tmpObj.MASHobjectType == MASH_Object.FRAME)             { tmpObjectArray = frameObjects;       }
-    else if(tmpObj.MASHobjectType == MASH_Object.COLLECTION)        { tmpObjectArray = collectionObjects;  }
-    else if(tmpObj.MASHobjectType == MASH_Object.FORM)              { tmpObjectArray = formObjects;        }
-    else if(tmpObj.MASHobjectType == MASH_Object.INPUT)             { tmpObjectArray = inputObjects;       }
+    else if(tmpObj.MASHobjectType == MASH_Object.TEXT)              { tmpObjectArray = textObjects;            }
+    else if(tmpObj.MASHobjectType == MASH_Object.IMAGE)             { tmpObjectArray = imageObjects;           }
+    else if(tmpObj.MASHobjectType == MASH_Object.FRAME)             { tmpObjectArray = frameObjects;           }
+    else if(tmpObj.MASHobjectType == MASH_Object.COLLECTION)        { tmpObjectArray = collectionObjects;      }
+    else if(tmpObj.MASHobjectType == MASH_Object.FORM)              { tmpObjectArray = formObjects;            }
+    else if(tmpObj.MASHobjectType == MASH_Object.INPUT)             { tmpObjectArray = inputObjects;           }
 
-    else if(tmpObj.MASHobjectType == MASH_Object.VIDEO)             { tmpObjectArray = videoObjects;       }
-    else if(tmpObj.MASHobjectType == MASH_Object.VIDEO_INDEX)       { tmpObjectArray = videoIndiexObjects; }
+    else if(tmpObj.MASHobjectType == MASH_Object.VIDEO)             { tmpObjectArray = videoObjects;           }
+    else if(tmpObj.MASHobjectType == MASH_Object.VIDEO_INDEX)       { tmpObjectArray = videoIndiexObjects;     }
 
-    else if(tmpObj.MASHobjectType == MASH_Object.CONTEXTUAL_MENU)   { tmpObjectArray = otherObjects;       }
-    else if(tmpObj.MASHobjectType == MASH_Object.CONTROL_MENU)      { tmpObjectArray = otherObjects;       }
+    else if(tmpObj.MASHobjectType == MASH_Object.CONTEXTUAL_MENU)   { tmpObjectArray = otherObjects;           }
+    else if(tmpObj.MASHobjectType == MASH_Object.CONTROL_MENU)      { tmpObjectArray = otherObjects;           }
 
-    else if(tmpObj.MASHobjectType == MASH_Object.USER_ANNOTATION)   { tmpObjectArray = annotationObjects;  }
+    else if(tmpObj.MASHobjectType == MASH_Object.USER_ANNOTATION)   { tmpObjectArray = annotationObjects;      }
+
+    else if(tmpObj.MASHobjectType == MASH_Object.DIGITIZED_RECORD)  { tmpObjectArray = digitizedRecordObjects; }
+
     return tmpObjectArray;
 
 }//MASH_Object.getArray
@@ -221,7 +239,7 @@ MASH_Object.createObject = function(objParameters, arrayIndex){
     var tmpCollection = MASH_Object.getArray(objParameters);
 
     //validate array index
-    var test=true;
+//    var test=true;
     if(!arrayIndex) {
         arrayIndex = tmpCollection.length;
     }
@@ -234,10 +252,7 @@ MASH_Object.createObject = function(objParameters, arrayIndex){
     tmpObj.MASHparameters.collection = null;
     tmpCollection[arrayIndex]        = objParameters;
 
-    //MASH-MT
-    tmpObj.style.class = "MASH";
-
-return tmpObj;
+    return tmpObj;
 
 }//MASH_Object.createObject
 
@@ -311,6 +326,9 @@ MASH_Object.deleteMASHObjects = function(){
     //video index objects
     videoIndexObjects   = new Array();
 
+    //APT objects
+    digitizedRecordObjects = new Array();
+
 }//MASH_Object.deleteMASHObjects
 
 
@@ -361,8 +379,6 @@ MASH_Object.setStyle = function(tmpObj, tmpStyle){
         else if(attValue[1] == "border-color")        { tmpObj.borderColor        = attValue[2]; }
     }
 
-    //MASH-MT
-    tmpObj.class = "MASH";
 
 }//MASH_Object.setStyle
 
@@ -375,11 +391,9 @@ MASH_Object.setStyle = function(tmpObj, tmpStyle){
 // * in addition it provides style definition for the wrapper object
 MASH_Object.prototype.createWrapperObject = function(tmpObjID, i){
 
-
     //compute dimensions
-    var adjustedWidth   = adjustSize(this.width,  this.borderWidth);
-    var adjustedHeight  = adjustSize(this.height, this.borderWidth);
-
+    var adjustedWidth                        = adjustSize(this.width,  this.borderWidth);
+    var adjustedHeight                       = adjustSize(this.height, this.borderWidth);
 
     //wrapper
     this.wrapperObj                          = document.createElement("div");
@@ -411,6 +425,36 @@ MASH_Object.prototype.createWrapperObject = function(tmpObjID, i){
         addEventListener(this.wrapperObj, "mousedown", divMouseDown, false);
     }
 
+    //attach resize control
+    if(this.clickable == true) {
+//        this.resizeButton                        = document.createElement("div");
+//        this.resizeButton.wrapperObj             = this.wrapperObj;
+//        this.resizeButton.title                  = "resize";
+//
+//        this.resizeButton.style.position         = "absolute";
+//        this.resizeButton.style.backgroundImage  = "url(" + this.CTRL_CORNER_RESIZE_IMG + ")";
+//        this.resizeButton.style.left             = adjustedWidth  - 27;
+//        this.resizeButton.style.top              = adjustedHeight - 27;
+//        this.resizeButton.style.width            = 28;
+//        this.resizeButton.style.height           = 28;
+//        this.resizeButton.style.overflow         = "hidden";
+//        this.resizeButton.style.zIndex           = 1;
+
+        this.resizeButton                        = document.createElement("img");
+        this.resizeButton.wrapperObj             = this.wrapperObj;
+        this.resizeButton.title                  = "resize";
+        this.resizeButton.src                    = this.CTRL_CORNER_RESIZE_IMG;
+
+        this.resizeButton.style.position         = "absolute";
+        this.resizeButton.style.left             = adjustedWidth  - 36;
+        this.resizeButton.style.top              = adjustedHeight - 36;
+        this.resizeButton.style.width            = 36;
+        this.resizeButton.style.height           = 36;
+        this.resizeButton.style.zIndex           = 1;
+
+        addEventListener(this.resizeButton,  "mousedown", resizeBottomRightMouseDown,  false);
+        this.wrapperObj.appendChild(this.resizeButton);
+    }
 
 
     //contextual layer
@@ -452,135 +496,135 @@ MASH_Object.prototype.createContextLayer = function(){
     this.contextLayer.style.visibility             = "hidden";
 
     // top left control
-    this.controlTopLeft                            = document.createElement("div");
-    this.controlTopLeft.wrapperObj                 = this.wrapperObj;
-    this.controlTopLeft.id                         = MASH_Object.RESIZE_CONTROL + RESIZE_TOP_LEFT;
-
-    this.controlTopLeft.style.position             = "absolute";
-    this.controlTopLeft.style.left                 = 0;
-    this.controlTopLeft.style.top                  = 0;
-    this.controlTopLeft.style.width                = 10;
-    this.controlTopLeft.style.height               = 10;
-    this.controlTopLeft.style.zIndex               = 0;
-    this.controlTopLeft.style.overflow             = "hidden";
-    this.controlTopLeft.style.backgroundColor      = "#000000";
+//    this.controlTopLeft                            = document.createElement("div");
+//    this.controlTopLeft.wrapperObj                 = this.wrapperObj;
+//    this.controlTopLeft.id                         = MASH_Object.RESIZE_CONTROL + RESIZE_TOP_LEFT;
+//
+//    this.controlTopLeft.style.position             = "absolute";
+//    this.controlTopLeft.style.left                 = 0;
+//    this.controlTopLeft.style.top                  = 0;
+//    this.controlTopLeft.style.width                = 10;
+//    this.controlTopLeft.style.height               = 10;
+//    this.controlTopLeft.style.zIndex               = 0;
+//    this.controlTopLeft.style.overflow             = "hidden";
+//    this.controlTopLeft.style.backgroundColor      = "#000000";
 
     // top center control
-    this.controlTopCenter                          = document.createElement("div");
-    this.controlTopCenter.wrapperObj               = this.wrapperObj;
-
-    this.controlTopCenter.style.position           = "absolute";
-    this.controlTopCenter.style.left               = (adjustedWidth/2) - 5;
-    this.controlTopCenter.style.top                = 0;
-    this.controlTopCenter.style.width              = 10;
-    this.controlTopCenter.style.height             = 10;
-    this.controlTopCenter.style.overflow           = "hidden";
-    this.controlTopCenter.style.zIndex             = 0;
-    this.controlTopCenter.style.backgroundColor    = "#000000";
+//    this.controlTopCenter                          = document.createElement("div");
+//    this.controlTopCenter.wrapperObj               = this.wrapperObj;
+//
+//    this.controlTopCenter.style.position           = "absolute";
+//    this.controlTopCenter.style.left               = (adjustedWidth/2) - 5;
+//    this.controlTopCenter.style.top                = 0;
+//    this.controlTopCenter.style.width              = 10;
+//    this.controlTopCenter.style.height             = 10;
+//    this.controlTopCenter.style.overflow           = "hidden";
+//    this.controlTopCenter.style.zIndex             = 0;
+//    this.controlTopCenter.style.backgroundColor    = "#000000";
 
     // top right control
-    this.controlTopRight                           = document.createElement("div");
-    this.controlTopRight.wrapperObj                = this.wrapperObj;
-
-    this.controlTopRight.style.position            = "absolute";
-    this.controlTopRight.style.left                = adjustedWidth - 12;
-    this.controlTopRight.style.top                 = 0;
-    this.controlTopRight.style.width               = 10;
-    this.controlTopRight.style.height              = 10;
-    this.controlTopRight.style.overflow            = "hidden";
-    this.controlTopRight.style.zIndex              = 0;
-    this.controlTopRight.style.backgroundColor     = "#000000";
+//    this.controlTopRight                           = document.createElement("div");
+//    this.controlTopRight.wrapperObj                = this.wrapperObj;
+//
+//    this.controlTopRight.style.position            = "absolute";
+//    this.controlTopRight.style.left                = adjustedWidth - 12;
+//    this.controlTopRight.style.top                 = 0;
+//    this.controlTopRight.style.width               = 10;
+//    this.controlTopRight.style.height              = 10;
+//    this.controlTopRight.style.overflow            = "hidden";
+//    this.controlTopRight.style.zIndex              = 0;
+//    this.controlTopRight.style.backgroundColor     = "#000000";
 
     // middle left control
-    this.controlMiddleLeft                         = document.createElement("div");
-    this.controlMiddleLeft.wrapperObj              = this.wrapperObj;
-
-    this.controlMiddleLeft.style.position          = "absolute";
-    this.controlMiddleLeft.style.left              = 0;
-    this.controlMiddleLeft.style.top               = (adjustedHeight/2) - 5;
-    this.controlMiddleLeft.style.width             = 10;
-    this.controlMiddleLeft.style.height            = 10;
-    this.controlMiddleLeft.style.zIndex            = 0;
-    this.controlMiddleLeft.style.overflow          = "hidden";
-    this.controlMiddleLeft.style.backgroundColor   = "#000000";
+//    this.controlMiddleLeft                         = document.createElement("div");
+//    this.controlMiddleLeft.wrapperObj              = this.wrapperObj;
+//
+//    this.controlMiddleLeft.style.position          = "absolute";
+//    this.controlMiddleLeft.style.left              = 0;
+//    this.controlMiddleLeft.style.top               = (adjustedHeight/2) - 5;
+//    this.controlMiddleLeft.style.width             = 10;
+//    this.controlMiddleLeft.style.height            = 10;
+//    this.controlMiddleLeft.style.zIndex            = 0;
+//    this.controlMiddleLeft.style.overflow          = "hidden";
+//    this.controlMiddleLeft.style.backgroundColor   = "#000000";
 
     // middle right control
-    this.controlMiddleRight                        = document.createElement("div");
-    this.controlMiddleRight.wrapperObj             = this.wrapperObj;
-
-    this.controlMiddleRight.style.position         = "absolute";
-    this.controlMiddleRight.style.left             = adjustedWidth - 12;
-    this.controlMiddleRight.style.top              = (adjustedHeight/2) - 5;
-    this.controlMiddleRight.style.width            = 10;
-    this.controlMiddleRight.style.height           = 10;
-    this.controlMiddleRight.style.zIndex           = 0;
-    this.controlMiddleRight.style.overflow         = "hidden";
-    this.controlMiddleRight.style.backgroundColor  = "#000000";
+//    this.controlMiddleRight                        = document.createElement("div");
+//    this.controlMiddleRight.wrapperObj             = this.wrapperObj;
+//
+//    this.controlMiddleRight.style.position         = "absolute";
+//    this.controlMiddleRight.style.left             = adjustedWidth - 12;
+//    this.controlMiddleRight.style.top              = (adjustedHeight/2) - 5;
+//    this.controlMiddleRight.style.width            = 10;
+//    this.controlMiddleRight.style.height           = 10;
+//    this.controlMiddleRight.style.zIndex           = 0;
+//    this.controlMiddleRight.style.overflow         = "hidden";
+//    this.controlMiddleRight.style.backgroundColor  = "#000000";
 
     // bottom left control
-    this.controlBottomLeft                         = document.createElement("div");
-    this.controlBottomLeft.wrapperObj              = this.wrapperObj;
-
-    this.controlBottomLeft.style.position          = "absolute";
-    this.controlBottomLeft.style.left              = 0;
-    this.controlBottomLeft.style.top               = adjustedHeight - 12;
-    this.controlBottomLeft.style.width             = 10;
-    this.controlBottomLeft.style.height            = 10;
-    this.controlBottomLeft.style.overflow          = "hidden";
-    this.controlBottomLeft.style.zIndex            = 0;
-    this.controlBottomLeft.style.backgroundColor   = "#000000";
+//    this.controlBottomLeft                         = document.createElement("div");
+//    this.controlBottomLeft.wrapperObj              = this.wrapperObj;
+//
+//    this.controlBottomLeft.style.position          = "absolute";
+//    this.controlBottomLeft.style.left              = 0;
+//    this.controlBottomLeft.style.top               = adjustedHeight - 12;
+//    this.controlBottomLeft.style.width             = 10;
+//    this.controlBottomLeft.style.height            = 10;
+//    this.controlBottomLeft.style.overflow          = "hidden";
+//    this.controlBottomLeft.style.zIndex            = 0;
+//    this.controlBottomLeft.style.backgroundColor   = "#000000";
 
     // bottom center control
-    this.controlBottomCenter                       = document.createElement("div");
-    this.controlBottomCenter.wrapperObj            = this.wrapperObj;
-
-    this.controlBottomCenter.style.position        = "absolute";
-    this.controlBottomCenter.style.left            = (adjustedWidth/2) - 5;
-    this.controlBottomCenter.style.top             = adjustedHeight - 12;
-    this.controlBottomCenter.style.width           = 10;
-    this.controlBottomCenter.style.height          = 10;
-    this.controlBottomCenter.style.overflow        = "hidden";
-    this.controlBottomCenter.style.zIndex          = 0;
-    this.controlBottomCenter.style.backgroundColor = "#000000";
+//    this.controlBottomCenter                       = document.createElement("div");
+//    this.controlBottomCenter.wrapperObj            = this.wrapperObj;
+//
+//    this.controlBottomCenter.style.position        = "absolute";
+//    this.controlBottomCenter.style.left            = (adjustedWidth/2) - 5;
+//    this.controlBottomCenter.style.top             = adjustedHeight - 12;
+//    this.controlBottomCenter.style.width           = 10;
+//    this.controlBottomCenter.style.height          = 10;
+//    this.controlBottomCenter.style.overflow        = "hidden";
+//    this.controlBottomCenter.style.zIndex          = 0;
+//    this.controlBottomCenter.style.backgroundColor = "#000000";
 
     // bottom right control
-    this.controlBottomRight                        = document.createElement("div");
-    this.controlBottomRight.wrapperObj             = this.wrapperObj;
-
-    this.controlBottomRight.style.position         = "absolute";
-    this.controlBottomRight.style.left             = adjustedWidth  - 12;
-    this.controlBottomRight.style.top              = adjustedHeight - 12;
-    this.controlBottomRight.style.width            = 10;
-    this.controlBottomRight.style.height           = 10;
-    this.controlBottomRight.style.overflow         = "hidden";
-    this.controlBottomRight.style.zIndex           = 0;
-    this.controlBottomRight.style.backgroundColor  = "#000000";
+//    this.controlBottomRight                        = document.createElement("div");
+//    this.controlBottomRight.wrapperObj             = this.wrapperObj;
+//
+//    this.controlBottomRight.style.position         = "absolute";
+//    this.controlBottomRight.style.left             = adjustedWidth  - 12;
+//    this.controlBottomRight.style.top              = adjustedHeight - 12;
+//    this.controlBottomRight.style.width            = 10;
+//    this.controlBottomRight.style.height           = 10;
+//    this.controlBottomRight.style.overflow         = "hidden";
+//    this.controlBottomRight.style.zIndex           = 0;
+//    this.controlBottomRight.style.backgroundColor  = "#000000";
 
     //attach events
-    if(this.clickable == true) {
-        addEventListener(this.controlTopLeft,      "mousedown", resizeTopLeftMouseDown,   false);
-        addEventListener(this.controlTopCenter,    "mousedown", resizeTopCenterMouseDown, false);
-        addEventListener(this.controlTopRight,     "mousedown", resizeTopRightMouseDown,  false);
-
-        addEventListener(this.controlMiddleLeft,   "mousedown", resizeMiddleLeftMouseDown,  false);
-        addEventListener(this.controlMiddleRight,  "mousedown", resizeMiddleRightMouseDown, false);
-
-        addEventListener(this.controlBottomLeft,   "mousedown", resizeBottomLeftMouseDown,   false);
-        addEventListener(this.controlBottomCenter, "mousedown", resizeBottomCenterMouseDown, false);
-        addEventListener(this.controlBottomRight,  "mousedown", resizeBottomRightMouseDown,  false);
-    }
+//    if(this.clickable == true) {
+//        addEventListener(this.controlTopLeft,      "mousedown", resizeTopLeftMouseDown,   false);
+//        addEventListener(this.controlTopCenter,    "mousedown", resizeTopCenterMouseDown, false);
+//        addEventListener(this.controlTopRight,     "mousedown", resizeTopRightMouseDown,  false);
+//
+//        addEventListener(this.controlMiddleLeft,   "mousedown", resizeMiddleLeftMouseDown,  false);
+//        addEventListener(this.controlMiddleRight,  "mousedown", resizeMiddleRightMouseDown, false);
+//
+//        addEventListener(this.controlBottomLeft,   "mousedown", resizeBottomLeftMouseDown,   false);
+//        addEventListener(this.controlBottomCenter, "mousedown", resizeBottomCenterMouseDown, false);
+//        addEventListener(this.controlBottomRight,  "mousedown", resizeBottomRightMouseDown,  false);
+//    }
 
     //append inner object
-    this.controlTopLeft      = this.contextLayer.appendChild(this.controlTopLeft);
-    this.controlTopCenter    = this.contextLayer.appendChild(this.controlTopCenter);
-    this.controlTopRight     = this.contextLayer.appendChild(this.controlTopRight);
-
-    this.controlMiddleLeft   = this.contextLayer.appendChild(this.controlMiddleLeft);
-    this.controlMiddleRight  = this.contextLayer.appendChild(this.controlMiddleRight);
-
-    this.controlBottomLeft   = this.contextLayer.appendChild(this.controlBottomLeft);
-    this.controlBottomCenter = this.contextLayer.appendChild(this.controlBottomCenter);
-    this.controlBottomRight  = this.contextLayer.appendChild(this.controlBottomRight);
+//    this.controlTopLeft      = this.contextLayer.appendChild(this.controlTopLeft);
+//    this.controlTopCenter    = this.contextLayer.appendChild(this.controlTopCenter);
+//    this.controlTopRight     = this.contextLayer.appendChild(this.controlTopRight);
+//
+//    this.controlMiddleLeft   = this.contextLayer.appendChild(this.controlMiddleLeft);
+//    this.controlMiddleRight  = this.contextLayer.appendChild(this.controlMiddleRight);
+//
+//    this.controlBottomLeft   = this.contextLayer.appendChild(this.controlBottomLeft);
+//    this.controlBottomCenter = this.contextLayer.appendChild(this.controlBottomCenter);
+//    this.controlBottomRight  = this.contextLayer.appendChild(this.controlBottomRight);
 
     this.contextLayer        = this.wrapperObj.appendChild(this.contextLayer);
 
@@ -593,62 +637,94 @@ MASH_Object.prototype.createContextLayer = function(){
 
 
 
+// MASH_Object.prototype.emphasizeResizeButton                               MASH_Object.prototype.emphasizeResizeButton
+// ---------------------------------------------------------------------------------------------------------------------
+// * creates a layer that allows to manipulate the object
+MASH_Object.prototype.emphasizeResizeButton = function(){
+
+    this.resizeButton.style.backgroundColor = "#ff0000";
+
+    var oldWidth                   = parseInt(this.resizeButton.style.width );
+    var oldHeight                  = parseInt(this.resizeButton.style.height);
+    this.resizeButton.style.left   = parseInt(this.resizeButton.style.left) - oldWidth;
+    this.resizeButton.style.top    = parseInt(this.resizeButton.style.top ) - oldHeight;
+    this.resizeButton.style.width  = oldWidth  * 2;
+    this.resizeButton.style.height = oldHeight * 2;
+
+    window.status = "RESIZING " + this.id;
+
+}//emphasizeResizeButton
+
+
+
+// MASH_Object.prototype.demphasizeResizeButton                               MASH_Object.prototype.demphasizeResizeButton
+// ---------------------------------------------------------------------------------------------------------------------
+// * creates a layer that allows to manipulate the object
+MASH_Object.prototype.demphasizeResizeButton = function(){
+
+    this.resizeButton.style.backgroundColor = "transparent";
+
+    var oldWidth                   = parseInt(this.resizeButton.style.width );
+    var oldHeight                  = parseInt(this.resizeButton.style.height);
+    this.resizeButton.style.width  = parseInt(oldWidth  / 2);
+    this.resizeButton.style.height = parseInt(oldHeight / 2);
+
+    var newWidth                   = parseInt(this.resizeButton.style.width );
+    var newHeight                  = parseInt(this.resizeButton.style.height);
+    this.resizeButton.style.left   = parseInt(this.resizeButton.style.left) + newWidth;
+    this.resizeButton.style.top    = parseInt(this.resizeButton.style.top ) + newHeight;
+
+}//demphasizeResizeButton
+
+
+
 // MASH_Object.prototype.resizeContextLayer                                     MASH_Object.prototype.resizeContextLayer
 // ---------------------------------------------------------------------------------------------------------------------
 MASH_Object.prototype.resizeContextLayer = function(newWidth, newHeight) {
-/*
-    //resize wrapperObj
-    this.width  = newWidth;
-    this.height = newHeight;
-    if(isNetscape)  {
-        this.width  = newWidth  + (2*this.borderWidth);
-        this.height = newHeight + (2*this.borderWidth);
-    }
-    else if(isIE)   {
-        this.width  = newWidth;
-        this.height = newHeight;
-    }
-*/
+
+    window.status = "newWidth = " + newWidth + " newHeight = " + newHeight;
+
     //adjust the width and height
-    this.wrapperObj.style.width  = newWidth;
-    this.wrapperObj.style.height = newHeight;
-
-
-    //resize context layer
     var adjustedWidth  = this.getContextLayerNewWidth(newWidth);
     var adjustedHeight = this.getContextLayerNewHeight(newHeight);
 
-    this.contextLayer.width        = adjustedWidth;
-    this.contextLayer.height       = adjustedHeight;
+//    this.wrapperObj.style.width  = newWidth;
+//    this.wrapperObj.style.height = newHeight;
+    this.wrapperObj.style.width  = adjustedWidth;
+    this.wrapperObj.style.height = adjustedHeight;
 
+    //resize context layer
     this.contextLayer.style.width  = adjustedWidth;
     this.contextLayer.style.height = adjustedHeight;
 
-    //relocate the context layer controls
-    this.controlTopLeft.style.left      = 0;
-    this.controlTopLeft.style.top       = 0;
+    this.resizeButton.style.left  = adjustedWidth  - parseInt(this.resizeButton.style.width ) - parseInt(this.wrapperObj.style.borderWidth);
+    this.resizeButton.style.top   = adjustedHeight - parseInt(this.resizeButton.style.height) - parseInt(this.wrapperObj.style.borderWidth);
 
-    this.controlTopCenter.style.left    = (adjustedWidth/2)  -  3;
-    this.controlTopCenter.style.top     = 0;
 
-    this.controlTopRight.style.left     = adjustedWidth      - 12;
-    this.controlTopRight.style.top      = 0;
-
-    this.controlMiddleLeft.style.left   = 0;
-    this.controlMiddleLeft.style.top    = (adjustedHeight/2) -  3;
-
-    this.controlMiddleRight.style.left  =  adjustedWidth     - 12;
-    this.controlMiddleRight.style.top   = (adjustedHeight/2) -  3;
-
-    this.controlBottomLeft.style.left   = 0;
-    this.controlBottomLeft.style.top    = adjustedHeight     - 12;
-
-    this.controlBottomCenter.style.left = (adjustedWidth/2)  -  3;
-    this.controlBottomCenter.style.top  = adjustedHeight     - 12;
-
-    this.controlBottomRight.style.left  = adjustedWidth      - 12;
-    this.controlBottomRight.style.top   = adjustedHeight     - 12;
-
+//relocate the context layer controls
+//    this.controlTopLeft.style.left      = 0;
+//    this.controlTopLeft.style.top       = 0;
+//
+//    this.controlTopCenter.style.left    = (adjustedWidth/2)  -  3;
+//    this.controlTopCenter.style.top     = 0;
+//
+//    this.controlTopRight.style.left     = adjustedWidth      - 12;
+//    this.controlTopRight.style.top      = 0;
+//
+//    this.controlMiddleLeft.style.left   = 0;
+//    this.controlMiddleLeft.style.top    = (adjustedHeight/2) -  3;
+//
+//    this.controlMiddleRight.style.left  =  adjustedWidth     - 12;
+//    this.controlMiddleRight.style.top   = (adjustedHeight/2) -  3;
+//
+//    this.controlBottomLeft.style.left   = 0;
+//    this.controlBottomLeft.style.top    = adjustedHeight     - 12;
+//
+//    this.controlBottomCenter.style.left = (adjustedWidth/2)  -  3;
+//    this.controlBottomCenter.style.top  = adjustedHeight     - 12;
+//
+//    this.controlBottomRight.style.left  = adjustedWidth      - 12;
+//    this.controlBottomRight.style.top   = adjustedHeight     - 12;
 
 }//MASH_Object.prototype.resizeContextLayer
 
@@ -1107,9 +1183,6 @@ MASH_Object.prototype.toString = function() {
             mashObjectToString += tmpMashObjectProperty + " = " + this[tmpMashObjectProperty] + "\n";
         }
     }
-
-    mashObjectToString += "Style = " + this.reference.style.class  + "\n";
-
     return mashObjectToString;
 
 }//MASH_Object.prototype.toString

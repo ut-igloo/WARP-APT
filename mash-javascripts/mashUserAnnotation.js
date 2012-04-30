@@ -35,7 +35,8 @@ function MASH_UserAnnotation(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIn
     else if(tmpType == MASH_UserAnnotation.YELLOW_CIRCLE)    {
         var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:0; border-color:#0000ff; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:10pt; ";
         this.base    = MASH_Image;
-        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.YELLOW_CIRCLE_IMAGE_FILE, tmpText );
+        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.TOUCH_IMAGE_FILE, tmpText );
+//        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.YELLOW_CIRCLE_IMAGE_FILE, tmpText );
     }
 
     else if(tmpType == MASH_UserAnnotation.BLUE_RECTANGLE)   {
@@ -60,7 +61,7 @@ function MASH_UserAnnotation(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIn
     }
 
     else if(tmpType == MASH_UserAnnotation.FINGER_MARKER) {
-        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:4; border-color:#ffff00; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:80pt; ";
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:4; border-color:#ffff00; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:8pt; ";
         this.base    = MASH_Text;
         this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, tmpText );
     }
@@ -108,6 +109,7 @@ MASH_UserAnnotation.GREEN_CIRCLE_IMAGE_FILE  = "mash_images/annotation-green.png
 MASH_UserAnnotation.RED_CIRCLE_IMAGE_FILE    = "mash_images/annotation-red.png";
 MASH_UserAnnotation.YELLOW_CIRCLE_IMAGE_FILE = "mash_images/annotation-yellow.png";
 
+MASH_UserAnnotation.TOUCH_IMAGE_FILE         = "mash_images/touch-feedback.png";
 
 // MASH_UserAnnotation.clone                                                                   MASH_UserAnnotation.clone
 // ---------------------------------------------------------------------------------------------------------------------
@@ -169,12 +171,24 @@ MASH_UserAnnotation.prototype.createScreenObjectMASH_Image  = function(i){
 
 
     //make object and sub object's id
-    var tmpObjID        = MASH_Image.ID_PREFIX       + i;
-    var tmpObjInnerID   = MASH_Image.INNER_ID_PREFIX + i;
-
+    var tmpObjID                            = MASH_Image.ID_PREFIX       + i;
+    var tmpObjInnerID                        = MASH_Image.INNER_ID_PREFIX + i;
 
     //wrapper object
-    this.wrapperObj      = this.createWrapperObject(tmpObjID, i);
+    this.wrapperObj                          = this.createWrapperObject(tmpObjID, i);
+
+    //round corners
+    this.wrapperObj.style.borderRadius       = '10px'; // standard
+    this.wrapperObj.style.MozBorderRadius    = '10px'; // Mozilla
+    this.wrapperObj.style.WebkitBorderRadius = '10px'; // WebKit
+    this.wrapperObj.style.boxShadow          = '15px 15px 15px #558';
+
+    this.wrapperObj.style.borderTopWidth     = '0';
+    this.wrapperObj.style.borderRightWidth   = '0';
+    this.wrapperObj.style.borderBottomWidth  = '2';
+    this.wrapperObj.style.borderLeftWidth    = '0';
+    this.wrapperObj.style.overflowY          = 'auto';
+
 
     addEventListener(this.wrapperObj, "dblclick",  MASH_Behavior_AutoPresentation.repaceImg,    false);
 
@@ -264,13 +278,11 @@ MASH_UserAnnotation.prototype.createScreenObjectMASH_Text  = function(i){
     addEventListener(this.innerObj, "mousemove", divPropagateNoDefault, false);
     addEventListener(this.innerObj, "mouseup",   divPropagateNoDefault, false);
 
-
     //append inner object
-    this.innerObj      = this.innerTRObj.appendChild(this.innerObj);
-    this.innerTRObj    = this.innerTBodyObj.appendChild(this.innerTRObj);
-    this.innerTBodyObj = this.innerTableObj.appendChild(this.innerTBodyObj);
-    this.innerTableObj = this.wrapperObj.appendChild(this.innerTableObj);
-
+    this.innerObj                    = this.innerTRObj.appendChild(this.innerObj);
+    this.innerTRObj                  = this.innerTBodyObj.appendChild(this.innerTRObj);
+    this.innerTBodyObj               = this.innerTableObj.appendChild(this.innerTBodyObj);
+    this.innerTableObj               = this.wrapperObj.appendChild(this.innerTableObj);
 
     //cross reference the parameters with the screen object
     this.wrapperObj.MASHparameters   = this;
