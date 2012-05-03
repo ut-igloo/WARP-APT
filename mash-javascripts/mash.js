@@ -130,15 +130,18 @@ function writeControls(){
 
 
     document.writeln("<a href=\"javascript:createArchivalSubGroup();\"                              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_ID   + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_FILE   + "\" title=\"Create Sub-Group\"  alt=\"Sub-Group\"  border=\"0\"></a>");
+    document.writeln("<a href=\"javascript:createArchivalSeries();\"                                ><img id=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_ID  + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_FILE  + "\" title=\"Create Series\"     alt=\"Series\"     border=\"0\"></a>");
+    document.writeln("<a href=\"javascript:createArchivalSubSeries();\"                             ><img id=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_ID    + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_FILE    + "\" title=\"Create Sub-Series\" alt=\"Sub-Series\" border=\"0\"></a>");
+    document.writeln("<a href=\"javascript:createArchivalFile();\"                                  ><img id=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_ID + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_FILE + "\" title=\"Create File\"       alt=\"File\"       border=\"0\"></a>&nbsp;||&nbsp;");
 //    document.writeln("<a href=\"javascript:annotateCollection('#eef8ff', '#000088');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_ID   + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_BLUE_IMG_FILE   + "\" title=\"Create Sub-Group\"  alt=\"Sub-Group\"  border=\"0\"></a>");
-    document.writeln("<a href=\"javascript:annotateCollection('#eefff8', '#008800');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_ID  + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_FILE  + "\" title=\"Create Series\"     alt=\"Series\"     border=\"0\"></a>");
-    document.writeln("<a href=\"javascript:annotateCollection('#fff8ee', '#880000');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_ID    + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_FILE    + "\" title=\"Create Sub-Series\" alt=\"Sub-Series\" border=\"0\"></a>");
-    document.writeln("<a href=\"javascript:annotateCollection('#ffffee', '#aaaa00');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_ID + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_FILE + "\" title=\"Create File\"       alt=\"File\"       border=\"0\"></a>&nbsp;||&nbsp;");
+//    document.writeln("<a href=\"javascript:annotateCollection('#eefff8', '#008800');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_ID  + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_GREEN_IMG_FILE  + "\" title=\"Create Series\"     alt=\"Series\"     border=\"0\"></a>");
+//    document.writeln("<a href=\"javascript:annotateCollection('#fff8ee', '#880000');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_ID    + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_RED_IMG_FILE    + "\" title=\"Create Sub-Series\" alt=\"Sub-Series\" border=\"0\"></a>");
+//    document.writeln("<a href=\"javascript:annotateCollection('#ffffee', '#aaaa00');\"              ><img id=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_ID + "\" src=\"" + CTRL_ANNOTATE_COLLECTION_YELLOW_IMG_FILE + "\" title=\"Create File\"       alt=\"File\"       border=\"0\"></a>&nbsp;||&nbsp;");
 
 //    document.writeln("<a href=\"javascript:annotateBlueCircle();\"                                  ><img id=\"" + CTRL_ANNOTATE_CIRCLE_BLUE_IMG_ID       + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_BLUE_IMG_FILE       + "\" title=\"Make Blue Circle Annotation\"       alt=\"Make Blue Circle Annotation\"    border=\"0\"></a>");
 //    document.writeln("<a href=\"javascript:annotateGreenCircle();\"                                 ><img id=\"" + CTRL_ANNOTATE_CIRCLE_GREEN_IMG_ID      + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_GREEN_IMG_FILE      + "\" title=\"Make Green Circle Annotation\"      alt=\"Make Green Circle Annotation\"   border=\"0\"></a>");
 //    document.writeln("<a href=\"javascript:annotateRedCircle();\"                                   ><img id=\"" + CTRL_ANNOTATE_CIRCLE_RED_IMG_ID        + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_RED_IMG_FILE        + "\" title=\"Make Red Circle Annotation\"        alt=\"Make Red Circle Annotation\"     border=\"0\"></a>");
-    document.writeln("<a href=\"javascript:annotateYellowCircle();\"                                ><img id=\"" + CTRL_ANNOTATE_CIRCLE_YELLOW_IMG_ID     + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_YELLOW_IMG_FILE     + "\" title=\"Make Yellow Circle Annotation\"     alt=\"Make Yellow Circle Annotation\"  border=\"0\"></a>&nbsp;||&nbsp;");
+//    document.writeln("<a href=\"javascript:annotateYellowCircle();\"                                ><img id=\"" + CTRL_ANNOTATE_CIRCLE_YELLOW_IMG_ID     + "\" src=\"" + CTRL_ANNOTATE_CIRCLE_YELLOW_IMG_FILE     + "\" title=\"Make Yellow Circle Annotation\"     alt=\"Make Yellow Circle Annotation\"  border=\"0\"></a>&nbsp;||&nbsp;");
 
     document.writeln("<a href=\"javascript:annotateBlueText();\"                                    ><img id=\"" + CTRL_ANNOTATE_TEXT_BLUE_IMG_ID         + "\" src=\"" + CTRL_ANNOTATE_TEXT_BLUE_IMG_FILE         + "\" title=\"Make Blue Text Annotation\"         alt=\"Make Blue Text Annotation\"      border=\"0\"></a>");
     document.writeln("<a href=\"javascript:annotateGreenText();\"                                   ><img id=\"" + CTRL_ANNOTATE_TEXT_GREEN_IMG_ID        + "\" src=\"" + CTRL_ANNOTATE_TEXT_GREEN_IMG_FILE        + "\" title=\"Make Green Text Annotation\"        alt=\"Make Green Text Annotation\"     border=\"0\"></a>");
@@ -1860,11 +1863,19 @@ function divMouseDown(e){
     var fingerX      = parseInt( objX + getWindowScrollX() );
     var fingerY      = parseInt( objY + getWindowScrollY() );
 
-//    MT_fingerMarker = createUserAnnotation("", objX-20, objY-20, 40, 40, (topZ+2), "+", MASH_UserAnnotation.FINGER_MARKER);
+    /* OLD TOUCH FEEDBACK
+    //MT_fingerMarker = createUserAnnotation("", objX-20, objY-20, 40, 40, (topZ+2), "+", MASH_UserAnnotation.FINGER_MARKER);
     MT_fingerMarkerTop    = createUserAnnotation(""+fingerX, fingerX-8,  fingerY-30, 4, 20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
     MT_fingerMarkerLeft   = createUserAnnotation(""+fingerX, fingerX-30, fingerY-8, 20,  4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
     MT_fingerMarkerBottom = createUserAnnotation(""+fingerX, fingerX-8,  fingerY+10, 4, 20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
     MT_fingerMarkerRight  = createUserAnnotation(""+fingerX, fingerX+10, fingerY-8, 20,  4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    */
+//    console.log(this);
+    // New touch feedback
+    MT_fingerMarkerTop    = createUserAnnotation("", fingerX-8,  fingerY-20, 20, 4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    MT_fingerMarkerLeft   = createUserAnnotation("", fingerX-20, fingerY-8, 4,  20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    MT_fingerMarkerBottom = createUserAnnotation("", fingerX-8,  fingerY+10, 20, 4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    MT_fingerMarkerRight  = createUserAnnotation("", fingerX+10, fingerY-8, 4,  20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
 
 
     //update the status bar
@@ -2767,6 +2778,114 @@ function createArchivalSubGroup(){
     createArchivalGroup(newID, 190, 40, 200, 100, ++topZ, style, title, groupType, description);
 
 }//createArchivalSubGroup
+
+
+
+// createArchivalSeries                                                                             createArchivalSeries
+// ---------------------------------------------------------------------------------------------------------------------
+// * Creates an archival group type "series" (APT)
+function createArchivalSeries(){
+
+
+    //validate paramenters
+    var backgroundColor = "#eefff8";
+    var borderColor     = "#008800";
+
+    var style = "align:left; "                                +
+                "vertical-align:top; "                        +
+                "background-color:"  + backgroundColor + "; " +
+                "border-color:"      + borderColor     + "; " +
+                "border-width:2; "                            +
+                "border-style:dashed; "                       +
+                "background-image:none; "                     +
+                "color:#ffffff; "                             +
+                "font-size:9pt; "                             ;
+
+    //get title of acollection
+    var annotationText = prompt("Please enter the title of the Series", "");
+    if(!annotationText) { return; }
+
+    var newID           = "ArchivalGroup" + MASH_Object.getUniqueID();
+    var title           = MASH_ArchivalGroup.TYPE_SERIES + ": " + annotationText;
+    var groupType       = MASH_ArchivalGroup.TYPE_SERIES;
+    var description     = "";
+
+    //create collection
+    createArchivalGroup(newID, 190, 40, 200, 100, ++topZ, style, title, groupType, description);
+
+}//createArchivalSeries
+
+
+
+// createArchivalSubSeries                                                                       createArchivalSubSeries
+// ---------------------------------------------------------------------------------------------------------------------
+// * Creates an archival group type "sub-series" (APT)
+function createArchivalSubSeries(){
+
+
+    //validate paramenters
+    var backgroundColor = "#fff8ee";
+    var borderColor     = "#880000";
+
+    var style = "align:left; "                                +
+                "vertical-align:top; "                        +
+                "background-color:"  + backgroundColor + "; " +
+                "border-color:"      + borderColor     + "; " +
+                "border-width:2; "                            +
+                "border-style:dashed; "                       +
+                "background-image:none; "                     +
+                "color:#ffffff; "                             +
+                "font-size:9pt; "                             ;
+
+    //get title of acollection
+    var annotationText = prompt("Please enter the title of the Sub-Series", "");
+    if(!annotationText) { return; }
+
+    var newID           = "ArchivalGroup" + MASH_Object.getUniqueID();
+    var title           = MASH_ArchivalGroup.TYPE_SUBSERIES + ": " + annotationText;
+    var groupType       = MASH_ArchivalGroup.TYPE_SUBSERIES;
+    var description     = "";
+
+    //create collection
+    createArchivalGroup(newID, 190, 40, 200, 100, ++topZ, style, title, groupType, description);
+
+}//createArchivalSubSeries
+
+
+
+// createArchivalFile                                                                                 createArchivalFile
+// ---------------------------------------------------------------------------------------------------------------------
+// * Creates an archival group type "file" (APT)
+function createArchivalFile(){
+
+
+    //validate paramenters
+    var backgroundColor = "#ffffee";
+    var borderColor     = "#aaaa00";
+
+    var style = "align:left; "                                +
+                "vertical-align:top; "                        +
+                "background-color:"  + backgroundColor + "; " +
+                "border-color:"      + borderColor     + "; " +
+                "border-width:2; "                            +
+                "border-style:dashed; "                       +
+                "background-image:none; "                     +
+                "color:#ffffff; "                             +
+                "font-size:9pt; "                             ;
+
+    //get title of acollection
+    var annotationText = prompt("Please enter the title of the File", "");
+    if(!annotationText) { return; }
+
+    var newID           = "ArchivalGroup" + MASH_Object.getUniqueID();
+    var title           = MASH_ArchivalGroup.TYPE_FILE + ": " + annotationText;
+    var groupType       = MASH_ArchivalGroup.TYPE_FILE;
+    var description     = "";
+
+    //create collection
+    createArchivalGroup(newID, 190, 40, 200, 100, ++topZ, style, title, groupType, description);
+
+}//createArchivalFile
 
 
 

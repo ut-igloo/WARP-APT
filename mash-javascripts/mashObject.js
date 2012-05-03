@@ -642,7 +642,7 @@ MASH_Object.prototype.createContextLayer = function(){
 // * creates a layer that allows to manipulate the object
 MASH_Object.prototype.emphasizeResizeButton = function(){
 
-    this.resizeButton.style.backgroundColor = "#ff0000";
+//    this.resizeButton.style.backgroundColor = "#ff0000";
 
     var oldWidth                   = parseInt(this.resizeButton.style.width );
     var oldHeight                  = parseInt(this.resizeButton.style.height);
@@ -657,12 +657,12 @@ MASH_Object.prototype.emphasizeResizeButton = function(){
 
 
 
-// MASH_Object.prototype.demphasizeResizeButton                               MASH_Object.prototype.demphasizeResizeButton
+// MASH_Object.prototype.demphasizeResizeButton                             MASH_Object.prototype.demphasizeResizeButton
 // ---------------------------------------------------------------------------------------------------------------------
 // * creates a layer that allows to manipulate the object
 MASH_Object.prototype.demphasizeResizeButton = function(){
 
-    this.resizeButton.style.backgroundColor = "transparent";
+//    this.resizeButton.style.backgroundColor = "transparent";
 
     var oldWidth                   = parseInt(this.resizeButton.style.width );
     var oldHeight                  = parseInt(this.resizeButton.style.height);
@@ -690,15 +690,15 @@ MASH_Object.prototype.resizeContextLayer = function(newWidth, newHeight) {
 
 //    this.wrapperObj.style.width  = newWidth;
 //    this.wrapperObj.style.height = newHeight;
-    this.wrapperObj.style.width  = adjustedWidth;
-    this.wrapperObj.style.height = adjustedHeight;
+    this.wrapperObj.style.width    = adjustedWidth;
+    this.wrapperObj.style.height   = adjustedHeight;
 
     //resize context layer
     this.contextLayer.style.width  = adjustedWidth;
     this.contextLayer.style.height = adjustedHeight;
 
-    this.resizeButton.style.left  = adjustedWidth  - parseInt(this.resizeButton.style.width ) - parseInt(this.wrapperObj.style.borderWidth);
-    this.resizeButton.style.top   = adjustedHeight - parseInt(this.resizeButton.style.height) - parseInt(this.wrapperObj.style.borderWidth);
+    this.resizeButton.style.left   = adjustedWidth  - parseInt(this.resizeButton.style.width ) - parseInt(this.wrapperObj.style.borderWidth);
+    this.resizeButton.style.top    = adjustedHeight - parseInt(this.resizeButton.style.height) - parseInt(this.wrapperObj.style.borderWidth);
 
 
 //relocate the context layer controls

@@ -53,7 +53,7 @@ function MASH_ArchivalGroup(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZInd
 
 }
 //set inheritance
-MASH_ArchivalGroup.prototype                     = new MASH_Object("MASH_ArchivalGroup",0,0,1,1,0,"");
+MASH_ArchivalGroup.prototype                     = new MASH_Collection("MASH_ArchivalGroup",0,0,1,1,0,"", new Array());
 MASH_ArchivalGroup.prototype.constructor         = MASH_ArchivalGroup;
 //MASH_ArchivalGroup
 
@@ -342,7 +342,7 @@ MASH_ArchivalGroup.prototype.createScreenObject  = function(i){
 
 
 
-// MASH_ArchivalGroup.zoomInCollectionEvent                                           MASH_ArchivalGroup.zoomInCollectionEvent
+// MASH_ArchivalGroup.zoomInCollectionEvent                                     MASH_ArchivalGroup.zoomInCollectionEvent
 // ---------------------------------------------------------------------------------------------------------------------
 // * it is a wrapper over the function zoomObj in order to be able to call it as an event handler
 MASH_ArchivalGroup.zoomInCollectionEvent = function(tmpEvent){
@@ -367,7 +367,7 @@ MASH_ArchivalGroup.zoomInCollectionEvent = function(tmpEvent){
 
 
 
-// MASH_ArchivalGroup.zoomOutCollectionEvent                                         MASH_ArchivalGroup.zoomOutCollectionEvent
+// MASH_ArchivalGroup.zoomOutCollectionEvent                                   MASH_ArchivalGroup.zoomOutCollectionEvent
 // ---------------------------------------------------------------------------------------------------------------------
 // * zooms the contentest of a COLLECTION object
 // * it is a wrapper over the function zoomObj in order to be able to call it as an event handler
