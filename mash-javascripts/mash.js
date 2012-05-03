@@ -1498,7 +1498,7 @@ function resizeBottomCenterMouseDown(e){
     return false;
 }//resizeBottomCenterMouseDown
 
-
+  
 
 // resizeBottomRightMouseDown                                                                 resizeBottomRightMouseDown
 // ---------------------------------------------------------------------------------------------------------------------
@@ -1703,6 +1703,8 @@ function divScroll(e){
 // divMouseDown                                                                                             divMouseDown
 // ---------------------------------------------------------------------------------------------------------------------
 function divMouseDown(e){
+    // Start of mousedown in unix epoch
+    var now = new Date();
 
     //check that is not being scrolling (avoid 'sticky' scrollbars
     if(scrollFlag) {
@@ -1711,13 +1713,23 @@ function divMouseDown(e){
         scrollFlag = false;
         return false;
     }
-
+ 
     //delete objects created by the spatial parser
     deleteSpatialObjects();
 
     //validate that we have the event object
     //  (this compensates for using DOM 2 and IE event models
     e = validateEventObject(e);
+
+    // Check for double click
+    if(this.lastClick != undefined) {
+        console.log("diff", now.getTime()-this.lastClick.getTime());
+        if(now.getTime() - this.wrapperObj.lastClick.getTime() <= 400) {
+            console.log("double click");
+        }
+    }
+    // Set time of last mousedown
+    this.lastClick = now;
 
     //check for right button
     if(getMouseButton(e) == MOUSE_RIGHT_BUTTON) {
