@@ -35,40 +35,59 @@ function MASH_UserAnnotation(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIn
     else if(tmpType == MASH_UserAnnotation.YELLOW_CIRCLE)    {
         var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:0; border-color:#0000ff; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:10pt; ";
         this.base    = MASH_Image;
-        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.TOUCH_IMAGE_FILE, tmpText );
-//        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.YELLOW_CIRCLE_IMAGE_FILE, tmpText );
+//        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.TOUCH_IMAGE_FILE, tmpText );
+        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.YELLOW_CIRCLE_IMAGE_FILE, tmpText );
     }
 
     else if(tmpType == MASH_UserAnnotation.BLUE_RECTANGLE)   {
-        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#ffffff; border-width:4; border-color:#0000ff; border-style:solid; color:#000088; font-family:Arial; font-weight:bold; font-size:10pt; ";
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#eeeeff; border-width:4; border-color:#0000ff; border-style:solid; color:#000088; font-family:Arial; font-weight:bold; font-size:10pt; ";
         this.base    = MASH_Text;
         this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, tmpText );
     }
     else if(tmpType == MASH_UserAnnotation.GREEN_RECTANGLE)  {
-        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#ffffff; border-width:4; border-color:#00ff00; border-style:solid; color:#008800; font-family:Arial; font-weight:bold; font-size:10pt; ";
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#eeffee; border-width:4; border-color:#00ff00; border-style:solid; color:#008800; font-family:Arial; font-weight:bold; font-size:10pt; ";
         this.base    = MASH_Text;
         this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, tmpText );
     }
     else if(tmpType == MASH_UserAnnotation.RED_RECTANGLE)    {
-        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#ffffff; border-width:4; border-color:#ff0000; border-style:solid; color:#880000; font-family:Arial; font-weight:bold; font-size:10pt; ";
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#ffeeee; border-width:4; border-color:#ff0000; border-style:solid; color:#880000; font-family:Arial; font-weight:bold; font-size:10pt; ";
         this.base    = MASH_Text;
         this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, tmpText );
     }
     else if(tmpType == MASH_UserAnnotation.YELLOW_RECTANGLE) {
-        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#ffffff; border-width:4; border-color:#ffff00; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:10pt; ";
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#ffffee; border-width:4; border-color:#ffff00; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:10pt; ";
         this.base    = MASH_Text;
         this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, tmpText );
     }
 
     else if(tmpType == MASH_UserAnnotation.FINGER_MARKER) {
-        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:4; border-color:#ffff00; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:8pt; ";
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:#ffff88; border-width:4; border-color:#ffff88; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:8pt; ";
         this.base    = MASH_Text;
         this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, tmpText );
     }
+    else if(tmpType == MASH_UserAnnotation.TOUCH_FEEDBACK_TOP) {
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:0; border-color:#0000ff; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:10pt; ";
+        this.base    = MASH_Image;
+        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.TOUCH_TOP_IMAGE_FILE, tmpText );
+    }
+    else if(tmpType == MASH_UserAnnotation.TOUCH_FEEDBACK_RIGHT) {
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:0; border-color:#0000ff; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:10pt; ";
+        this.base    = MASH_Image;
+        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.TOUCH_RIGHT_IMAGE_FILE, tmpText );
+    }
+    else if(tmpType == MASH_UserAnnotation.TOUCH_FEEDBACK_BOTTOM) {
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:0; border-color:#0000ff; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:10pt; ";
+        this.base    = MASH_Image;
+        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.TOUCH_BOTTOM_IMAGE_FILE, tmpText );
+    }
+    else if(tmpType == MASH_UserAnnotation.TOUCH_FEEDBACK_LEFT) {
+        var tmpStyle = "align:center; vertical-align:middle; background-image:none; background-color:transparent; border-width:0; border-color:#0000ff; border-style:solid; color:#888800; font-family:Arial; font-weight:bold; font-size:10pt; ";
+        this.base    = MASH_Image;
+        this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle, MASH_UserAnnotation.TOUCH_LEFT_IMAGE_FILE, tmpText );
+    }
 
-    this.text = tmpText;
-
-    this.MASHobjectType = MASH_Object.USER_ANNOTATION;
+    this.text               = tmpText;
+    this.MASHobjectType     = MASH_Object.USER_ANNOTATION;
 
     //context menu
     this.contextMenuString  = "<hr>\n"                                                                                                                                                  +
@@ -76,7 +95,7 @@ function MASH_UserAnnotation(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIn
                               "<span onclick=\"otherObjects[0].targetObj.destroy();  otherObjects[0].close();\" style=\"color:550000; text-decoration:none;\">Destroy</span><br>\n"   ;
 
     //XML
-    this.xmlObjectTag = MASH_UserAnnotation.XML_TAG_OBJECT;
+    this.xmlObjectTag       = MASH_UserAnnotation.XML_TAG_OBJECT;
 
 }
 //set inheritance
@@ -102,6 +121,10 @@ MASH_UserAnnotation.GREEN_RECTANGLE          = 26;
 MASH_UserAnnotation.RED_RECTANGLE            = 27;
 MASH_UserAnnotation.YELLOW_RECTANGLE         = 28;
 
+MASH_UserAnnotation.TOUCH_FEEDBACK_TOP       = 91;
+MASH_UserAnnotation.TOUCH_FEEDBACK_RIGHT     = 92;
+MASH_UserAnnotation.TOUCH_FEEDBACK_BOTTOM    = 93;
+MASH_UserAnnotation.TOUCH_FEEDBACK_LEFT      = 94;
 MASH_UserAnnotation.FINGER_MARKER            = 99;
 
 MASH_UserAnnotation.BLUE_CIRCLE_IMAGE_FILE   = "mash_images/annotation-blue.png";
@@ -110,6 +133,11 @@ MASH_UserAnnotation.RED_CIRCLE_IMAGE_FILE    = "mash_images/annotation-red.png";
 MASH_UserAnnotation.YELLOW_CIRCLE_IMAGE_FILE = "mash_images/annotation-yellow.png";
 
 MASH_UserAnnotation.TOUCH_IMAGE_FILE         = "mash_images/touch-feedback.png";
+
+MASH_UserAnnotation.TOUCH_TOP_IMAGE_FILE     = "mash_images/TouchFeedbackTop.png";
+MASH_UserAnnotation.TOUCH_RIGHT_IMAGE_FILE   = "mash_images/TouchFeedbackRight.png";
+MASH_UserAnnotation.TOUCH_BOTTOM_IMAGE_FILE  = "mash_images/TouchFeedbackBottom.png";
+MASH_UserAnnotation.TOUCH_LEFT_IMAGE_FILE    = "mash_images/TouchFeedbackLeft.png";
 
 // MASH_UserAnnotation.clone                                                                   MASH_UserAnnotation.clone
 // ---------------------------------------------------------------------------------------------------------------------
@@ -157,8 +185,31 @@ MASH_UserAnnotation.prototype.createScreenObject  = function(i){
         return this.createScreenObjectMASH_Text(i);
     }
     else if((this.type == MASH_UserAnnotation.FINGER_MARKER)    ){
-        return this.createScreenObjectMASH_Text(i);
+        var tmpObj = this.createScreenObjectMASH_Text(i);
+        tmpObj.MASHparameters.alpha(0.20);
+        return tmpObj;
     }
+    else if((this.type == MASH_UserAnnotation.TOUCH_FEEDBACK_TOP)    ){
+        var tmpObj = this.createScreenObjectMASH_Image(i);
+        tmpObj.MASHparameters.alpha(0.20);
+        return tmpObj;
+    }
+    else if((this.type == MASH_UserAnnotation.TOUCH_FEEDBACK_RIGHT)  ){
+        var tmpObj = this.createScreenObjectMASH_Image(i);
+        tmpObj.MASHparameters.alpha(0.20);
+        return tmpObj;
+    }
+    else if((this.type == MASH_UserAnnotation.TOUCH_FEEDBACK_BOTTOM) ){
+        var tmpObj = this.createScreenObjectMASH_Image(i);
+        tmpObj.MASHparameters.alpha(0.20);
+        return tmpObj;
+    }
+    else if((this.type == MASH_UserAnnotation.TOUCH_FEEDBACK_LEFT)   ){
+        var tmpObj = this.createScreenObjectMASH_Image(i);
+        tmpObj.MASHparameters.alpha(0.20);
+        return tmpObj;
+    }
+
 
 }//createScreenObject
 
@@ -177,18 +228,23 @@ MASH_UserAnnotation.prototype.createScreenObjectMASH_Image  = function(i){
     //wrapper object
     this.wrapperObj                          = this.createWrapperObject(tmpObjID, i);
 
-    //round corners
-    this.wrapperObj.style.borderRadius       = '10px'; // standard
-    this.wrapperObj.style.MozBorderRadius    = '10px'; // Mozilla
-    this.wrapperObj.style.WebkitBorderRadius = '10px'; // WebKit
-    this.wrapperObj.style.boxShadow          = '15px 15px 15px #558';
+    if( (this.type != MASH_UserAnnotation.TOUCH_FEEDBACK_TOP   ) &&
+        (this.type != MASH_UserAnnotation.TOUCH_FEEDBACK_RIGHT ) &&
+        (this.type != MASH_UserAnnotation.TOUCH_FEEDBACK_BOTTOM) &&
+        (this.type != MASH_UserAnnotation.TOUCH_FEEDBACK_LEFT  ) ){
 
-    this.wrapperObj.style.borderTopWidth     = '0';
-    this.wrapperObj.style.borderRightWidth   = '0';
-    this.wrapperObj.style.borderBottomWidth  = '2';
-    this.wrapperObj.style.borderLeftWidth    = '0';
-    this.wrapperObj.style.overflowY          = 'auto';
+        //round corners
+        this.wrapperObj.style.borderRadius       = '10px'; // standard
+        this.wrapperObj.style.MozBorderRadius    = '10px'; // Mozilla
+        this.wrapperObj.style.WebkitBorderRadius = '10px'; // WebKit
+        this.wrapperObj.style.boxShadow          = '15px 15px 15px #558';
 
+        this.wrapperObj.style.borderTopWidth     = '0';
+        this.wrapperObj.style.borderRightWidth   = '0';
+        this.wrapperObj.style.borderBottomWidth  = '2';
+        this.wrapperObj.style.borderLeftWidth    = '0';
+        this.wrapperObj.style.overflowY          = 'hidden';
+    }
 
     addEventListener(this.wrapperObj, "dblclick",  MASH_Behavior_AutoPresentation.repaceImg,    false);
 
@@ -240,6 +296,23 @@ MASH_UserAnnotation.prototype.createScreenObjectMASH_Text  = function(i){
 
     //wrapper object
     this.wrapperObj                    = this.createWrapperObject(tmpObjID, i);
+    this.wrapperObj.style.overflow     = "hidden";
+
+    if(this.type != MASH_UserAnnotation.FINGER_MARKER){
+
+        //round corners
+        this.wrapperObj.style.borderRadius       = '10px'; // standard
+        this.wrapperObj.style.MozBorderRadius    = '10px'; // Mozilla
+        this.wrapperObj.style.WebkitBorderRadius = '10px'; // WebKit
+        this.wrapperObj.style.boxShadow          = '15px 15px 15px #558';
+
+        this.wrapperObj.style.borderTopWidth     = '1';
+        this.wrapperObj.style.borderRightWidth   = '3';
+        this.wrapperObj.style.borderBottomWidth  = '3';
+        this.wrapperObj.style.borderLeftWidth    = '1';
+        this.wrapperObj.style.overflowY          = 'hidden';
+    }
+
 
     //compute dimensions
     var adjustedWidth                  = adjustSize(this.width,  this.borderWidth);
@@ -273,7 +346,7 @@ MASH_UserAnnotation.prototype.createScreenObjectMASH_Text  = function(i){
     addEventListener(this.innerObj, "drag",      divDrag, false);
     addEventListener(this.innerObj, "dragstop",  divDrag, false);
 
-    //this is to allow dragin inside collections
+    //this is to allow draging inside collections
     addEventListener(this.innerObj, "mousedown", divPropagateNoDefault, false);
     addEventListener(this.innerObj, "mousemove", divPropagateNoDefault, false);
     addEventListener(this.innerObj, "mouseup",   divPropagateNoDefault, false);
@@ -379,9 +452,8 @@ MASH_UserAnnotation.prototype.resize = function(newWidth, newHeight) {
     this.resizeContextLayer(newWidth, newHeight);
 
     //compute dimensions
-    var adjustedWidth   = adjustSize(newWidth,  this.borderWidth);
-    var adjustedHeight  = adjustSize(newHeight, this.borderWidth);
-
+    var adjustedWidth           = adjustSize(newWidth,  this.borderWidth);
+    var adjustedHeight          = adjustSize(newHeight, this.borderWidth);
     this.innerObj.style.width   = adjustedWidth;
     this.innerObj.style.height  = adjustedHeight;
 
@@ -409,6 +481,30 @@ MASH_UserAnnotation.prototype.destroy = function() {
     this.reference.parentNode.removeChild(this.reference);
 
 }//MASH_UserAnnotation.prototype.destroy
+
+
+
+// MASH_UserAnnotation.destroyTouchFeedback                                     MASH_UserAnnotation.destroyTouchFeedback
+// ---------------------------------------------------------------------------------------------------------------------
+MASH_UserAnnotation.destroyTouchFeedback = function() {
+
+    //search for this annotation in the annotationObjects array
+    for(var i=0; i<annotationObjects.length; i++) {
+
+        if( (annotationObjects[i].type == MASH_UserAnnotation.TOUCH_FEEDBACK_TOP   ) ||
+            (annotationObjects[i].type == MASH_UserAnnotation.TOUCH_FEEDBACK_RIGHT ) ||
+            (annotationObjects[i].type == MASH_UserAnnotation.TOUCH_FEEDBACK_BOTTOM) ||
+            (annotationObjects[i].type == MASH_UserAnnotation.TOUCH_FEEDBACK_LEFT  ) ){
+
+            //remove screen object
+            annotationObjects[i].reference.parentNode.removeChild(annotationObjects[i].reference);
+            //remove annotation from array
+            annotationObjects.splice(i--,1);
+        }
+    }
+
+
+}//MASH_UserAnnotation.destroyTouchFeedback
 
 
 
@@ -454,6 +550,7 @@ MASH_UserAnnotation.prototype.editText = function() {
 
         this.innerObj.innerHTML = this.text;
     }
+
 
 }//MASH_UserAnnotation.prototype.editText
 

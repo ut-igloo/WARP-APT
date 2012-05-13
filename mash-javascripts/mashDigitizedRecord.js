@@ -18,31 +18,32 @@ function MASH_DigitizedRecord(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZI
     this.base = MASH_Object;
     this.base(tmpID, tmpLeft, tmpTop, tmpWidth, tmpHeight, tmpZIndex, tmpStyle);
 
-    this.src                = tmpSrc;
-    this.text               = tmpText;
-    this.MASHobjectType     = MASH_Object.DIGITIZED_RECORD;
+    this.src                      = tmpSrc;
+    this.text                     = tmpText;
+    this.MASHobjectType           = MASH_Object.DIGITIZED_RECORD;
 
-    //Metadata variables
-    this.metadataTitle       = "";
-    this.metadataDescription = "";
+    //Metadata variables (APT)
+    this.metadataTitle            = "";
+    this.metadataDescription      = "";
 
 
     //context menu
-    this.contextMenuString  = "<div style='line-height:3em; border-style:solid; border-width: 0 0 1 0; border-color:#047AAC;' >\n";
-    this.contextMenuString += "    <span onclick=\"otherObjects[0].targetObj.staple();\"     style='" + MASH_MetadataMenu.BUTTON_STYLE + "'>Staple</span>";
-    this.contextMenuString += "</div><br/>\n";
+    this.contextMenuString        = "<div style='line-height:3em; border-style:solid; border-width: 0 0 1 0; border-color:#047AAC;' >\n";
+    this.contextMenuString       += "    <span onclick=\"otherObjects[0].targetObj.staple();\"     style='" + MASH_MetadataMenu.BUTTON_STYLE + "'>Staple</span>";
+//    this.contextMenuString       += "    <span onmousedown=\"otherObjects[0].targetObj.staple();\"     style='" + MASH_MetadataMenu.BUTTON_STYLE + "'>Staple</span>";
+    this.contextMenuString       += "</div><br/>\n";
 
-    this.contextMenuString += "    <table style='positon:relative; width:100%; font-size:12pt; font-weight:bold;' border='0'>\n";
-    this.contextMenuString += "        <tr><td colspan='2'>File</td></tr>";
-    this.contextMenuString += "        <tr><td colspan='1'><textarea name='metadataFilename'        id='" + MASH_DigitizedRecord.ID_TEXTAREA_FILENAME    + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:40px;  background-color:#eeeeee; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' readonly='readonhly' >" + this.src       + "</textarea></td> <td colspan='1' style='width:40px;'><a href=\"" + this.src + "\" target=\"_new\" style='" + MASH_MetadataMenu.BUTTON_STYLE + " text-decoration:none;'>Show</span></td></tr>";
-    this.contextMenuString += "        <tr><td colspan='2'>Title</td></tr>";
-    this.contextMenuString += "        <tr><td colspan='2'><textarea name='metadataTitle'           id='" + MASH_DigitizedRecord.ID_TEXTAREA_TITLE       + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:25px;  background-color:#ffffff; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' >" + this.metadataTitle       + "</textarea></td></tr>\n";
-    this.contextMenuString += "        <tr><td colspan='2'>Description</td></tr>";
-    this.contextMenuString += "        <tr><td colspan='2'><textarea name='metadataDescription'     id='" + MASH_DigitizedRecord.ID_TEXTAREA_DESCRIPTION + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:100px; background-color:#ffffff; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' >" + this.metadataDescription + "</textarea></td></tr>\n";
-    this.contextMenuString += "    </table>\n";
+    this.contextMenuString       += "    <table style='position:relative; width:100%; font-size:12pt; font-weight:bold;' border='0'>\n";
+    this.contextMenuString       += "        <tr><td colspan='2'>File</td></tr>";
+    this.contextMenuString       += "        <tr><td colspan='1'><textarea name='metadataFilename'        id='" + MASH_DigitizedRecord.ID_TEXTAREA_FILENAME    + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:40px;  background-color:#eeeeee; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' readonly='readonhly' >" + this.src       + "</textarea></td> <td colspan='1' style='width:40px;'><a href=\"" + this.src + "\" target=\"_new\" style='" + MASH_MetadataMenu.BUTTON_STYLE + " text-decoration:none;'>Show</span></td></tr>";
+    this.contextMenuString       += "        <tr><td colspan='2'>Title</td></tr>";
+    this.contextMenuString       += "        <tr><td colspan='2'><textarea name='metadataTitle'           id='" + MASH_DigitizedRecord.ID_TEXTAREA_TITLE       + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:25px;  background-color:#ffffff; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' >" + this.metadataTitle       + "</textarea></td></tr>\n";
+    this.contextMenuString       += "        <tr><td colspan='2'>Description</td></tr>";
+    this.contextMenuString       += "        <tr><td colspan='2'><textarea name='metadataDescription'     id='" + MASH_DigitizedRecord.ID_TEXTAREA_DESCRIPTION + "' style='position:relative; overflow:auto; resize:vertical; width:100%; height:100px; background-color:#ffffff; border-width:1px; border-style:solid; border-color:#047AAC; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt;' >" + this.metadataDescription + "</textarea></td></tr>\n";
+    this.contextMenuString       += "    </table>\n";
 
     //XML
-    this.xmlObjectTag       = MASH_DigitizedRecord.XML_TAG_OBJECT;
+    this.xmlObjectTag            = MASH_DigitizedRecord.XML_TAG_OBJECT;
 
     this.FIXED_DIMENSIONAL_RATIO = tmpWidth / tmpHeight;
 }

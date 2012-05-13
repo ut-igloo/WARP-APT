@@ -18,14 +18,14 @@ function MASH_MetadataMenu(tmpLeft, tmpTop, tmpObj) {
 //    var tmpStyle = "align:left; vertical-align:top; background-color:#e4e4e4; border-color:#000000; border-width:1; border-style:solid; color:#000000; font-family:arial; font-size:9pt; font-weight:normal;";
     var tmpStyle = "align:left; vertical-align:top; background-color:#e8e8ea; border-color:#047AAC; border-width:1; border-style:solid; color:#000000; font-family:arial; font-size:9pt; font-weight:normal;";
 
-    var intialWidth  = 400;
+    var intialWidth  = 430;
     var intialHeight = MASH_MetadataMenu.getInitialHeight();
     if(tmpObj.MASHobjectType == MASH_Object.USER_ANNOTATION ){
         intialWidth  = 280;
-        intialHeight = 130;
+        intialHeight = 170;
     }
     if(tmpObj.MASHobjectType == MASH_Object.COLLECTION ){
-        intialHeight = 375;
+        intialHeight = 400;
     }
 
     this.base    = MASH_Object;
@@ -59,10 +59,10 @@ MASH_MetadataMenu.ID_PREFIX                      = MASH_Object.ID_PREFIX + MASH_
 MASH_MetadataMenu.CLOSE_BUTTON_IMG_ID            = "mashControlMenuCloseButton";
 MASH_MetadataMenu.CLOSE_BUTTON_IMG_FILE          = CONTROLS_IMG_DIR + "close-button.png";
 MASH_MetadataMenu.CLOSE_BUTTON_IMG_FILE_REVERSE  = CONTROLS_IMG_DIR + "close-button-reverse.png";
-MASH_MetadataMenu.CLOSE_BUTTON_IMG_WIDTH         = "16";
-MASH_MetadataMenu.CLOSE_BUTTON_IMG_HEIGHT        = "16";
+MASH_MetadataMenu.CLOSE_BUTTON_IMG_WIDTH         = "36";
+MASH_MetadataMenu.CLOSE_BUTTON_IMG_HEIGHT        = "36";
 
-MASH_MetadataMenu.BUTTON_STYLE                   = "cursor:pointer; background-image:-moz-linear-gradient(90deg, #34AADC, #047AAC, #34AADC); border-color:#82a3f0; border-width:1; border-style:solid; color:#ffffff; font-family:arial; font-size:9pt; font-weight:normal; padding:2 5 2 5; margin:5 5 5 5; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt; ";
+MASH_MetadataMenu.BUTTON_STYLE                   = "cursor:pointer; position:relative; width:100px; height:36px; background-image:-moz-linear-gradient(90deg, #34AADC, #047AAC, #34AADC); border-color:#82a3f0; border-width:1; border-style:solid; color:#ffffff; font-family:arial; font-size:14pt; font-weight:normal; padding:2 5 2 5; margin:5 5 5 5; -border-radius:3pt; -moz-border-radius:3pt; -webkit-border-radius:3pt; ";
 
 
 // MASH_MetadataMenu.prototype.createScreenObject                         MASH_MetadataMenu.prototype.createScreenObject
@@ -142,7 +142,7 @@ MASH_MetadataMenu.prototype.createScreenObject  = function(i){
 
     this.topDiv                              = document.createElement("div");
     this.topDiv.style.width                  = '96%';
-    this.topDiv.style.height                 = '8px';
+    this.topDiv.style.height                 = '30px';
     this.topDiv.style.marginTop              = '3px';
     this.topDiv.style.marginRight            = '15px';
     this.topDiv.style.marginBottom           = '3px';
@@ -171,6 +171,8 @@ MASH_MetadataMenu.prototype.createScreenObject  = function(i){
     this.controlDiv.style.borderTopColor     = '#047AAC';
     this.controlDiv.innerHTML                = "<span onclick=\"otherObjects[0].saveTarget();\" style='" + MASH_MetadataMenu.BUTTON_STYLE + "'>Save</span> ";
     this.controlDiv.innerHTML               += "<span onclick=\"otherObjects[0].close();\"      style='" + MASH_MetadataMenu.BUTTON_STYLE + "'>Cancel</span>";
+//    this.controlDiv.innerHTML                = "<span onmousedown=\"otherObjects[0].saveTarget();\" style='" + MASH_MetadataMenu.BUTTON_STYLE + "'>Save</span> ";
+//    this.controlDiv.innerHTML               += "<span onmousedown=\"otherObjects[0].close();\"      style='" + MASH_MetadataMenu.BUTTON_STYLE + "'>Cancel</span>";
 
     var contextMenuInnerHTMLString           = "";
 
@@ -468,7 +470,7 @@ MASH_MetadataMenu.getInitialHeight = function() {
 //    return  600;
 
 
-    return  400;
+    return  440;
 
 }//MASH_MetadataMenu.prototype.getInitialHeight
 

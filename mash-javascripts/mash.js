@@ -80,6 +80,10 @@ var MT_fingerMarkerLeft   = null;
 var MT_fingerMarkerBottom = null;
 var MT_fingerMarkerRight  = null;
 
+var MT_MOVEMENT_TOLERANCE = 3;   //movement allowance in pixels for finger to move and still count as a long hold touch
+var MT_LONG_HOLD_TIMEOUT = 700;  //minimum time in milliseconds required to count as long hold touch
+var MT_DBCLICK_TIMEOUT   = 400;  //maximum time in milliseconds required to count as double click
+
 // =====================================================================================================================
 // GLOBAL FUNCTIONS                                                                                     GLOBAL FUNCTIONS
 // =====================================================================================================================
@@ -111,6 +115,7 @@ function writeQuestionnaires(){
 // * writes the control bar in the web page
 function writeControls(){
 
+    document.writeln("<span style=\"position:relative; -moz-transform:scale(2.0);\">\n");
     document.writeln("<a href=\"javascript:arrangeObjects(allMASHObjects);\"><img id=\"" + CTRL_REARRANGE_IMG_ID              + "\" src=\"" + CTRL_REARRANGE_IMG_FILE               + "\" title=\"Re-arrange\"                     alt=\"re-arrange objects to their original state\"        border=\"0\"></a>&nbsp;");
     document.writeln("<a href=\"javascript:freezeAllObjects();\"            ><img id=\"" + CTRL_FREEZE_IMG_ID                 + "\" src=\"" + CTRL_UNFREEZE_IMG_FILE                + "\" title=\"Freeze Space\"                   alt=\"freezes the space. Objects cannot be moved\"        border=\"0\"></a>&nbsp;||&nbsp;");
 //    document.writeln("<a href=\"javascript:saveAllObjects();\"              ><img id=\"" + CTRL_SAVE_IMG_ID                   + "\" src=\"" + CTRL_SAVE_IMG_FILE                    + "\" title=\"Save Space\"                     alt=\"save the objects' current state\"                   border=\"0\"></a>&nbsp;");
@@ -147,7 +152,7 @@ function writeControls(){
     document.writeln("<a href=\"javascript:annotateGreenText();\"                                   ><img id=\"" + CTRL_ANNOTATE_TEXT_GREEN_IMG_ID        + "\" src=\"" + CTRL_ANNOTATE_TEXT_GREEN_IMG_FILE        + "\" title=\"Make Green Text Annotation\"        alt=\"Make Green Text Annotation\"     border=\"0\"></a>");
     document.writeln("<a href=\"javascript:annotateRedText();\"                                     ><img id=\"" + CTRL_ANNOTATE_TEXT_RED_IMG_ID          + "\" src=\"" + CTRL_ANNOTATE_TEXT_RED_IMG_FILE          + "\" title=\"Make Red Text Annotation\"          alt=\"Make Red Text Annotation\"       border=\"0\"></a>");
     document.writeln("<a href=\"javascript:annotateYellowText();\"                                  ><img id=\"" + CTRL_ANNOTATE_TEXT_YELLOW_IMG_ID       + "\" src=\"" + CTRL_ANNOTATE_TEXT_YELLOW_IMG_FILE       + "\" title=\"Make Yellow Text Annotation\"       alt=\"Make Yellow Text Annotation\"    border=\"0\"></a>&nbsp;||&nbsp;");
-
+    document.writeln("</span>");
 }//writeControls
 
 
@@ -1182,8 +1187,10 @@ function getCurrentTarget(e){
 //        return e.currentTarget;
         var objTemp   = e.currentTarget;
 
+//        window.status = "object = " +objTemp.id + "  z = "+objTemp.style.zIndex;
+        window.status = "object = " +objTemp.id ;
+
         //make sure that we get the <DIV> and not the element inside of it
-        window.status = "object = " +objTemp.id + "  z = "+objTemp.style.zIndex;
 
         //fakes the event propagation (bubbling up) to the wrapper div
         while((objTemp.parentNode) && (objTemp.id.indexOf(MASH_Object.ID_PREFIX)!=0)) {
@@ -1214,6 +1221,27 @@ function getTarget(e){
     if(isNetscape) { return e.target;       }
     else if(isIE)  { return e.srcElement;   }
 }//getTarget
+
+
+// fireEvent                                                                                                   fireEvent
+// ---------------------------------------------------------------------------------------------------------------------
+function fireEvent(element, event){
+
+    //IE
+    if(isIE) {
+//    if (document.createEventObject){
+        var evt = document.createEventObject();
+        return element.fireEvent("on"+event, evt)
+    }
+    //Netscape                                                                                              Netscape
+    // dispatch for firefox + others
+    else{
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent(event, true, true);
+        return !element.dispatchEvent(evt);
+    }
+
+}//fireEvent
 
 
 // addEventListener                                                                                     addEventListener
@@ -1498,7 +1526,7 @@ function resizeBottomCenterMouseDown(e){
     return false;
 }//resizeBottomCenterMouseDown
 
-  
+
 
 // resizeBottomRightMouseDown                                                                 resizeBottomRightMouseDown
 // ---------------------------------------------------------------------------------------------------------------------
@@ -1703,8 +1731,7 @@ function divScroll(e){
 // divMouseDown                                                                                             divMouseDown
 // ---------------------------------------------------------------------------------------------------------------------
 function divMouseDown(e){
-    // Start of mousedown in unix epoch
-    var now = new Date();
+
 
     //check that is not being scrolling (avoid 'sticky' scrollbars
     if(scrollFlag) {
@@ -1713,7 +1740,7 @@ function divMouseDown(e){
         scrollFlag = false;
         return false;
     }
- 
+
     //delete objects created by the spatial parser
     deleteSpatialObjects();
 
@@ -1721,39 +1748,21 @@ function divMouseDown(e){
     //  (this compensates for using DOM 2 and IE event models
     e = validateEventObject(e);
 
-    // Check for double click
-    if(this.lastClick != undefined) {
-        console.log("diff", now.getTime()-this.lastClick.getTime());
-        if(now.getTime() - this.wrapperObj.lastClick.getTime() <= 400) {
-            console.log("double click");
-        }
-    }
-    // Set time of last mousedown
-    this.lastClick = now;
 
     //check for right button
     if(getMouseButton(e) == MOUSE_RIGHT_BUTTON) {
-
-        //This disables the default action for this event
-        preventDefault(e);
-        stopPropagation(e);
 
         //initialize values
         objDrag     = getCurrentTarget(e);
         objX        = e.clientX;
         objY        = e.clientY;
 
-        //close all other contextual menus
-        while(otherObjects.length>0) {
-            otherObjects[0].close();
-        }
+        //disable default action for this event
+        preventDefault(e);
+        stopPropagation(e);
 
-        //open contextual menu for this object
-//        objDrag.MASHparameters.contextMenu = new MASH_ContextualMenu(objX-10, objY-10,  objDrag.MASHparameters);
-        objDrag.MASHparameters.contextMenu = new MASH_MetadataMenu(objX-10, objY-10,  objDrag.MASHparameters);
-        var tmpObj                         = MASH_Object.createObject(objDrag.MASHparameters.contextMenu, null);
-
-        objDrag.MASHparameters.select(true);
+        //show context menu
+        divShowContextMenu();
 
         return false;
     }
@@ -1812,6 +1821,37 @@ function divMouseDown(e){
     objY        = e.clientY;
     wasDragged  = false;
 
+   //code for double click and long hold events (start of mousedown in unix epoch)
+    var now = new Date().getTime();
+
+    // Check for double click
+    if(objDrag.lastClick != undefined) {
+        if( now - objDrag.lastClick <= MT_DBCLICK_TIMEOUT) {
+//            fireEvent(getCurrentTarget(e), 'dblclick');
+//            alert("double click on:\n" + this.MASHparameters.MASHobjectType + " \nid = " + this.MASHparameters.id );
+
+            if(objDrag.rotated == true) {
+                objDrag.wrapperObj.style.MozTransform = "rotate(0deg)";
+                objDrag.rotated = false;
+            }
+            else {
+                objDrag.wrapperObj.style.MozTransform = "rotate(30deg)";
+                objDrag.rotated = true;
+            }
+
+            //disable default action for this event
+            preventDefault(e);
+            stopPropagation(e);
+
+//            console.log("double click");
+        }
+    }
+    // Set time and location of last mousedown
+    objDrag.lastClick    = now;
+    objDrag.longHoldLeft = parseInt(objX);
+    objDrag.longHoldTop  = parseInt(objY);
+
+
     //check if the object is inside a collection
     if((objDrag.MASHparameters)                      &&
        (objDrag.MASHparameters.collection != null)   ){
@@ -1849,15 +1889,13 @@ function divMouseDown(e){
 
             //animate
 //            objDrag.MASHparameters.startImportAnimation(500);
-            tmpMASHCollection.startImportAnimation(200);
+//            tmpMASHCollection.startImportAnimation(200);
 
 //        }//CTRL KEY pressed
     }
 
     //let objects with zIndex = 0 in the same level
     if(objDrag.style.zIndex > 0) {
-//        alert(" id = " + objDrag.id + "\n zIndex = " + objDrag.style.zIndex);
-
         //bring the object forward
         objDrag.style.zIndex = ++topZ;
     }
@@ -1869,25 +1907,19 @@ function divMouseDown(e){
     }
 
 
-
     //draw finger mark (useful in Multi-Touch applications
-//    var fingerOffset = getSrcElementOffset(objDrag);
     var fingerX      = parseInt( objX + getWindowScrollX() );
     var fingerY      = parseInt( objY + getWindowScrollY() );
 
-    /* OLD TOUCH FEEDBACK
-    //MT_fingerMarker = createUserAnnotation("", objX-20, objY-20, 40, 40, (topZ+2), "+", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerTop    = createUserAnnotation(""+fingerX, fingerX-8,  fingerY-30, 4, 20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerLeft   = createUserAnnotation(""+fingerX, fingerX-30, fingerY-8, 20,  4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerBottom = createUserAnnotation(""+fingerX, fingerX-8,  fingerY+10, 4, 20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerRight  = createUserAnnotation(""+fingerX, fingerX+10, fingerY-8, 20,  4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    */
-//    console.log(this);
-    // New touch feedback
-    MT_fingerMarkerTop    = createUserAnnotation("", fingerX-8,  fingerY-20, 20, 4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerLeft   = createUserAnnotation("", fingerX-20, fingerY-8, 4,  20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerBottom = createUserAnnotation("", fingerX-8,  fingerY+10, 20, 4, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
-    MT_fingerMarkerRight  = createUserAnnotation("", fingerX+10, fingerY-8, 4,  20, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    // multitouch feedback
+//    MT_fingerMarkerTop    = createUserAnnotation("", (fingerX - 50), (fingerY - 50), 100, 30, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+//    MT_fingerMarkerRight  = createUserAnnotation("", (fingerX + 20), (fingerY - 20),  30, 40, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+//    MT_fingerMarkerBottom = createUserAnnotation("", (fingerX - 50), (fingerY + 20), 100, 30, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+//    MT_fingerMarkerLeft   = createUserAnnotation("", (fingerX - 50), (fingerY - 20),  30, 40, (topZ+2), "", MASH_UserAnnotation.FINGER_MARKER);
+    MT_fingerMarkerTop    = createUserAnnotation("", (fingerX - 50), (fingerY - 50), 100, 30, (topZ+2), "", MASH_UserAnnotation.TOUCH_FEEDBACK_TOP   );
+    MT_fingerMarkerRight  = createUserAnnotation("", (fingerX + 20), (fingerY - 20),  30, 40, (topZ+2), "", MASH_UserAnnotation.TOUCH_FEEDBACK_RIGHT );
+    MT_fingerMarkerBottom = createUserAnnotation("", (fingerX - 50), (fingerY + 20), 100, 30, (topZ+2), "", MASH_UserAnnotation.TOUCH_FEEDBACK_BOTTOM);
+    MT_fingerMarkerLeft   = createUserAnnotation("", (fingerX - 50), (fingerY - 20),  30, 40, (topZ+2), "", MASH_UserAnnotation.TOUCH_FEEDBACK_LEFT  );
 
 
     //update the status bar
@@ -1930,6 +1962,32 @@ function divMouseMove(e){
     //validate that we have the event object
     //  (this compensates for using DOM 2 and IE event models
     e = validateEventObject(e);
+
+
+    //determine a long hold by checking the lapsed time and that the event has not moved much
+    var now = new Date().getTime();
+    if( (objX >= (objDrag.longHoldLeft - MT_MOVEMENT_TOLERANCE) ) &&
+        (objX <= (objDrag.longHoldLeft + MT_MOVEMENT_TOLERANCE) ) &&
+        (objY >= (objDrag.longHoldTop  - MT_MOVEMENT_TOLERANCE) ) &&
+        (objY <= (objDrag.longHoldTop  + MT_MOVEMENT_TOLERANCE) ) ){
+
+        if( now - objDrag.lastClick >= MT_LONG_HOLD_TIMEOUT ) {
+
+            //it is important to remove the mousemove listener quickly, to prevent from firing multiple times
+            removeEventListener(document, "mousemove", divMouseMove, true);
+            removeEventListener(document, "mouseup",   divMouseUp,   true);
+
+            //disable default action for this event
+            preventDefault(e);
+            stopPropagation(e);
+
+            //show context menu
+            divShowContextMenu();
+
+            return false;
+        }
+    }
+
 
     //check for right button
     if(getMouseButton(e) == MOUSE_RIGHT_BUTTON) {
@@ -1975,11 +2033,10 @@ function divMouseMove(e){
             objDrag.style.top  = newY;
 
             //delete finger marker (used in Multi-Touch applications)
-//            MT_fingerMarker.moveBy(deltaX, deltaY);
-            MT_fingerMarkerTop.moveBy(deltaX, deltaY);
-            MT_fingerMarkerLeft.moveBy(deltaX, deltaY);
+            MT_fingerMarkerTop.moveBy(   deltaX, deltaY);
+            MT_fingerMarkerLeft.moveBy(  deltaX, deltaY);
             MT_fingerMarkerBottom.moveBy(deltaX, deltaY);
-            MT_fingerMarkerRight.moveBy(deltaX, deltaY);
+            MT_fingerMarkerRight.moveBy( deltaX, deltaY);
 
 
             //update postion of objDrag
@@ -2012,15 +2069,11 @@ function divMouseMove(e){
 // ---------------------------------------------------------------------------------------------------------------------
 function divMouseUp(e){
 
-    scrollFlag = false;
-
+    scrollFlag            = false;
 
     //delete finger marker (used in Multi-Touch applications)
-//    MT_fingerMarker.destroy();
-//    MT_fingerMarker = null;
-
     MASH_UserAnnotation.destroyFingerMarkers();
-
+    MASH_UserAnnotation.destroyTouchFeedback();
     MT_fingerMarkerTop    = null;
     MT_fingerMarkerLeft   = null;
     MT_fingerMarkerBottom = null;
@@ -2032,6 +2085,26 @@ function divMouseUp(e){
     //validate that we have the event object
     //  (this compensates for using DOM 2 and IE event models
     e = validateEventObject(e);
+
+    //determine a long hold by checking the lapsed time and that the event has not moved much
+    var now = new Date().getTime();
+    if( now - objDrag.lastClick >= MT_LONG_HOLD_TIMEOUT ) {
+        if( (objX >= (objDrag.longHoldLeft - MT_MOVEMENT_TOLERANCE) ) &&
+            (objX <= (objDrag.longHoldLeft + MT_MOVEMENT_TOLERANCE) ) &&
+            (objY >= (objDrag.longHoldTop  - MT_MOVEMENT_TOLERANCE) ) &&
+            (objY <= (objDrag.longHoldTop  + MT_MOVEMENT_TOLERANCE) ) ){
+
+            removeEventListener(document, "mousemove", divMouseMove, true);
+            removeEventListener(document, "mouseup",   divMouseUp,   true);
+
+            //disable default action for this event
+            preventDefault(e);
+            stopPropagation(e);
+
+            //show Context Menu
+            divShowContextMenu();
+        }
+    }
 
     //check for right button
     if(getMouseButton(e) == MOUSE_RIGHT_BUTTON) {
@@ -2145,7 +2218,7 @@ function divMouseUp(e){
 
                 //animate
 //                objDrag.MASHparameters.startImportAnimation(200);
-                topCollection[0].startImportAnimation(300);
+//                topCollection[0].startImportAnimation(300);
 
             }//collection
 
@@ -2201,6 +2274,38 @@ function divMouseUp(e){
 
 }//divMouseUp
 
+
+
+// divShowContextMenu                                                                                 divShowContextMenu
+// ---------------------------------------------------------------------------------------------------------------------
+// * some variable must be already defined, including objDrag, objX, objY
+function divShowContextMenu(){
+
+    //validate that this is not attempting to get the contextual menu of another contextual menu
+    if(objDrag.MASHparameters.MASHobjectType == MASH_Object.CONTEXTUAL_MENU) {
+        return false;
+    }
+
+    //close all other contextual menus
+    while(otherObjects.length>0) {
+        otherObjects[0].close();
+    }
+
+    //open contextual menu for this object
+    objDrag.MASHparameters.contextMenu = new MASH_MetadataMenu(objX-10, objY-10,  objDrag.MASHparameters);
+    var tmpObj                         = MASH_Object.createObject(objDrag.MASHparameters.contextMenu, null);
+
+    objDrag.MASHparameters.select(true);
+
+    //delete finger marker (used in Multi-Touch applications)
+    MASH_UserAnnotation.destroyFingerMarkers();
+    MASH_UserAnnotation.destroyTouchFeedback();
+    MT_fingerMarkerTop    = null;
+    MT_fingerMarkerLeft   = null;
+    MT_fingerMarkerBottom = null;
+    MT_fingerMarkerRight  = null;
+
+}//divShowContextMenu
 
 
 

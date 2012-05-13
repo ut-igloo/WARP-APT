@@ -427,35 +427,29 @@ MASH_Object.prototype.createWrapperObject = function(tmpObjID, i){
 
     //attach resize control
     if(this.clickable == true) {
-//        this.resizeButton                        = document.createElement("div");
-//        this.resizeButton.wrapperObj             = this.wrapperObj;
-//        this.resizeButton.title                  = "resize";
-//
-//        this.resizeButton.style.position         = "absolute";
-//        this.resizeButton.style.backgroundImage  = "url(" + this.CTRL_CORNER_RESIZE_IMG + ")";
-//        this.resizeButton.style.left             = adjustedWidth  - 27;
-//        this.resizeButton.style.top              = adjustedHeight - 27;
-//        this.resizeButton.style.width            = 28;
-//        this.resizeButton.style.height           = 28;
-//        this.resizeButton.style.overflow         = "hidden";
-//        this.resizeButton.style.zIndex           = 1;
 
-        this.resizeButton                        = document.createElement("img");
-        this.resizeButton.wrapperObj             = this.wrapperObj;
-        this.resizeButton.title                  = "resize";
-        this.resizeButton.src                    = this.CTRL_CORNER_RESIZE_IMG;
+        if( (this.type != MASH_UserAnnotation.FINGER_MARKER        ) &&
+            (this.type != MASH_UserAnnotation.TOUCH_FEEDBACK_TOP   ) &&
+            (this.type != MASH_UserAnnotation.TOUCH_FEEDBACK_RIGHT ) &&
+            (this.type != MASH_UserAnnotation.TOUCH_FEEDBACK_BOTTOM) &&
+            (this.type != MASH_UserAnnotation.TOUCH_FEEDBACK_LEFT  ) ){
 
-        this.resizeButton.style.position         = "absolute";
-        this.resizeButton.style.left             = adjustedWidth  - 36;
-        this.resizeButton.style.top              = adjustedHeight - 36;
-        this.resizeButton.style.width            = 36;
-        this.resizeButton.style.height           = 36;
-        this.resizeButton.style.zIndex           = 1;
+            this.resizeButton                        = document.createElement("img");
+            this.resizeButton.wrapperObj             = this.wrapperObj;
+            this.resizeButton.title                  = "resize";
+            this.resizeButton.src                    = this.CTRL_CORNER_RESIZE_IMG;
+            this.resizeButton.style.position         = "absolute";
+            this.resizeButton.style.left             = adjustedWidth  - 36;
+            this.resizeButton.style.top              = adjustedHeight - 36;
+            this.resizeButton.style.width            = 36;
+            this.resizeButton.style.height           = 36;
+            this.resizeButton.style.zIndex           = 1;
 
-        addEventListener(this.resizeButton,  "mousedown", resizeBottomRightMouseDown,  false);
-        this.wrapperObj.appendChild(this.resizeButton);
+            addEventListener(this.resizeButton,  "mousedown", resizeBottomRightMouseDown,  false);
+            this.wrapperObj.appendChild(this.resizeButton);
+        }// if not FINGER_MARKER
+
     }
-
 
     //contextual layer
     this.createContextLayer();

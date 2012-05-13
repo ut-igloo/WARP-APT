@@ -53,8 +53,12 @@ MASH_Behavior_AutoPresentation.picture        = new Array();
 // ---------------------------------------------------------------------------------------------------------------------
 MASH_Behavior_AutoPresentation.initReplaceBehavior = function(){
 
+    MASH_Behavior_AutoPresentation.picture        = new Array();
+
     //add behavior to images
-    for(var i=0; i<imageObjects.length;i++) {
+    var i = 0;
+    var j = 0;
+    for(i=0; i<imageObjects.length;i++) {
 
         var tmpBehaviorObject     = new MASH_Behavior_AutoPresentation();
 
@@ -67,6 +71,23 @@ MASH_Behavior_AutoPresentation.initReplaceBehavior = function(){
             tmpBehaviorObject.changed = false;
 
             addBehaviorObject(imageObjects[i], tmpBehaviorObject);
+        }
+    }
+
+    //add behavior to images and DigitizedRecords
+    for(j=i; j<(digitizedRecordObjects.length+i); j++) {
+
+        var tmpBehaviorObject     = new MASH_Behavior_AutoPresentation();
+
+        if(MASH_Behavior_AutoPresentation.picture[j]){
+            tmpBehaviorObject.src     = MASH_Behavior_AutoPresentation.picture[j].src;
+            tmpBehaviorObject.width   = MASH_Behavior_AutoPresentation.picture[j].width;
+            tmpBehaviorObject.height  = MASH_Behavior_AutoPresentation.picture[j].height;
+            tmpBehaviorObject.title   = MASH_Behavior_AutoPresentation.picture[j].text;
+            tmpBehaviorObject.zIndex  = 1;
+            tmpBehaviorObject.changed = false;
+
+            addBehaviorObject(digitizedRecordObjects[j], tmpBehaviorObject);
         }
     }
 
@@ -94,9 +115,12 @@ MASH_Behavior_AutoPresentation.repaceImg = function(tmpEvent){
     var tmpObjID        = MASH_Image.ID_PREFIX       + objIndex;
     var tmpObjInnerID   = MASH_Image.INNER_ID_PREFIX + objIndex;
 
+    var innerObj        = wrapperObj.MASHparameters.innerObj;
+
+
     if(wrapperObj.id == tmpObjID) {
         var childrenObj = wrapperObj.childNodes;
-        var innerObj    = wrapperObj.childNodes[0];
+        innerObj        = wrapperObj.childNodes[0];
     }
     else if(wrapperObj.id == tmpObjInnerID) {
         innerObj        = wrapperObj;
@@ -114,7 +138,13 @@ MASH_Behavior_AutoPresentation.repaceImg = function(tmpEvent){
 
     if(MASH_Behavior_AutoPresentation.notInitialized) { MASH_Behavior_AutoPresentation.initReplaceBehavior(); }
 
-    var tmpBehaviorObject    = getBehaviorObject(imageObjects[objIndex], "AutoPresentation");
+
+    var tmpObjectArray       = imageObjects;
+    if(wrapperObj.MASHparameters.MASHobjectType == MASH_Object.DIGITIZED_RECORD) {
+        tmpObjectArray       = digitizedRecordObjects;
+    }
+    var tmpBehaviorObject    = getBehaviorObject(tmpObjectArray[objIndex], "AutoPresentation");
+//    var tmpBehaviorObject    = getBehaviorObject(imageObjects[objIndex], "AutoPresentation");
 
     if(!tmpBehaviorObject) { return; }
 
@@ -141,14 +171,14 @@ MASH_Behavior_AutoPresentation.repaceImg = function(tmpEvent){
     tmpBehaviorObject.zIndex = tmpZIndex;
 
     //scroll to the object
-    var windowLeft = wrapperObj.offsetLeft;
-    var tmpWidth   = getObjectCurrentWidth(wrapperObj);
+    var windowLeft           = wrapperObj.offsetLeft;
+    var tmpWidth             = getObjectCurrentWidth(wrapperObj);
 
     if(tmpWidth < getWindowWidth()) { windowLeft = windowLeft - ((getWindowWidth()-tmpWidth)/2);    }
     if(windowLeft<0)                { windowLeft = 0;                                               }
 
-    var windowTop  = wrapperObj.offsetTop;
-    var tmpHeight  = getObjectCurrentHeight(wrapperObj);
+    var windowTop            = wrapperObj.offsetTop;
+    var tmpHeight            = getObjectCurrentHeight(wrapperObj);
 
     if(tmpHeight < getWindowHeight()) { windowTop = windowTop - ((getWindowHeight()-tmpHeight)/2);  }
     if(windowTop<0)                   { windowTop = 0;                                              }
